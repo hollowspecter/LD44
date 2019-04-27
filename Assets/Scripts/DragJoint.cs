@@ -37,9 +37,15 @@ public class DragJoint : MonoBehaviour {
             if(MainCamera.ScreenPointRaycast(GameInput.position, out worldPos, dragStart.y)){
                 rigid.MovePosition(worldPos+Vector3.up*lift);
             }
-            return;
-        }else{
-            rigid.MovePosition(hitInfo.point+Vector3.up*lift);
+        } else{
+            if(hitInfo.point != Vector3.zero){
+                rigid.MovePosition(hitInfo.point+Vector3.up*lift);
+            }else{
+                Vector3 worldPos;
+                if(MainCamera.ScreenPointRaycast(GameInput.position, out worldPos, dragStart.y)){
+                    rigid.MovePosition(worldPos+Vector3.up*lift);
+                }
+            }
         }
     }
 }
