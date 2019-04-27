@@ -8,12 +8,13 @@ using UnityEngine.UI;
 
 public class TellerMachine : MonoBehaviour, IDraggableReceiver {
     public Dispensary dispensary;
-    public Dictionary<string,float> accounts = new Dictionary<string, float>();
+    public Dictionary<string,Account> accounts = new Dictionary<string, Account>();
     public string firstNameField { get; set;}
     public string lastNameField { get; set;}
-    public string accountName {
-        get { return firstNameField + lastNameField; }
-    }
+    public string accountNumberField { get; set;}
+    public InputField firstNameText;
+    public InputField lastNameText;
+    public InputField accountNumberText;
     public Text messageText;
     public Text balanceText;
     private static CultureInfo ci = new CultureInfo("en-US");
@@ -33,19 +34,51 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
         StopAllCoroutines();
     }
     private void Update(){
-        if(accounts.ContainsKey(accountName)){
-            balanceText.text = "Balance: "+accounts[accountName].ToString("C");
+        if(accountNumberField == null || accountNumberField == ""){ return;}
+        if(accounts.ContainsKey(accountNumberField)){
+            firstNameText.text = accounts[accountNumberField].firstName;
+            lastNameText.text = accounts[accountNumberField].lastName;
+            balanceText.text = "Balance: "+accounts[accountNumberField].balance.ToString("C");
         }else{
             balanceText.text = "Balance: $0.00";
         }
     }
 
+    private IAccountReceiver receiver;
+    public void RegisterAccountReceiver(IAccountReceiver receiver){        
+        if(this.receiver != null){
+            throw new Exception("Only one receiver per TellerMachine");
+        }
+        this.receiver = receiver;
+    }
+
+    public static System.Random random = new System.Random();
     public void CreateAccount(){
-        if(accounts.ContainsKey(accountName)){
+        if(receiver != null && receiver.hasAccount){
+            return;
+        } 
+        if(firstNameField == ""){
             Error();
             return;
         }
-        accounts[accountName] = 0f;
+        if(lastNameField == ""){
+            Error();
+            return;            
+        }
+        string accountNumber = random.Next().ToString("000000");
+        while(accounts.ContainsKey(accountNumber)){
+            accountNumber = random.Next().ToString("000000");
+        }
+        accounts[accountNumber] = new Account();
+        accounts[accountNumber].accountNumber = accountNumber;
+        accounts[accountNumber].firstName = firstNameField;
+        accounts[accountNumber].lastName = lastNameField;
+        accounts[accountNumber].balance = 0f;
+        accountNumberText.text = accountNumber;
+        if(receiver != null){
+            receiver.OnAccountCreated(accounts[accountNumber]);
+        }        
+        print(accountNumber);
         Success();
     }
 
@@ -54,9 +87,9 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
     }
 
     private void Withdraw(float amount){
-        if(accounts.ContainsKey(accountName)){
-            if(accounts[accountName] >= amount){
-                accounts[accountName] -= amount;
+        if(accounts.ContainsKey(accountNumberField)){
+            if(accounts[accountNumberField].balance >= amount){
+                accounts[accountNumberField].balance -= amount;
                 Success();
                 return;
             }
@@ -65,8 +98,8 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
     }
 
     public void Deposit(){
-        if(accounts.ContainsKey(accountName)){
-            accounts[accountName] += amountField;
+        if(accounts.ContainsKey(accountNumberField)){
+            accounts[accountNumberField].balance += amountField;
             Success();
             return;
         }
@@ -91,7 +124,7 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
                 case Draggable.Type.Coin:
                 case Draggable.Type.GoldBar:
                 case Draggable.Type.SilverBar:{
-                    if(accounts.ContainsKey(accountName)){
+                    if(accounts.ContainsKey(accountNumberField)){
                         balance += drag.value;
                         Success();
                         return true;
