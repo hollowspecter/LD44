@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d9c0a972e5d724da1d7701927817ba, type: 3}
   m_Name: RandyRacoon
   m_EditorClassIdentifier: 
-  CustomerPrefab: {fileID: 7461100563602216010, guid: 70a0cd0a602875f41816904b812fc22b,
+  CustomerPrefab: {fileID: 489099820978914747, guid: 946e79451201e064bae9b93831d40565,
     type: 3}
   accountNumber: 25012
   name: Randy
