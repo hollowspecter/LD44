@@ -33,6 +33,8 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
     }
     private void OnDisable(){
         StopAllCoroutines();
+        accounts.Clear();
+        receiver = null;
     }
     private void Update(){
         Account a;

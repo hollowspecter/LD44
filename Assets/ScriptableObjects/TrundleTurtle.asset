@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CustomerPrefab: {fileID: 3534616037941894670, guid: 79eed034f7657fe478eae774fef58e1f,
     type: 3}
-  accountNumber: W666W
-  name: Trundle
+  account:
+    accountNumber: 21412515
+    firstName: Trundle
+    lastName: Turtle
+    balance: 40
   graphic: {fileID: 21300000, guid: dfbe46a6455fc9743ad6353b62fa35ce, type: 3}
   moneyWantingToUse:
     minValue: 234.62184

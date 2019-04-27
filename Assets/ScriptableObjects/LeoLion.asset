@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91d9c0a972e5d724da1d7701927817ba, type: 3}
-  m_Name: RandyRacoon
+  m_Name: LeoLion
   m_EditorClassIdentifier: 
-  CustomerPrefab: {fileID: 489099820978914747, guid: 946e79451201e064bae9b93831d40565,
+  CustomerPrefab: {fileID: 2262742946600095323, guid: e20e81b647d8fc242b3650b4d377ff3a,
     type: 3}
   account:
-    accountNumber: 939298
-    firstName: Randy
-    lastName: Raccoon
-    balance: 0
-  graphic: {fileID: 21300000, guid: bb81ea557e2d29a4ba7de5c388b57561, type: 3}
+    accountNumber: 32124124
+    firstName: Leo
+    lastName: Lion
+    balance: 100
+  graphic: {fileID: 21300000, guid: dfbe46a6455fc9743ad6353b62fa35ce, type: 3}
   moneyWantingToUse:
-    minValue: 30.339031
-    maxValue: 111.24312
-  wrongMoneyUseRange: 5
+    minValue: 234.62184
+    maxValue: 307.43552
+  wrongMoneyUseRange: 12
   timeToGetAngry:
-    minValue: 101.70965
-    maxValue: 169.51608
+    minValue: 239.93045
+    maxValue: 375.5433
