@@ -916,7 +916,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5460052753963320664}
-        m_MethodName: set_firstNameField
+        m_MethodName: set_lastNameField
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1261,6 +1261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5460052753963320671}
   - component: {fileID: 5460052753963320664}
+  - component: {fileID: 427196752066722906}
   m_Layer: 0
   m_Name: TellerMachine
   m_TagString: Untagged
@@ -1297,17 +1298,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9476aba97927565a19ffbe4e65aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  analyzerTrigger: {fileID: 6397292960631220876}
-  outlet: {fileID: 5460052755285473360}
+  dispensary: {fileID: 427196752066722906}
+  messageText: {fileID: 1259013031095626050}
+  balanceText: {fileID: 2441961011767034341}
+  balance: 0
+--- !u!114 &427196752066722906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460052753963320665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa8c3f228096b346a767113ca6e5d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   changePrefabs:
   - {fileID: 166848753518314445, guid: 520c69650a479e78592a12e85a0bd3dd, type: 3}
   - {fileID: 166848753518314445, guid: c5eacef36beda500cb1222538c75d551, type: 3}
   - {fileID: 166848753518314445, guid: 8d51e25d8d5f57e2b98d6c09d58e86b8, type: 3}
+  trigger: {fileID: 6397292960631220876}
+  outlet: {fileID: 5460052755285473360}
   dispenseForce: 3
   dispenseDelay: 0.3
-  messageText: {fileID: 1259013031095626050}
-  balanceText: {fileID: 2441961011767034341}
-  balance: 0
 --- !u!1 &5460052754555454982
 GameObject:
   m_ObjectHideFlags: 0
