@@ -4,7 +4,9 @@ using UnityEngine.UI;
 using System.Text;
 using System.Collections.Generic;
 using Yarn.Unity;
+using Yarn;
 using System;
+using TMPro;
 
 public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
 {
@@ -17,7 +19,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
     public GameObject interact;
 
     /// The UI element that displays lines
-    public Text lineText;
+    public TMP_Text lineText;
 
     //UI Box
     public GameObject boxText;
@@ -40,6 +42,11 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
 
     [NonSerialized]
     public bool interaction = false;
+    private bool dialogueTimer;
+    private bool count;
+    //otherwise will skip
+    public bool needsInput = true;
+    public bool nothing;
 
     void Awake()
     {
@@ -84,10 +91,18 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
 
 
         // Wait for any user input
-        while (Input.anyKeyDown == false)
+        if(needsInput)
         {
-            yield return null;
+            while (Input.anyKeyDown == false)
+            {
+                yield return null;
+            }
         }
+        else //otherwise skip ahead
+        {
+            yield return new WaitForSeconds(2.0f);
+        }
+
 
         // Hide the text and prompt
         lineText.gameObject.SetActive(false);
@@ -111,8 +126,17 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         foreach (var optionString in optionsCollection.options)
         {
             optionButtons[i].gameObject.SetActive(true);
-            optionButtons[i].GetComponentInChildren<Text>().text = optionString;
+            //TO DO animate the button
+            optionButtons[i].GetComponentInChildren<TMP_Text>().text = optionString;
             i++;
+        }
+
+        //start the timer of how long the player takes to answer
+        count = true;
+        if (count == true)
+        {
+            optionButtons[0].GetComponent<TimerDialogue>().StartCount();
+            count = false;
         }
 
         // Record that we're using it
@@ -128,6 +152,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         foreach (var button in optionButtons)
         {
             button.gameObject.SetActive(false);
+            //TO DO animate the button going away
         }
     }
 
@@ -163,6 +188,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         // Enable the dialogue controls.
         if (dialogueContainer != null)
             dialogueContainer.SetActive(true);
+            //TO DO animate the button
 
         // Hide the game controls.
         if (gameControlsContainer != null)
@@ -181,6 +207,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         // Hide the dialogue interface.
         if (dialogueContainer != null)
             dialogueContainer.SetActive(false);
+            //TO DO animate the button
 
         // Show the game controls.
         if (gameControlsContainer != null)

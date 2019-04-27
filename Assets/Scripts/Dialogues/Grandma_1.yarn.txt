@@ -11,10 +11,11 @@ position: 822,-16
 title: compliment
 tags: 
 colorID: 0
-position: 568,158
+position: 496,178
 ---
 /*Grandma smiles big*/
-<<Grandma>> Oh, that is so nice of you! My grandson did it. Did you know, he is a hairdresser himself? And a really good one! You should totally see him!
+<<Grandma>> Oh, that is so nice of you!
+My grandson did it. Did you know, he is a hairdresser himself? And a really good one! You should totally see him!
 <<Self>> [[I thought you said my hair was fabulous? Why do I need to see another hairdresser?|irritation]]
 <<Self>> [[Oh, that is awesome! I bet he is the best! It is such a sophisticated job.|confirmation]]
 <<Self>> [[Sounds good! Where is the place where I can find him?|question]]
@@ -25,7 +26,10 @@ colorID: 0
 position: 217,220
 ---
 /*Grandma looks dissaproving*/
-<<Grandma>> Oh, my dear. If you don't know that yourself... You know there is a mirror in the bathroom. My poor, poor, dear. Have you ever tried a marriage agency? Anyway... Have a nice day, dear. Try to see the good things in live!
+<<Grandma>> Oh, my dear. If you don't know that yourself...
+You know there is a mirror in the bathroom. My poor, poor, dear. Have you ever tried a marriage agency?
+...
+Anyway... Have a nice day, dear. Try to see the good things in life!
 ===
 title: confirmation
 tags: 
@@ -33,7 +37,8 @@ colorID: 0
 position: 593,539
 ---
 /*Grandma big big smile*/
-<<Grandma>> That is so right my dear! It is an art form not valued enough! He is a real creative genius! The Curls and the Bob and the Plaits! He even invented a new bald!
+<<Grandma>> That is so right my dear! It is an art form not valued enough!
+He is a real creative genius! The Curls and the Bob and the Plaits! He even invented a new bald!
 <<Self>> [[What? You know, that all those are normal hairstyles you can just get everywhere...?|confusion]]
 <<Self>> [[Oh, right, ofcourse! I heard of the new bald. Is that the new cut you got yourself?|confusion]]
 <<Self>> [[Your son really is godlike creature. He should totally get the nobelprize for hairdressers. Have a real nice day!|saving]]
@@ -51,10 +56,11 @@ position: 956,246
 title: saving
 tags: 
 colorID: 0
-position: 1053,653
+position: 1045,653
 ---
 /*Grandma smiles*/
-<<Grandma>> Thank you, my dear! Maybe one day you get the best haircut in your whole live and you will know, it was him! Have a nice, hairy day, my dear. 
+<<Grandma>> Thank you, my dear! Maybe one day you get the best haircut in your whole live and you will know, it was him!
+Have a nice, hairy day, my dear. 
 ===
 title: confusion
 tags: 
@@ -62,8 +68,9 @@ colorID: 0
 position: 253,734
 ---
 /*Grandma looks very dissaproving*/
-<<Grandma>> Oooh, my! What an awful thing to say! You poor dishevelled and disorientated thing! Someone should do something about the youth before they all go to rack!
--> Grandma leaves
+<<Grandma>> Oooh, my! What an awful thing to say! You poor dishevelled and disorientated thing!
+Someone should do something about the youth before they all go to rack!
+/*Grandma leaves*/
 ===
 title: serious
 tags: 
@@ -71,6 +78,7 @@ colorID: 0
 position: 1240,83
 ---
 /*Grandma looks rushed*/
-<<Grandma>> Oh, look at the time! We're standing here talking like laundry girls! Alright, see you soon, have a nice day, good bye!
+<<Grandma>> Oh, look at the time! We're standing here talking like laundry girls!
+Alright, see you soon, have a nice day, good bye!
 /*Grandma leaves*/
 ===
