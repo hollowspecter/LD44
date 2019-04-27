@@ -9,13 +9,12 @@ public class CustomerGenEvent : CustomerGenerator
     public Sprite graphic;
     [MinMaxRange(1,350)]public RangedFloat moneyWantingToUse;
     public int wrongMoneyUseRange; //the range from moneyWantingToUse that they give you
-    [MinMaxRange(50,500)]public RangedFloat timeToGetAngry;
+    [MinMaxRange(15,50)]public RangedFloat timeToGetAngry;
     
     private Vector3 spawnPoint= new Vector3(0,100,0);
     
     public override GameObject GenerateCustomer()
-    {
-        
+    { 
         var customer = Instantiate(CustomerPrefab, spawnPoint, Quaternion.identity);
         
         var cBrain = customer.GetComponent<CustomerBrain>();
