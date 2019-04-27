@@ -4297,10 +4297,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 165.7
+  m_fontSize: 72
   m_fontSizeBase: 165.7
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -4428,7 +4428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changePrefabs:
-  - {fileID: 166848753518314445, guid: 520c69650a479e78592a12e85a0bd3dd, type: 3}
+  - {fileID: 1539950902447090003, guid: 13267e03c187bc42ea5d5e4ff5dd1f24, type: 3}
   - {fileID: 166848753518314445, guid: c5eacef36beda500cb1222538c75d551, type: 3}
   - {fileID: 166848753518314445, guid: 8d51e25d8d5f57e2b98d6c09d58e86b8, type: 3}
   trigger: {fileID: 6397292960631220876}
