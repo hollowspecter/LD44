@@ -55,6 +55,7 @@ public class CustomerBrain : MonoBehaviour
             need = (NeedType)Random.Range(1, 2);
         }
         action = need.ToString();
+
         
         //set the wait time to wait
         maxTime = Random.Range(maxTimeRange.minValue,maxTimeRange.maxValue);
@@ -70,22 +71,31 @@ public class CustomerBrain : MonoBehaviour
         if (accountMoney == 0)
         {
             action = "deposit";
-            return;
         }
         
         //if they want to withdraw/exchange/transfer and "money" is higher than the total
         //on their bank account, the total will be the new "money"
-        if (accountMoney < money)
+        if (accountMoney < money && accountMoney != 0)
         {
             money = accountMoney;
         } 
+               
+        speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ money +
+                            " Moneys! But I will only wait for " + maxTime + " min until I will leave!" + 
+                            "Oh, right, my Account Number is " + accountNumber + ".";
+
     }
 
     private void Start()
     {
         _sRend.sprite = graphic;   
-//        text.text = "Hello my name is " + name + " and I want to " + action +" "+ money +
-//                    " Moneys! But I will only wait for " + maxTime + " min until I will leave!" + 
-//                    "Oh, right, my Account Number is " + accountNumber + ".";
+
+    }
+
+    private void Update()
+    {
+        if (!amDone) return;
+        CustomerManager.next = true;
+        this.gameObject.SetActive(false);
     }
 }
