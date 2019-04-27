@@ -51,18 +51,18 @@ public class CustomerManager : MonoBehaviour
             _timeSet = true;
         }
         _timeToQueue--;
-        print("timeTo: " + _timeToQueue);
+//        print("timeTo: " + _timeToQueue);
         //if the CustomerBrain knows it is done and has moved away -> dequeue it 
         if (next)
         {
             queue.Peek().SetActive(false);
             queue.Dequeue();
+            queue.Peek().transform.position = spawnPositions[0];
             next = false;
         }
 
         if (_timeToQueue <= 0){_timeSet = false;}
         if (!(_timeToQueue <= 0) || queue.Count > maximumCustomer) return;
-//        print("name cunt: " + names.Count);
         
         //try to add/spawn new character in queue, if it fails to often it just leaves it be
         var enqueued = false;
@@ -77,7 +77,7 @@ public class CustomerManager : MonoBehaviour
             //check if character is already enqueued
             if (!queue.Contains(Customers[nextCharacter]))
             {
-//                print("ququq: " + Mathf.Max(0, queue.Count));
+                print("ququq: " + spawnPositions[Mathf.Max(0, queue.Count)]);
 
                 var c = Customers[nextCharacter];
                 //set a character active and add to queue

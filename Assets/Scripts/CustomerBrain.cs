@@ -31,12 +31,12 @@ public class CustomerBrain : MonoBehaviour
     
     public TMP_Text speechBubble;
     
-    private SpriteRenderer _sRend;
+//    private SpriteRenderer _sRend;
 
-    private void Awake()
-    {
-        _sRend = GetComponent<SpriteRenderer>();
-    }
+//    private void Awake()
+//    {
+//        _sRend = GetComponent<SpriteRenderer>();
+//    }
 
     private void OnEnable()
     {
@@ -86,16 +86,15 @@ public class CustomerBrain : MonoBehaviour
 
     }
 
-    private void Start()
-    {
-        _sRend.sprite = graphic;   
-
-    }
+//    private void Start()
+//    {
+//        _sRend.sprite = graphic;   
+//
+//    }
 
     private void Update()
     {
         if (!amDone) return;
         CustomerManager.next = true;
-        this.gameObject.SetActive(false);
     }
 }
