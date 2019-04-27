@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d9c0a972e5d724da1d7701927817ba, type: 3}
   m_Name: TrundleTurtle
   m_EditorClassIdentifier: 
-  CustomerPrefab: {fileID: 0}
-  accountNumber: 
-  name: 
-  graphic: {fileID: 0}
+  CustomerPrefab: {fileID: 7461100563602216010, guid: 70a0cd0a602875f41816904b812fc22b,
+    type: 3}
+  accountNumber: W666W
+  name: Trundle
+  graphic: {fileID: 21300000, guid: dfbe46a6455fc9743ad6353b62fa35ce, type: 3}
+  moneyWantingToUse:
+    minValue: 234.62184
+    maxValue: 307.43552
+  wrongMoneyUseRange: 12
+  timeToGetAngry:
+    minValue: 239.93045
+    maxValue: 375.5433

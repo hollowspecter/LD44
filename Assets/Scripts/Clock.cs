@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿//for global timetracking
 using UnityEngine;
 
 public class Clock : MonoBehaviour

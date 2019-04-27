@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(CustomerSoundEvent))]
+//[RequireComponent(typeof(CustomerSoundEvent))]
 public class MessyTestScript : MonoBehaviour
 {
     public string name;

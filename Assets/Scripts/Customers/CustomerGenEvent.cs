@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Random = UnityEngine.Random;
 
 [CreateAssetMenu(menuName = "CostumerGen/Customer")]
 public class CustomerGenEvent : CustomerGenerator
@@ -8,19 +7,26 @@ public class CustomerGenEvent : CustomerGenerator
     public string accountNumber;
     public string name;
     public Sprite graphic;
-
-    public override void GenerateCustomer(RangedFloat angryTime, RangedFloat money, string need, Transform spawnPoint)
+    [MinMaxRange(1,350)]public RangedFloat moneyWantingToUse;
+    public int wrongMoneyUseRange; //the range from moneyWantingToUse that they give you
+    [MinMaxRange(50,500)]public RangedFloat timeToGetAngry;
+    
+    private Vector3 spawnPoint= new Vector3(0,100,0);
+    
+    public override GameObject GenerateCustomer()
     {
-        var customer = Instantiate(CustomerPrefab, spawnPoint.position, Quaternion.identity);
         
-        //TODO: make a CustomerManager to be even able to set stuff
-        var cManager = customer.GetComponent<MessyTestScript>(); //customer.GetComponent<CustomerManager>();
+        var customer = Instantiate(CustomerPrefab, spawnPoint, Quaternion.identity);
         
-        cManager.name = name;
-        cManager.graphic = graphic;
-        cManager.maxTime = Random.Range(angryTime.minValue,angryTime.maxValue);
-        cManager.money = (int)Random.Range(money.minValue,money.maxValue);
-        cManager.action = need;
-        cManager.accountNumber = accountNumber;
+        var cBrain = customer.GetComponent<CustomerBrain>();
+        
+        cBrain.customerName = name;
+        cBrain.graphic = graphic;
+        cBrain.maxTimeRange = timeToGetAngry;
+        cBrain.moneyToUse = moneyWantingToUse;
+        cBrain.moneyRange = wrongMoneyUseRange;
+        cBrain.accountNumber = accountNumber;
+        
+        return customer;
     }
 }

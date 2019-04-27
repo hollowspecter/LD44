@@ -17,3 +17,10 @@ MonoBehaviour:
   accountNumber: 25012
   name: Randy
   graphic: {fileID: 21300000, guid: bb81ea557e2d29a4ba7de5c388b57561, type: 3}
+  moneyWantingToUse:
+    minValue: 30.339031
+    maxValue: 111.24312
+  wrongMoneyUseRange: 5
+  timeToGetAngry:
+    minValue: 101.70965
+    maxValue: 169.51608

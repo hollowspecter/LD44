@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 416924958}
   - component: {fileID: 416924957}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: SpawnerLogic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,18 +237,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 416924956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 460b1c7d03fa2e74fbd34487118ea380, type: 3}
+  m_Script: {fileID: 11500000, guid: 98c9753e22911354387500ac0014e488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cGen: {fileID: 11400000, guid: 0cd68ae1c38e1f44c97f810d09ee3150, type: 2}
-  maximumCustomer: 5
-  moneyAtHand:
-    minValue: 50.078125
-    maxValue: 172.77344
-  timeToGetAngry:
-    minValue: 127.34375
-    maxValue: 282.03125
-  spawnLocation: {fileID: 656840644}
+  cGen: []
+  maximumCustomer: 2
+  minTime: 10
+  maxTime: 50
+  spawnPositions:
+  - {x: 20, y: -2, z: 18}
+  - {x: 10, y: -2, z: 20}
+  - {x: -5, y: -2, z: 23}
 --- !u!4 &416924958
 Transform:
   m_ObjectHideFlags: 0
@@ -262,36 +261,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &656840643
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 656840644}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &656840644
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656840643}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -2, z: 25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &930304005
 GameObject:
@@ -410,7 +379,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

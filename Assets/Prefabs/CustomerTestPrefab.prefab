@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7089007667091133835}
   - component: {fileID: 4679852909082196349}
-  - component: {fileID: 7913265689796366731}
+  - component: {fileID: 4721228637271078932}
   m_Layer: 0
   m_Name: CustomerTestPrefab
   m_TagString: Untagged
@@ -337,7 +337,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7913265689796366731
+--- !u!114 &4721228637271078932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -346,13 +346,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7461100563602216010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb9625b43cefbdf40b1d3c3cf8ccc9c0, type: 3}
+  m_Script: {fileID: 11500000, guid: e7c08685daa2b1444bee3fd7a83b86cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
   graphic: {fileID: 0}
-  maxTime: 0
-  money: 0
+  maxTimeRange:
+    minValue: 0
+    maxValue: 0
+  moneyToUse:
+    minValue: 0
+    maxValue: 0
+  moneyRange: 0
   action: 
   accountNumber: 
-  text: {fileID: 926417370613766467}
+  myTurn: 0
+  amDone: 0
+  speechBubble: {fileID: 926417370613766467}

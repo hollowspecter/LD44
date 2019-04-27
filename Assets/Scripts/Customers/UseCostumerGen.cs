@@ -16,7 +16,7 @@ public class UseCostumerGen : MonoBehaviour
         exchange
     }
 
-    private NeedType need;
+    private NeedType _need;
     private Transform _childTransform;
 
 //    private Clock _clockTime;
@@ -24,15 +24,12 @@ public class UseCostumerGen : MonoBehaviour
     private void Start()
     {
 //        _clockTime = Clock.instance;
-        need = (NeedType)Random.Range(0, 2);
+        _need = (NeedType)Random.Range(0, 2);
         Spawn();
     }
 
     protected virtual void Spawn()
     {
-       cGen.GenerateCustomer(timeToGetAngry,moneyAtHand,need.ToString(),spawnLocation);
+       cGen.GenerateCustomer();
     }
-    
-    
-
 }
