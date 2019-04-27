@@ -40,6 +40,8 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
             lastNameText.text = accounts[accountNumberField].lastName;
             balanceText.text = "Balance: "+accounts[accountNumberField].balance.ToString("C");
         }else{
+            firstNameText.text = "";
+            lastNameText.text = "";
             balanceText.text = "Balance: $0.00";
         }
     }
