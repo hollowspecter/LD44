@@ -1301,6 +1301,8 @@ MonoBehaviour:
   outlet: {fileID: 5460052755285473360}
   changePrefabs:
   - {fileID: 166848753518314445, guid: 520c69650a479e78592a12e85a0bd3dd, type: 3}
+  - {fileID: 166848753518314445, guid: c5eacef36beda500cb1222538c75d551, type: 3}
+  - {fileID: 166848753518314445, guid: 8d51e25d8d5f57e2b98d6c09d58e86b8, type: 3}
   dispenseForce: 3
   dispenseDelay: 0.3
   messageText: {fileID: 1259013031095626050}
