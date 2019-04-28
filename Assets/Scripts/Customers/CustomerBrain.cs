@@ -13,7 +13,7 @@ public class CustomerBrain : MonoBehaviour
     public int moneyRange;
     public string action;
     public string accountNumber;
-    public int angrinessLevel = 0; //from 0 to 3. 0 is super chill 3 is pissed af
+    public int hapinessLevel = 5; //from 0 to 3. 5 is super chill 0 is pissed af
     public bool moreMoney;
 
     public bool myTurn = false; //if true, it will go to the counter
@@ -51,7 +51,7 @@ public class CustomerBrain : MonoBehaviour
         myTurn = false;
         amDone = false;
         introduced = false;
-        angrinessLevel = 0;
+        hapinessLevel = 5;
 
         
         //setup their action they want to do
@@ -123,12 +123,12 @@ public class CustomerBrain : MonoBehaviour
         _timePast+= Time.deltaTime;
         
         if (_timePast > _maxTime * 0.7)
-            {angrinessLevel = 1;print("I am getting impatient!");}
+            {hapinessLevel--;print("I am getting impatient!");}
         
         if (_timePast > _maxTime)
         {
             print("I am going home!");
-            angrinessLevel = 2;
+            hapinessLevel = hapinessLevel-2;
             amDone = true;
         }
     }
@@ -164,6 +164,11 @@ public class CustomerBrain : MonoBehaviour
                 _fundCheck = 0;
                 break;
             }
+            case "makeAccount":
+            {
+                speechBubble.text = "Hi I want to make an Account! My name is: " + customerName;
+                break;
+            }
             default:
                 break;
         }
@@ -181,7 +186,7 @@ public class CustomerBrain : MonoBehaviour
                 }
                 else
                 {
-                    angrinessLevel += 2;
+                    hapinessLevel -= 2;
                     break;
                 }
             case "withdraw":
@@ -191,7 +196,7 @@ public class CustomerBrain : MonoBehaviour
                 }
                 else
                 {
-                    angrinessLevel += 2;
+                    hapinessLevel -= 2;
                     break;
                 }
             case "robbery":
@@ -201,9 +206,20 @@ public class CustomerBrain : MonoBehaviour
                 }
                 else
                 {
-                    angrinessLevel += 2;
+                    hapinessLevel -= 2;
                     break;
                 }
+            case "makeAccount":
+                if (cI.hasAccount)
+                {
+                    break;
+                }
+                else
+                {
+                    hapinessLevel -= 3;
+                    break;
+                }
+                
             default:
                 break;
         }
@@ -215,10 +231,9 @@ public class CustomerBrain : MonoBehaviour
         Tween leaveTween = transform.DOMoveX(transform.position.x, -100);
         yield return leaveTween.WaitForCompletion();
         //TODO: give angryness value to the Scoreboard 
+        //cI.happiness = hapinessLevel;
         CustomerManager.next = true;
     }
-    
-
 
     //TODO: throws money amount. Look at how Sam dispenses with his Teller machine
     private void GiveMoney()
