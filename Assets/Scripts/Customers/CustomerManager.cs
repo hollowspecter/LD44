@@ -22,6 +22,7 @@ public class CustomerManager : MonoBehaviour
     public Dictionary<string,GameObject> Customers = new Dictionary<string, GameObject>();
     
     private Transform _childTransform;
+    public Dispensary dispensary;
     
     private void Start()
     {

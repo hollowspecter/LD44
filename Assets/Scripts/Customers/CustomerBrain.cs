@@ -107,7 +107,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         if (moreMoney)
         {
             _money = (_moneyWanting/2) + Random.Range(-moneyRange, moneyRange);
-            GiveMoney();
+            GiveMoney(_money);
             moreMoney = false;
         }
 
@@ -142,7 +142,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             {
                 speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
                                     " Moneys! my Account Number is " + accountNumber + ".";
-                GiveMoney();
+                GiveMoney(_money);
                 break;
             }
 
