@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using sfx;
 using DG.Tweening;
 
@@ -55,6 +56,16 @@ public class SoundManager : MonoBehaviour
         if ( m_settings.AutostartAmbient ) ToggleAmbience ();
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += SceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= SceneLoaded;
+    }
+
     #endregion
 
     #region private_methods
@@ -96,6 +107,19 @@ public class SoundManager : MonoBehaviour
             // fade out
             _source.DOFade ( 0f, m_settings.FadeDuration )
                    .OnComplete ( _source.Stop );
+        }
+    }
+
+    private void SceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if ( scene.name == "MainMenu" )
+        {
+            ToggleAmbience ();
+        }
+
+        if (scene.name == "MainGame" )
+        {
+            ToggleAmbience ();
         }
     }
 
