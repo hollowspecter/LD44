@@ -42,7 +42,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
     private void OnEnable()
     {
-        dispensary.RegisterReceiver(this);
 
         //TODO: check their Account -> Needs the money tracking system
 
