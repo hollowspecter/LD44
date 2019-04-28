@@ -14,17 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CustomerPrefab: {fileID: 489099820978914747, guid: 946e79451201e064bae9b93831d40565,
     type: 3}
-  dispensaryPrefab: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
-    type: 3}
   account:
     accountNumber: 939298
     firstName: Randy
     lastName: Raccoon
     balance: 0
+  graphic: {fileID: 21300000, guid: bb81ea557e2d29a4ba7de5c388b57561, type: 3}
   moneyWantingToUse:
     minValue: 30.339031
-    maxValue: 249.98752
+    maxValue: 111.24312
   wrongMoneyUseRange: 5
   timeToGetAngry:
-    minValue: 34.244843
-    maxValue: 43.04578
+    minValue: 22.45753
+    maxValue: 34.07718
