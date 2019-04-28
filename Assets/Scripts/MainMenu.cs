@@ -44,23 +44,12 @@ public class MainMenu : MonoBehaviour
     private Vector3 fullSize = Vector3.one;
     private Vector3 minSize = new Vector3(0.001F, 0.001F,0.001F);
     
-    [Header("parallax")] 
-    public bool parallaxing = false;
-    public Transform parallaxTransform;
-//    public float Margin;
-//    public float Layer;
-//    float x;
-//    float y;
     float easing = 0.2f;
     private Vector3 pz;
     Vector3 startPos;
 
-    #region parallax
     private void Start ()
     {
-        if (!parallaxing) return;
-        startPos = parallaxTransform.position;
-
         // add click sound
         this.UpdateAsObservable ()
             .Where ( _ => Input.GetMouseButtonDown ( 0 ) )
@@ -74,22 +63,6 @@ public class MainMenu : MonoBehaviour
         SubscribeToButton ( quitButton, QuitGame );
     }
 
-    private void Update()
-    {
-        if (!parallaxing) return;
-        ParallaxMouse(parallaxTransform);
-    }
-
-    private void ParallaxMouse(Transform trans)
-    {
-        //parallxing ellements in ui
-        Vector3 pz = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-        pz.z = 0;
-        trans.position = pz;
-        
-        trans.position = new Vector3(startPos.x + (pz.x * easing), startPos.y + (pz.y * easing), 0);
-    }
-
     private void SubscribeToButton(UnityEngine.UI.Button button, UnityAction action )
     {
         var clickStream = button.onClick.AsObservable ();
@@ -98,7 +71,7 @@ public class MainMenu : MonoBehaviour
                    .Subscribe ( _ => action () )
                    .AddTo ( this );
     }
-    #endregion
+
 
     #region Credits
     public void ShowCredits()
@@ -110,9 +83,9 @@ public class MainMenu : MonoBehaviour
     IEnumerator CreditOpenCoroutine()
     {
         cPopUp = DOTween.Sequence();
-        cPopUp.Append(creditsWindow.transform.DOMove(creditsTargetPos.position, speed, true) )
+        cPopUp.Append(creditsWindow.transform.DOMove(creditsTargetPos.position, speed, true))
         //cPopUp.Append(creditsWindow.DOAnchorPos(creditsTargetPos.position, speed, true) )
-            .SetEase(Ease.OutQuint)
+            .SetEase(EaseFactory.StopMotion(8,Ease.OutQuint))
             .Insert(0,creditsWindow.DOScale(fullSize,speed));
         yield return cPopUp.WaitForCompletion();
         creditsEnabled = true;
@@ -123,7 +96,7 @@ public class MainMenu : MonoBehaviour
     {
         cPopOut = DOTween.Sequence();
         cPopOut.Append(creditsWindow.DOAnchorPos(creditsStartPos.position, speed, true))
-            .SetEase(Ease.OutQuint)
+            .SetEase(EaseFactory.StopMotion(8,Ease.OutQuint))
             .Insert(0, creditsWindow.DOScale(minSize, speed));
 
         yield return cPopOut.WaitForCompletion();
@@ -144,7 +117,7 @@ public class MainMenu : MonoBehaviour
         tPopUp = DOTween.Sequence();
         tPopUp.Append ( tutorialWindow.transform.DOMove ( tutorialTargetPos.position, speed, true ) )
         //tPopUp.Append(tutorialWindow.DOAnchorPos(tutorialTargetPos.position, speed, true))
-            .SetEase(Ease.OutQuint)
+            .SetEase(EaseFactory.StopMotion(8,Ease.OutQuint))
             .Insert(0, tutorialWindow.DOScale(fullSize,speed));
         yield return tPopUp.WaitForCompletion();
         tutorialEnabled = true;
@@ -155,7 +128,7 @@ public class MainMenu : MonoBehaviour
     {
         tPopOut = DOTween.Sequence();
         tPopOut.Append(tutorialWindow.DOAnchorPos(tutorialStartPos.position, speed, true))
-            .SetEase(Ease.OutQuint)
+            .SetEase(EaseFactory.StopMotion(8,Ease.OutQuint))
             .Insert(0,tutorialWindow.DOScale(minSize, speed));
         yield return tPopOut.WaitForCompletion();
         tutorialEnabled = false;
