@@ -17,7 +17,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
      */
     public GameObject dialogueContainer;
 
-    public GameObject interact;
+    //public GameObject interact;
 
     /// The UI element that displays lines
     public TMP_Text lineText;
@@ -40,9 +40,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
     /// Make it possible to temporarily disable the controls when
     /// dialogue is active and to restore them when dialogue ends
     public RectTransform gameControlsContainer;
-
-    [NonSerialized]
-    public bool interaction = false;
+    
     private bool dialogueTimer;
     private bool count;
     //otherwise will skip
@@ -191,9 +189,6 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
     public override IEnumerator DialogueStarted()
     {
         Debug.Log("Dialogue starting!");
-
-        if (interaction) interact.SetActive(false);
-        else interact.SetActive(true);
 
         // Enable the dialogue controls.
         if (dialogueContainer != null)

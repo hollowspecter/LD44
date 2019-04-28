@@ -16,10 +16,11 @@ public class TimerDialogue : MonoBehaviour
         var varStore = variableStorage.GetComponent<VariableStorage>();
         var valueToSet = new Yarn.Value(true);
         varStore.SetValue("$lastStraw", valueToSet);
-        Debug.Log(valueToSet);
+        //Debug.Log(valueToSet);
 
         var newName = new Yarn.Value("GRANDMA");
         varStore.SetValue("$newName", newName);
+        //Debug.Log(newName);
     }
 
     public void StartCount()
