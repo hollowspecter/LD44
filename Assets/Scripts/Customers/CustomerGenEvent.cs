@@ -5,6 +5,7 @@ public class CustomerGenEvent : CustomerGenerator
 {
     public GameObject CustomerPrefab;
     public Dispensary dispensaryPrefab;
+    public DialogueBrainBridge dialoguePrefab;
     public string accountNumber { get{
         return account.accountNumber;
     }}
@@ -23,9 +24,12 @@ public class CustomerGenEvent : CustomerGenerator
     { 
         var customer = Instantiate(CustomerPrefab, spawnPoint, Quaternion.identity);
         var dispensary = Instantiate(dispensaryPrefab,customer.transform,false);
-        
+        var dialogue = Instantiate(dialoguePrefab,customer.transform,false);
+        dialogue.gameObject.SetActive(false);
         var cBrain = customer.GetComponent<CustomerBrain>();
         cBrain.dispensary = dispensary;
+        cBrain.dialogue = dialogue;
+        cBrain.dialogue.Init(cBrain);
         dispensary.RegisterReceiver(cBrain);
         
         cBrain.customerName = name;

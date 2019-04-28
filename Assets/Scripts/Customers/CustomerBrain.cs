@@ -19,6 +19,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     public bool myTurn = false; //if true, it will go to the counter
     public bool amDone = false; //if true, it will go away and will deactivates itself
     public Dispensary dispensary;
+    public DialogueBrainBridge dialogue;
     
     private enum NeedType
     {
@@ -172,6 +173,8 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             default:
                 break;
         }
+        dialogue.Init(this);
+        dialogue.gameObject.SetActive(true);
     }
     private void AngerManagment()
     {

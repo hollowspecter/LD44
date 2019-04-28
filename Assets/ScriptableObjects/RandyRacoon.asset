@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CustomerPrefab: {fileID: 489099820978914747, guid: 946e79451201e064bae9b93831d40565,
     type: 3}
+  dispensaryPrefab: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
+    type: 3}
   account:
     accountNumber: 939298
     firstName: Randy

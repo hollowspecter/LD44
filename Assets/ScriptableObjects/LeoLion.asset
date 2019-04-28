@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CustomerPrefab: {fileID: 2262742946600095323, guid: e20e81b647d8fc242b3650b4d377ff3a,
     type: 3}
+  dispensaryPrefab: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
+    type: 3}
   account:
     accountNumber: 32124124
     firstName: Leo
