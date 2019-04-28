@@ -232,7 +232,7 @@ MonoBehaviour:
   - {x: 0.092, y: -0.065, z: 0}
   - {x: -1.448, y: -0.094, z: 0.617}
   - {x: -1.229, y: 0, z: 1.412}
-  - {x: 1, y: 0, z: 1.8}
+  - {x: 2.29, y: 0, z: 1.8}
   dispensary: {fileID: 0}
 --- !u!4 &164084624
 Transform:
@@ -762,6 +762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2856509194756146942, guid: a550acab48ab1abe2963d25b611acb3a,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a550acab48ab1abe2963d25b611acb3a, type: 3}
