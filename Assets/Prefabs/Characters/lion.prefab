@@ -398,8 +398,11 @@ MonoBehaviour:
   moneyRange: 0
   action: 
   accountNumber: 
+  hapinessLevel: 5
+  moreMoney: 0
   myTurn: 0
   amDone: 0
+  dispensary: {fileID: 0}
   speechBubble: {fileID: 7819895778579182864}
 --- !u!1 &2262742946707337942
 GameObject:
@@ -1030,7 +1033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 7}
+  m_AnchoredPosition: {x: 0, y: 8.52}
   m_SizeDelta: {x: 15, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7638465685968007224
