@@ -28,6 +28,7 @@ public class CustomerManager : MonoBehaviour
         Spawn();
     }
 
+    //has customer an account?
     protected virtual void Spawn()
     {
         foreach (var customer in cGen)

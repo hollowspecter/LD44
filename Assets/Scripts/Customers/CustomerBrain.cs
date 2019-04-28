@@ -5,6 +5,7 @@ using TMPro;
 
 public class CustomerBrain : MonoBehaviour
 {
+    private ICustomer cI;
     public string customerName;
     public Sprite graphic;
     public RangedFloat maxTimeRange;
@@ -22,7 +23,8 @@ public class CustomerBrain : MonoBehaviour
     {
         deposit,
         withdraw,
-        robbery
+        robbery,
+        makeAccount
     }
 
     private NeedType need;
@@ -41,13 +43,16 @@ public class CustomerBrain : MonoBehaviour
     {
         //TODO: check their Account -> Needs the money tracking system
 
+        if (!cI.hasAccount)
+        {
+            need = NeedType.makeAccount;
+        }
+
         myTurn = false;
         amDone = false;
         introduced = false;
         angrinessLevel = 0;
-        
-        //TODO: remove test
-        _accountMoney = 230;
+
         
         //setup their action they want to do
         if (Random.Range(0, 100) > 95) //5 percent chance
