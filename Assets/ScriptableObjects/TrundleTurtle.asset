@@ -21,9 +21,9 @@ MonoBehaviour:
     balance: 40
   graphic: {fileID: 21300000, guid: dfbe46a6455fc9743ad6353b62fa35ce, type: 3}
   moneyWantingToUse:
-    minValue: 234.62184
-    maxValue: 307.43552
+    minValue: 164.2792
+    maxValue: 323.51385
   wrongMoneyUseRange: 12
   timeToGetAngry:
-    minValue: 239.93045
-    maxValue: 375.5433
+    minValue: 39.791245
+    maxValue: 50

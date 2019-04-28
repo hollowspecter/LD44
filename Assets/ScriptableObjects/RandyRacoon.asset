@@ -25,5 +25,5 @@ MonoBehaviour:
     maxValue: 111.24312
   wrongMoneyUseRange: 5
   timeToGetAngry:
-    minValue: 101.70965
-    maxValue: 169.51608
+    minValue: 22.45753
+    maxValue: 34.07718

@@ -30,7 +30,6 @@ public class CustomerManager : MonoBehaviour
 
     protected virtual void Spawn()
     {
-        
         foreach (var customer in cGen)
         {
             var c = customer.GenerateCustomer();
@@ -44,14 +43,13 @@ public class CustomerManager : MonoBehaviour
 
     private void Update()
     {
-        //TODO: stop spawning if global time is below a certain threshold. This will prevent customers coming in when we want to close
         if (!_timeSet)
         {
             _timeToQueue = Random.Range(minTime, maxTime);
             _timeSet = true;
         }
-        _timeToQueue--;
-//        print("timeTo: " + _timeToQueue);
+        _timeToQueue -=Time.deltaTime;
+
         //if the CustomerBrain knows it is done and has moved away -> dequeue it 
         if (next)
         {
@@ -61,7 +59,9 @@ public class CustomerManager : MonoBehaviour
             next = false;
         }
 
-        if (_timeToQueue <= 0){_timeSet = false;}
+        if (_timeToQueue <= 0)
+            {_timeSet = false;}
+        
         if (!(_timeToQueue <= 0) || queue.Count > maximumCustomer) return;
         
         //try to add/spawn new character in queue, if it fails to often it just leaves it be
@@ -87,7 +87,6 @@ public class CustomerManager : MonoBehaviour
                 enqueued = true;
                 break;
             }
-
         }
     }
 }
