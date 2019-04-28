@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91d9c0a972e5d724da1d7701927817ba, type: 3}
-  m_Name: TrundleTurtle
+  m_Name: SarahShark
   m_EditorClassIdentifier: 
-  CustomerPrefab: {fileID: 3534616037941894670, guid: 79eed034f7657fe478eae774fef58e1f,
+  CustomerPrefab: {fileID: 9216914771357251088, guid: ab9520cde3a527c499ec28c0d1f10447,
     type: 3}
   dispensaryPrefab: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
     type: 3}
   account:
-    accountNumber: 21412515
-    firstName: Trundle
-    lastName: Turtle
-    balance: 40
+    accountNumber: 123456798
+    firstName: Sarah
+    lastName: Shark
+    balance: 57
   moneyWantingToUse:
-    minValue: 345.71414
-    maxValue: 601.00256
-  wrongMoneyUseRange: 88
+    minValue: 181.4179
+    maxValue: 397.90744
+  wrongMoneyUseRange: 7
   timeToGetAngry:
-    minValue: 64.79123
-    maxValue: 75
+    minValue: 47.073452
+    maxValue: 55.593647
