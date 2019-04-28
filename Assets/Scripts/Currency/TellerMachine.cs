@@ -129,6 +129,7 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
         SoundManager.Instance.PlaySfxAsOneShot ( "UIAlert" );
     }
     public void Dispense(){        
+        if(dispensary.dispensing){ return;}
         float dispensed = dispensary.DispenseChange(amountField);
         balance -= dispensed;
     }

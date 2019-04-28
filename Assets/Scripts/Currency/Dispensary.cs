@@ -12,6 +12,8 @@ public class Dispensary : MonoBehaviour {
     public float dispenseDelay = 0.3f;
     private Queue<Draggable> dispenseQueue = new Queue<Draggable>();
     private IDraggableReceiver receiver;
+    public bool dispensing => dispenseQueue.Count > 0;
+
     private void OnEnable(){
         SortChange();
         dispenseRoutine = StartCoroutine(DispenseRoutine());
