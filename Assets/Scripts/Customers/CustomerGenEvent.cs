@@ -4,8 +4,14 @@
 public class CustomerGenEvent : CustomerGenerator
 {
     public GameObject CustomerPrefab;
-    public string accountNumber;
-    public string name;
+    public Dispensary dispensaryPrefab;
+    public string accountNumber { get{
+        return account.accountNumber;
+    }}
+    public string name {get{
+        return account.firstName + account.lastName;
+    }}
+    public Account account;
     public Sprite graphic;
     [MinMaxRange(1,350)]public RangedFloat moneyWantingToUse;
     public int wrongMoneyUseRange; //the range from moneyWantingToUse that they give you
@@ -16,8 +22,10 @@ public class CustomerGenEvent : CustomerGenerator
     public override GameObject GenerateCustomer()
     { 
         var customer = Instantiate(CustomerPrefab, spawnPoint, Quaternion.identity);
+        var dispensary = Instantiate(dispensaryPrefab,customer.transform,false);
         
         var cBrain = customer.GetComponent<CustomerBrain>();
+        cBrain.dispensary = dispensary;
         
         cBrain.customerName = name;
         cBrain.graphic = graphic;
