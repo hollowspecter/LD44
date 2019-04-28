@@ -11,6 +11,13 @@ public class App : MonoBehaviour {
         public GameObject[] stateObjects;
         public State(App representation) : base(representation) { }
 
+        public override void Init(App r){
+            base.Init(r);
+            foreach(var g in stateObjects){
+                g.SetActive(false);
+            }
+        }
+
         public override void Enter(){
             base.Enter();
             print("Enter " + this);
@@ -29,6 +36,7 @@ public class App : MonoBehaviour {
         }
     }
 
+    [Serializable]
     public class PreGame : State
     {
         public PreGame(App representation) : base(representation) { }
@@ -38,14 +46,16 @@ public class App : MonoBehaviour {
             if(Input.GetKeyDown(KeyCode.Space)){
                 r.stateMachine.SetState(r.inGame);
             }
-            if(Input.GetKeyDown(KeyCode.Escape)){
-                Application.Quit();
-            }
         }
     }    
+    [Serializable]
     public class InGame : State
     {
+        public TellerMachine tellerMachine;
         public InGame(App representation) : base(representation) { }
+        public override void Enter(){
+            base.Enter();
+        }
         public override void Update(){
             base.Update();
             var r = representation;
@@ -59,6 +69,7 @@ public class App : MonoBehaviour {
     public InGame inGame;
     private void Awake(){
         preGame.Init(this);
+        inGame.Init(this);
         stateMachine = new StateMachine<App>();
     }
     private void Start()
@@ -68,5 +79,12 @@ public class App : MonoBehaviour {
     private void Update()
     {
         stateMachine.Update();
+    }
+
+    public void StartGame(){
+        stateMachine.SetState(inGame);
+    }
+    public void EndGame(){
+        Application.Quit();
     }
 }

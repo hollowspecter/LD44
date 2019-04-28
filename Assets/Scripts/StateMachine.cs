@@ -3,11 +3,11 @@ using System;
 public class StateMachine<T> {
     private State currentState = null;
     public class State {
-        public T representation;
+        internal T representation;
         public State(T representation) {
             this.representation = representation;
         }
-        public void Init(T representation){
+        public virtual void Init(T representation){
             this.representation = representation;
         }
 

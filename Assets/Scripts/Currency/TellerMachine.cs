@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,11 +13,11 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
     public string firstNameField { get; set;}
     public string lastNameField { get; set;}
     public string accountNumberField { get; set;}
-    public InputField firstNameText;
-    public InputField lastNameText;
-    public InputField accountNumberText;
-    public Text messageText;
-    public Text balanceText;
+    public TMP_InputField firstNameText;
+    public TMP_InputField lastNameText;
+    public TMP_InputField accountNumberText;
+    public TextMeshProUGUI messageText;
+    public TextMeshProUGUI balanceText;
     private static CultureInfo ci = new CultureInfo("en-US");
     public string amountText {get; set;}
     public float amountField { 
@@ -32,22 +33,22 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
     }
     private void OnDisable(){
         StopAllCoroutines();
+        accounts.Clear();
+        receiver = null;
     }
     private void Update(){
-        if(accountNumberField == null || accountNumberField == ""){ return;}
-        if(accounts.ContainsKey(accountNumberField)){
-            firstNameText.text = accounts[accountNumberField].firstName;
-            lastNameText.text = accounts[accountNumberField].lastName;
-            balanceText.text = "Balance: "+accounts[accountNumberField].balance.ToString("C");
-        }else{
-            firstNameText.text = "";
-            lastNameText.text = "";
+        Account a;
+        if(TryGetAccount(accountNumberField,out a)){
+            firstNameText.text = a.firstName;
+            lastNameText.text = a.lastName;
+            balanceText.text = "Balance: "+a.balance.ToString("C");
+        }else {
             balanceText.text = "Balance: $0.00";
         }
     }
 
-    private IAccountReceiver receiver;
-    public void RegisterAccountReceiver(IAccountReceiver receiver){        
+    private ICustomer receiver;
+    public void RegisterAccountReceiver(ICustomer receiver){        
         if(this.receiver != null){
             throw new Exception("Only one receiver per TellerMachine");
         }
@@ -89,9 +90,10 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
     }
 
     private void Withdraw(float amount){
-        if(accounts.ContainsKey(accountNumberField)){
-            if(accounts[accountNumberField].balance >= amount){
-                accounts[accountNumberField].balance -= amount;
+        Account a;
+        if(TryGetAccount(accountNumberField,out a)){
+            if(a.balance >= amount){
+                a.balance -= amount;
                 Success();
                 return;
             }
@@ -100,12 +102,23 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
     }
 
     public void Deposit(){
-        if(accounts.ContainsKey(accountNumberField)){
-            accounts[accountNumberField].balance += amountField;
+        Account a;
+        if(TryGetAccount(accountNumberField,out a)){
+            a.balance += amountField;
             Success();
             return;
         }
         Error();
+    }
+    private bool TryGetAccount(string accountNumber, out Account account){
+        if(accountNumber == null || accountNumber == ""){ 
+            account = null;
+            return false; 
+        }
+        if(accounts.TryGetValue(accountNumber,out account)){
+            return true;
+        }
+        return false;
     }
 
     private void Success(){
@@ -122,26 +135,21 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
     public bool OnReceivedDraggable(Draggable drag)
     {
         switch(drag.type){
-                case Draggable.Type.Bill:
-                case Draggable.Type.Coin:
-                case Draggable.Type.GoldBar:
-                case Draggable.Type.SilverBar:{
-                    if(accounts.ContainsKey(accountNumberField)){
-                        balance += drag.value;
-                        Success();
-                        return true;
-                    }else{
-                        Error();
-                        return false;
-                    }
-                }
-                case Draggable.Type.Generic:{
-                    Error();
-                    return false;
-                }
-                default: {
-                    throw new Exception("Unhandled Draggable!");
-                }
+            case Draggable.Type.Bill:
+            case Draggable.Type.Coin:
+            case Draggable.Type.GoldBar:
+            case Draggable.Type.SilverBar:{
+                balance += drag.value;
+                Success();
+                return true;
             }
+            case Draggable.Type.Generic:{
+                Error();
+                return false;
+            }
+            default: {
+                throw new Exception("Unhandled Draggable!");
+            }
+        }
     }
 }
