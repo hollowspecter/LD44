@@ -186,7 +186,7 @@ public class CustomerBrain : MonoBehaviour
                 }
                 else
                 {
-                    hapinessLevel += 2;
+                    hapinessLevel -= 2;
                     break;
                 }
             case "withdraw":
@@ -196,7 +196,7 @@ public class CustomerBrain : MonoBehaviour
                 }
                 else
                 {
-                    hapinessLevel += 2;
+                    hapinessLevel -= 2;
                     break;
                 }
             case "robbery":
@@ -206,7 +206,7 @@ public class CustomerBrain : MonoBehaviour
                 }
                 else
                 {
-                    hapinessLevel += 2;
+                    hapinessLevel -= 2;
                     break;
                 }
             case "makeAccount":
@@ -216,7 +216,7 @@ public class CustomerBrain : MonoBehaviour
                 }
                 else
                 {
-                    hapinessLevel += 3;
+                    hapinessLevel -= 3;
                     break;
                 }
                 
@@ -231,6 +231,7 @@ public class CustomerBrain : MonoBehaviour
         Tween leaveTween = transform.DOMoveX(transform.position.x, -100);
         yield return leaveTween.WaitForCompletion();
         //TODO: give angryness value to the Scoreboard 
+        //cI.happiness = hapinessLevel;
         CustomerManager.next = true;
     }
 
