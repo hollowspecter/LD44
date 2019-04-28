@@ -1,0 +1,101 @@
+title: Start
+tags: 
+colorID: 0
+position: 721,130
+---
+Customer: Hey, friend.
+Player: Hi, Customer.
+[[Help]]
+===
+title: End
+tags: 
+colorID: 0
+position: 721,130
+---
+Customer: Bye!
+<<trigger Customer leave>>
+===
+title: Account
+tags: 
+colorID: 0
+position: 721,130
+---
+<<trigger Customer account>>
+<<if $has_account is true>>
+    Customer: Nice.
+    [[Help]]
+<<else>>
+    Customer: I still need an account, man.
+    [[Account|Account]]
+<<endif>>
+===
+title: Help
+tags: 
+colorID: 0
+position: 721,130
+---
+<<if visited("Help") is false>>
+Player: How can I help you?
+<<else>>
+Player: Anything else?
+<<endif>>
+<<if $has_account is true>>
+    <<if $needs_deposit is true>>
+        Customer: I need to deposit, man.
+        [[Deposit]]
+    <<endif>>
+    <<if $needs_withdraw is true>>
+        Customer: I need to withdraw, man.
+        Customer: I need $withdraw_amount
+        [[Withdraw]]
+    <<endif>>
+    <<if $needs_rob is true>>
+        Customer: This is a robbery, man.
+        Customer: Hand over the money.
+        [[Rob]]
+    <<endif>>
+    Customer: No, I'm good, man.
+    [[End]]
+<<else>>
+    Customer: I need an account, man.
+    [[Account]]
+<<endif>>
+===
+title: Deposit
+tags: 
+colorID: 0
+position: 721,130
+---
+Customer: Here you go.
+<<trigger Customer deposit>>
+[[Not Enough|Deposit]]
+[[Ok|Help]]
+===
+title: Withdraw
+tags: 
+colorID: 0
+position: 721,130
+---
+<<trigger Customer withdraw>>
+<<if $needs_withdraw is true>>
+    Customer: I still need money, man.
+    [[Withdraw]]
+<<else>>
+    Customer: Nice.
+    [[Help]]
+<<endif>>
+===
+title: Rob
+tags: 
+colorID: 0
+position: 721,130
+---
+<<trigger Customer rob>>
+<<if $needs_rob is true>>
+    Customer: I want more money, man.
+    [[Rob]]
+<<else>>
+    Customer: Nice.
+    [[End]]
+<<endif>>
+===
