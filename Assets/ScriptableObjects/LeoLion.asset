@@ -16,6 +16,8 @@ MonoBehaviour:
     type: 3}
   dispensaryPrefab: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
     type: 3}
+  dialoguePrefab: {fileID: 1388137253885994314, guid: c29a361c4ca70e7679e9210eccf4535c,
+    type: 3}
   account:
     accountNumber: 32124124
     firstName: Leo
