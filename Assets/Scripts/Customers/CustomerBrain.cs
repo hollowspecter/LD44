@@ -3,7 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using TMPro;
 
-public class CustomerBrain : MonoBehaviour
+public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 {
     private ICustomer cI;
     public string customerName;
@@ -232,16 +232,33 @@ public class CustomerBrain : MonoBehaviour
     }
 
     //TODO: throws money amount. Look at how Sam dispenses with his Teller machine
-    private void GiveMoney()
+    private void GiveMoney(float amount)
     {
         //throw amount of _money
     }
     
     //TODO: able to give customers money
-    private void GetMoney()
+    private void GetMoney(float amount)
     {
         //increase _fundCheck 
     }
-    
-    
+
+    public bool OnReceivedDraggable(Draggable drag)
+    {
+        switch(drag.type){
+            case Draggable.Type.Bill:
+            case Draggable.Type.Coin:
+            case Draggable.Type.GoldBar:
+            case Draggable.Type.SilverBar:{
+                GetMoney(drag.value);
+                return true;
+            }
+            case Draggable.Type.Generic:{
+                return false;
+            }
+            default: {
+                throw new System.Exception("Unhandled Draggable!");
+            }
+        }
+    }
 }
