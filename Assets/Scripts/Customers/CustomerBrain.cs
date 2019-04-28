@@ -18,6 +18,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
     public bool myTurn = false; //if true, it will go to the counter
     public bool amDone = false; //if true, it will go away and will deactivates itself
+    public Dispensary dispensary;
     
     private enum NeedType
     {
@@ -41,6 +42,8 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
     private void OnEnable()
     {
+        dispensary.RegisterReceiver(this);
+
         //TODO: check their Account -> Needs the money tracking system
 
 //        if (!cI.hasAccount)
@@ -232,15 +235,17 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     }
 
     //TODO: throws money amount. Look at how Sam dispenses with his Teller machine
-    private void GiveMoney(float amount)
+    private void GiveMoney()
     {
         //throw amount of _money
+        dispensary.DispenseChange(_money);
     }
     
     //TODO: able to give customers money
-    private void GetMoney(float amount)
+    private void GetMoney(int amount)
     {
         //increase _fundCheck 
+        _money += amount;
     }
 
     public bool OnReceivedDraggable(Draggable drag)
@@ -250,7 +255,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             case Draggable.Type.Coin:
             case Draggable.Type.GoldBar:
             case Draggable.Type.SilverBar:{
-                GetMoney(drag.value);
+                GetMoney((int)drag.value);
                 return true;
             }
             case Draggable.Type.Generic:{

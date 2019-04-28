@@ -4,6 +4,7 @@
 public class CustomerGenEvent : CustomerGenerator
 {
     public GameObject CustomerPrefab;
+    public Dispensary dispensaryPrefab;
     public string accountNumber { get{
         return account.accountNumber;
     }}
@@ -21,8 +22,10 @@ public class CustomerGenEvent : CustomerGenerator
     public override GameObject GenerateCustomer()
     { 
         var customer = Instantiate(CustomerPrefab, spawnPoint, Quaternion.identity);
+        var dispensary = Instantiate(dispensaryPrefab,customer.transform,false);
         
         var cBrain = customer.GetComponent<CustomerBrain>();
+        cBrain.dispensary = dispensary;
         
         cBrain.customerName = name;
         cBrain.graphic = graphic;
