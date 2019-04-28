@@ -52,13 +52,9 @@ public class App : MonoBehaviour {
     public class InGame : State
     {
         public TellerMachine tellerMachine;
-        public CustomerManager customerManager;
         public InGame(App representation) : base(representation) { }
         public override void Enter(){
             base.Enter();
-            foreach(var c in customerManager.cGen){
-                tellerMachine.accounts.Add(c.account.accountNumber,c.account);
-            }
         }
         public override void Update(){
             base.Update();
