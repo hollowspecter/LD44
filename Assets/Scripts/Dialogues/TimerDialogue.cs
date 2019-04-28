@@ -9,6 +9,19 @@ public class TimerDialogue : MonoBehaviour
     public float currCountdownValue;
     public GameObject variableStorage;
 
+    public void Update()
+    {
+        //if (currCountdownValue == 0)
+
+        var varStore = variableStorage.GetComponent<VariableStorage>();
+        var valueToSet = new Yarn.Value(true);
+        varStore.SetValue("$lastStraw", valueToSet);
+        Debug.Log(valueToSet);
+
+        var newName = new Yarn.Value("GRANDMA");
+        varStore.SetValue("$newName", newName);
+    }
+
     public void StartCount()
     {
       StartCoroutine(StartCountdown());
@@ -16,13 +29,10 @@ public class TimerDialogue : MonoBehaviour
     
     public IEnumerator StartCountdown(float countdownValue = 10)
     {
-        
         currCountdownValue = countdownValue;
         while (currCountdownValue > 0)
         {
-            var varStore = variableStorage.GetComponent<VariableStorage>();
-            var valueToSet = new Yarn.Value(true);
-            varStore.SetValue("$lastStraw", valueToSet);
+           
             yield return new WaitForSeconds(1.0f);
             currCountdownValue--;
         }

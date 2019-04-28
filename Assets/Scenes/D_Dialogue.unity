@@ -461,6 +461,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5205697144947192116, guid: 79eed034f7657fe478eae774fef58e1f,
+        type: 3}
+      propertyPath: speechBubble
+      value: 
+      objectReference: {fileID: 1178409023}
+    - target: {fileID: 5205697144947192116, guid: 79eed034f7657fe478eae774fef58e1f,
+        type: 3}
+      propertyPath: variableStorage
+      value: 
+      objectReference: {fileID: 1329991837}
+    - target: {fileID: 4834066131230894179, guid: 79eed034f7657fe478eae774fef58e1f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79eed034f7657fe478eae774fef58e1f, type: 3}
 --- !u!1 &121310461
@@ -1600,7 +1615,6 @@ MonoBehaviour:
   - {fileID: 1587400250}
   gameControlsContainer: {fileID: 0}
   needsInput: 1
-  nothing: 0
 --- !u!114 &1329991839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1617,6 +1631,9 @@ MonoBehaviour:
   - name: lastStraw
     value: false
     type: 2
+  - name: newName
+    value: 
+    type: 1
   debugTextView: {fileID: 0}
 --- !u!114 &1329991840
 MonoBehaviour:

@@ -7,6 +7,7 @@ using Yarn.Unity;
 using Yarn;
 using System;
 using TMPro;
+using static Yarn.Dialogue;
 
 public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
 {
@@ -46,7 +47,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
     private bool count;
     //otherwise will skip
     public bool needsInput = true;
-    public bool nothing;
+    //public bool nothing;
 
     void Awake()
     {
@@ -63,6 +64,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         }
 
     }
+
 
     /// Show a line of dialogue, gradually
     public override IEnumerator RunLine(Yarn.Line line)
@@ -159,6 +161,14 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
     /// Called by buttons to make a selection.
     public void SetOption(int selectedOption)
     {
+
+        //TO DO selectedOption is one of the randomnized options
+        //if (nothing)
+        //{
+        //    var randomOption = UnityEngine.Random.Range(0, 3);
+        //    selectedOption = randomOption;
+        //    nothing = false;
+        //}
 
         // Call the delegate to tell the dialogue system that we've
         // selected an option.

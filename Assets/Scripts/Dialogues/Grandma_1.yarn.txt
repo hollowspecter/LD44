@@ -3,7 +3,7 @@ tags: Wants to talk about Grandchildren
 colorID: 0
 position: 822,-16
 ---
-<<Grandma>> Hello my dear! May I say that your hair looks really fabulous!      
+<<Grandma>> Hello my dear! My name is <<$customerName>> May I say that your hair looks really fabulous!      
 <<Self>>[[Thank you very much! Your hair looks awesome too!|compliment]]
 <<self>>[[Oh, thank you! I had it done at the Mall. Really great woman there.|recommendation]]
 <<self>>[[Thank you, I did it myself! Hairdressers never understand what you want anyway, right?|critique]]
@@ -14,11 +14,17 @@ colorID: 0
 position: 496,178
 ---
 /*Grandma smiles big*/
+<<if $lastStraw is true>>
+wtf <<$newName>> are you doing
+[[im sorrrry|upset]]
+<<else>>
 <<Grandma>> Oh, that is so nice of you!
 My grandson did it. Did you know, he is a hairdresser himself? And a really good one! You should totally see him!
 <<Self>> [[I thought you said my hair was fabulous? Why do I need to see another hairdresser?|irritation]]
 <<Self>> [[Oh, that is awesome! I bet he is the best! It is such a sophisticated job.|confirmation]]
 <<Self>> [[Sounds good! Where is the place where I can find him?|question]]
+<<endif>>
+
 ===
 title: irritation
 tags: 
@@ -81,4 +87,11 @@ position: 1240,83
 <<Grandma>> Oh, look at the time! We're standing here talking like laundry girls!
 Alright, see you soon, have a nice day, good bye!
 /*Grandma leaves*/
+===
+title: upset
+tags: 
+colorID: 0
+position: 820,429
+---
+WTF are you doing??
 ===
