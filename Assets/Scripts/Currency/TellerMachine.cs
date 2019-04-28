@@ -126,6 +126,7 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
     }
     private void Error(){
         messageText.text = "ERROR";
+        SoundManager.Instance.PlaySfxAsOneShot ( "UIAlert" );
     }
     public void Dispense(){        
         float dispensed = dispensary.DispenseChange(amountField);
