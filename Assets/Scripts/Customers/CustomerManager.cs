@@ -57,6 +57,7 @@ public class CustomerManager : MonoBehaviour
             queue.Peek().SetActive(false);
             queue.Dequeue();
             queue.Peek().transform.position = spawnPositions[0];
+            queue.Peek().GetComponent<CustomerBrain>().myTurn = true;
             next = false;
         }
 

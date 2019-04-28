@@ -67,9 +67,7 @@ public class CustomerBrain : MonoBehaviour
 
         //set the wait time to wait
         _maxTime = Random.Range(maxTimeRange.minValue,maxTimeRange.maxValue)*5;
-        //maxTime = Mathf.Floor((maxTime / 60));
-        
-        
+
         //set money wanting to use
         //set money to use in range of wanting to use(difference!)
         _moneyWanting = (int)Random.Range(moneyToUse.minValue,moneyToUse.maxValue);
@@ -96,7 +94,10 @@ public class CustomerBrain : MonoBehaviour
         //as long as in the queue, time is of essence. If it is their turn, they will move to counter
         //TODO: set this somewhere to true
         if(!myTurn) 
-            {WaitingInQueue();}
+        {
+            WaitingInQueue();
+            return;   
+        }
 
         if (!introduced)
         {
@@ -223,7 +224,7 @@ public class CustomerBrain : MonoBehaviour
 
     IEnumerator LeaveCounter()
     {
-        Tween leaveTween = transform.DOMoveX(transform.position.x, -100);
+        Tween leaveTween = transform.DOMoveX(transform.position.x+-10, 1);
         yield return leaveTween.WaitForCompletion();
 
         App.instance.score.happiness = App.instance.score.happiness+hapinessLevel;
