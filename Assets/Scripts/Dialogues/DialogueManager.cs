@@ -4,7 +4,10 @@ using UnityEngine.UI;
 using System.Text;
 using System.Collections.Generic;
 using Yarn.Unity;
+using Yarn;
 using System;
+using TMPro;
+using static Yarn.Dialogue;
 
 public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
 {
@@ -14,10 +17,10 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
      */
     public GameObject dialogueContainer;
 
-    public GameObject interact;
+    //public GameObject interact;
 
     /// The UI element that displays lines
-    public Text lineText;
+    public TMP_Text lineText;
 
     //UI Box
     public GameObject boxText;
@@ -37,9 +40,12 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
     /// Make it possible to temporarily disable the controls when
     /// dialogue is active and to restore them when dialogue ends
     public RectTransform gameControlsContainer;
-
-    [NonSerialized]
-    public bool interaction = false;
+    
+    private bool dialogueTimer;
+    private bool count;
+    //otherwise will skip
+    public bool needsInput = true;
+    //public bool nothing;
 
     void Awake()
     {
@@ -56,6 +62,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         }
 
     }
+
 
     /// Show a line of dialogue, gradually
     public override IEnumerator RunLine(Yarn.Line line)
@@ -84,10 +91,18 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
 
 
         // Wait for any user input
-        while (Input.anyKeyDown == false)
+        if(needsInput)
         {
-            yield return null;
+            while (Input.anyKeyDown == false)
+            {
+                yield return null;
+            }
         }
+        else //otherwise skip ahead
+        {
+            yield return new WaitForSeconds(2.0f);
+        }
+
 
         // Hide the text and prompt
         lineText.gameObject.SetActive(false);
@@ -111,8 +126,17 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         foreach (var optionString in optionsCollection.options)
         {
             optionButtons[i].gameObject.SetActive(true);
-            optionButtons[i].GetComponentInChildren<Text>().text = optionString;
+            //TO DO animate the button
+            optionButtons[i].GetComponentInChildren<TMP_Text>().text = optionString;
             i++;
+        }
+
+        //start the timer of how long the player takes to answer
+        count = true;
+        if (count == true)
+        {
+            optionButtons[0].GetComponent<TimerDialogue>().StartCount();
+            count = false;
         }
 
         // Record that we're using it
@@ -128,12 +152,21 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         foreach (var button in optionButtons)
         {
             button.gameObject.SetActive(false);
+            //TO DO animate the button going away
         }
     }
 
     /// Called by buttons to make a selection.
     public void SetOption(int selectedOption)
     {
+
+        //TO DO selectedOption is one of the randomnized options
+        //if (nothing)
+        //{
+        //    var randomOption = UnityEngine.Random.Range(0, 3);
+        //    selectedOption = randomOption;
+        //    nothing = false;
+        //}
 
         // Call the delegate to tell the dialogue system that we've
         // selected an option.
@@ -157,12 +190,10 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
     {
         Debug.Log("Dialogue starting!");
 
-        if (interaction) interact.SetActive(false);
-        else interact.SetActive(true);
-
         // Enable the dialogue controls.
         if (dialogueContainer != null)
             dialogueContainer.SetActive(true);
+            //TO DO animate the button
 
         // Hide the game controls.
         if (gameControlsContainer != null)
@@ -181,6 +212,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         // Hide the dialogue interface.
         if (dialogueContainer != null)
             dialogueContainer.SetActive(false);
+            //TO DO animate the button
 
         // Show the game controls.
         if (gameControlsContainer != null)
