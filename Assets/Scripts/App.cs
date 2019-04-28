@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class App : MonoBehaviour {
     public static App instance;
+    public float time;
+
+    public float simulationTimeFactor = 1F;
+    public float timeUntilDayEnds = 800F;
 
     public StateMachine<App> stateMachine;
     [Serializable]
     public class State : StateMachine<App>.State
     {
+
+        
         public GameObject[] stateObjects;
         public State(App representation) : base(representation) { }
 
@@ -88,6 +94,7 @@ public class App : MonoBehaviour {
 
     public PreGame preGame;
     public InGame inGame;
+    public EndOfDay endOfDay;
     private void Awake(){
         if(instance != null){
             throw new Exception("Only one App allowed!");
@@ -103,6 +110,9 @@ public class App : MonoBehaviour {
     }
     private void Update()
     {
+        time += Time.deltaTime * simulationTimeFactor;
+        if(time > timeUntilDayEnds)
+        {stateMachine.SetState(endOfDay);}
         stateMachine.Update();
     }
 
