@@ -42,17 +42,7 @@ namespace sfx
     [Serializable]
     public class DialogSfx
     {
-        public AudioClip bop1;
-        public AudioClip bop2;
-        public AudioClip bop3;
-        public AudioClip bop4;
-        public AudioClip bop5;
-        public AudioClip bop6;
-        public AudioClip high1;
-        public AudioClip high2;
-        public AudioClip high3;
-        public AudioClip high4;
-        public AudioClip high5;
-        public AudioClip high6;
+        public AudioClip oldlady;
+        public AudioClip tryin;
     }
 }
