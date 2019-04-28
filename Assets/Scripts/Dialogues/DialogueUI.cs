@@ -98,14 +98,14 @@ namespace Yarn.Unity.Example {
                 // Display the line one character at a time
                 var stringBuilder = new StringBuilder ();
 
-                foreach (char c in line.text) {
+                foreach (char c in CheckVars(line.text)) {
                     stringBuilder.Append (c);
                     lineText.text = stringBuilder.ToString ();
                     yield return new WaitForSeconds (textSpeed);
                 }
             } else {
                 // Display the line immediately if textSpeed == 0
-                lineText.text = line.text;
+                lineText.text = CheckVars(line.text);
             }
 
             // Show the 'press any key' prompt when done, if we have one
@@ -209,6 +209,48 @@ namespace Yarn.Unity.Example {
             }
 
             yield break;
+        }
+
+        string CheckVars (string input)
+        {
+            string output = string.Empty;
+            bool checkingVar = false;
+            string currentVar = string.Empty;
+
+            int index = 0;
+            while (index < input.Length) {
+                if (input [index] == '[') {
+                    checkingVar = true;
+                    currentVar = string.Empty;
+                } else if (input [index] == ']') {
+                    checkingVar = false;
+                    output += ParseVariable(currentVar);
+                    currentVar = string.Empty;
+                } else if (checkingVar) {
+                    currentVar += input [index];
+                } else {
+                    output += input[index];
+                }
+                index += 1;
+            }
+
+            return output;
+        }
+
+        string ParseVariable (string varName)
+        {
+            //Check YarnSpinner's variable storage first
+            if (bridge.GetValue (varName) != Yarn.Value.NULL) {
+                return bridge.GetValue (varName).AsString;
+            }
+
+            //Handle other variables here
+            if(varName == "$withdraw_amount") {
+                return Time.time.ToString();
+            }
+
+            //If no variables are found, return the variable name
+            return varName;
         }
 
     }

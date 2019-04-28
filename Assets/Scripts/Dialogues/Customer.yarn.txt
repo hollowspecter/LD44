@@ -46,7 +46,7 @@ Player: Anything else?
     <<endif>>
     <<if $needs_withdraw is true>>
         Customer: I need to withdraw, man.
-        Customer: I need $withdraw_amount
+        Customer: I need [$withdraw_amount]
         [[Withdraw]]
     <<endif>>
     <<if $needs_rob is true>>
