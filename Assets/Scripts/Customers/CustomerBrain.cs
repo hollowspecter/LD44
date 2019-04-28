@@ -3,7 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using TMPro;
 
-public class CustomerBrain : MonoBehaviour
+public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 {
     private ICustomer cI;
     public string customerName;
@@ -43,17 +43,16 @@ public class CustomerBrain : MonoBehaviour
     {
         //TODO: check their Account -> Needs the money tracking system
 
-        if (!cI.hasAccount)
-        {
-            need = NeedType.makeAccount;
-        }
+//        if (!cI.hasAccount)
+//        {
+//            need = NeedType.makeAccount;
+//        }
 
         myTurn = false;
         amDone = false;
         introduced = false;
         hapinessLevel = 5;
 
-        
         //setup their action they want to do
         if (Random.Range(0, 100) > 95) //5 percent chance
         {
@@ -66,12 +65,9 @@ public class CustomerBrain : MonoBehaviour
         }
         action = need.ToString();
 
-        
         //set the wait time to wait
         _maxTime = Random.Range(maxTimeRange.minValue,maxTimeRange.maxValue)*5;
-        //maxTime = Mathf.Floor((maxTime / 60));
-        
-        
+
         //set money wanting to use
         //set money to use in range of wanting to use(difference!)
         _moneyWanting = (int)Random.Range(moneyToUse.minValue,moneyToUse.maxValue);
@@ -98,7 +94,10 @@ public class CustomerBrain : MonoBehaviour
         //as long as in the queue, time is of essence. If it is their turn, they will move to counter
         //TODO: set this somewhere to true
         if(!myTurn) 
-            {WaitingInQueue();}
+        {
+            WaitingInQueue();
+            return;   
+        }
 
         if (!introduced)
         {
@@ -145,9 +144,6 @@ public class CustomerBrain : MonoBehaviour
                 speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
                                     " Moneys! my Account Number is " + accountNumber + ".";
                 GiveMoney();
-                
-                //set new _money amount if we have to through again
-
                 break;
             }
 
@@ -228,24 +224,41 @@ public class CustomerBrain : MonoBehaviour
 
     IEnumerator LeaveCounter()
     {
-        Tween leaveTween = transform.DOMoveX(transform.position.x, -100);
+        Tween leaveTween = transform.DOMoveX(transform.position.x+-10, 1);
         yield return leaveTween.WaitForCompletion();
-        //TODO: give angryness value to the Scoreboard 
-        //cI.happiness = hapinessLevel;
+
+        App.instance.score.happiness = App.instance.score.happiness+hapinessLevel;
         CustomerManager.next = true;
     }
 
     //TODO: throws money amount. Look at how Sam dispenses with his Teller machine
-    private void GiveMoney()
+    private void GiveMoney(float amount)
     {
         //throw amount of _money
     }
     
     //TODO: able to give customers money
-    private void GetRobbedMoney()
+    private void GetMoney(float amount)
     {
         //increase _fundCheck 
     }
-    
-    
+
+    public bool OnReceivedDraggable(Draggable drag)
+    {
+        switch(drag.type){
+            case Draggable.Type.Bill:
+            case Draggable.Type.Coin:
+            case Draggable.Type.GoldBar:
+            case Draggable.Type.SilverBar:{
+                GetMoney(drag.value);
+                return true;
+            }
+            case Draggable.Type.Generic:{
+                return false;
+            }
+            default: {
+                throw new System.Exception("Unhandled Draggable!");
+            }
+        }
+    }
 }
