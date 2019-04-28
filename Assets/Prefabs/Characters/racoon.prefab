@@ -66,7 +66,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1184458407
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: -8296093359288528398, guid: 6371b4542ed98d84f90ce95cd66ef348,
     type: 3}
@@ -146,7 +146,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1184458407
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -4084643644002421914, guid: 6371b4542ed98d84f90ce95cd66ef348,
     type: 3}
@@ -240,6 +240,8 @@ MonoBehaviour:
   moneyRange: 0
   action: 
   accountNumber: 
+  angrinessLevel: 0
+  moreMoney: 0
   myTurn: 0
   amDone: 0
   speechBubble: {fileID: 5662978718968950316}
@@ -309,7 +311,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1184458407
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 8902434448063407509, guid: 6371b4542ed98d84f90ce95cd66ef348,
     type: 3}
@@ -389,7 +391,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1184458407
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: -1
   m_Sprite: {fileID: 7534833803083010614, guid: 6371b4542ed98d84f90ce95cd66ef348,
     type: 3}
@@ -469,7 +471,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1184458407
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -7566353045718855324, guid: 6371b4542ed98d84f90ce95cd66ef348,
     type: 3}
@@ -549,7 +551,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1184458407
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -3598537727940322574, guid: 6371b4542ed98d84f90ce95cd66ef348,
     type: 3}
