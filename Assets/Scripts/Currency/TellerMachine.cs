@@ -34,7 +34,7 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
     private void OnDisable(){
         StopAllCoroutines();
         accounts.Clear();
-        receiver = null;
+        customer = null;
     }
     private void Update(){
         Account a;
@@ -47,17 +47,17 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
         }
     }
 
-    private ICustomer receiver;
-    public void RegisterAccountReceiver(ICustomer receiver){        
-        if(this.receiver != null){
+    private ICustomer customer;
+    public void RegisterAccountReceiver(ICustomer customer){        
+        if(this.customer != null){
             throw new Exception("Only one receiver per TellerMachine");
         }
-        this.receiver = receiver;
+        this.customer = customer;
     }
 
     public static System.Random random = new System.Random();
     public void CreateAccount(){
-        if(receiver != null && receiver.hasAccount){
+        if(customer != null && customer.account != null){
             return;
         } 
         if(firstNameField == ""){
@@ -78,8 +78,8 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
         accounts[accountNumber].lastName = lastNameField;
         accounts[accountNumber].balance = 0f;
         accountNumberText.text = accountNumber;
-        if(receiver != null){
-            receiver.OnAccountCreated(accounts[accountNumber]);
+        if(customer != null){
+            customer.OnAccountCreated(accounts[accountNumber]);
         }        
         print(accountNumber);
         Success();

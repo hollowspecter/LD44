@@ -1,8 +1,13 @@
+using UnityEngine;
+
 public interface ICustomer {
-    bool hasAccount { get; }
+    void OnArrivedAtDesk(Dispensary customerDesk);
+    void OnLeaveDesk();
+    Account account { get; }
     void OnAccountCreated(Account account);
     float happiness { get; }
     bool fulfilledNeed { get; }
-    bool fulfilledMust { get; }
+    Vector3 position { get; set; }
+
     void OnDialogueTrigger(string trigger);
 }

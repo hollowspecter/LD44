@@ -12,10 +12,14 @@ public class Dispensary : MonoBehaviour {
     public float dispenseDelay = 0.3f;
     private Queue<Draggable> dispenseQueue = new Queue<Draggable>();
     private IDraggableReceiver receiver;
+    public float kept = 0f;
+    public float dispensed = 0f;
     private void OnEnable(){
         SortChange();
         dispenseRoutine = StartCoroutine(DispenseRoutine());
         trigger.stay = (c)=>OnTriggerStay(c);
+        kept = 0f;
+        dispensed = 0f;
     }
     private void OnDisable(){
         receiver = null;
@@ -27,6 +31,12 @@ public class Dispensary : MonoBehaviour {
         }
         this.receiver = receiver;
     }
+    public void RemoveReceiver(IDraggableReceiver receiver){
+        if(this.receiver != receiver){
+            throw new Exception("Removing wrong receiver!");
+        }
+        this.receiver = null;
+    }
 
     public void SetChangePrefabs(Draggable[] changePrefabs){
         this.changePrefabs = changePrefabs;
@@ -36,7 +46,7 @@ public class Dispensary : MonoBehaviour {
     private void OnTriggerStay(Collider collider){
         Draggable drag = collider.GetComponent<Draggable>();
         if(drag){
-            if(receiver.OnReceivedDraggable(drag)){
+            if(receiver != null && receiver.OnReceivedDraggable(drag)){
                 Keep(drag);
             }else{
                 DispenseQueued(drag);
@@ -45,6 +55,7 @@ public class Dispensary : MonoBehaviour {
     }
 
     private void Keep(Draggable drag){
+        kept += drag.value;
         Destroy(drag.gameObject);
     }
 
@@ -77,6 +88,7 @@ public class Dispensary : MonoBehaviour {
                 }
             }
         }
+        this.dispensed += dispensed;
         return dispensed;
     }
     private void DispenseQueued(Draggable drag){    
