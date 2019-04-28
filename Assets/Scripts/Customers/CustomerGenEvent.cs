@@ -25,6 +25,7 @@ public class CustomerGenEvent : CustomerGenerator
         
         var cBrain = customer.GetComponent<CustomerBrain>();
         cBrain.dispensary = dispensary;
+        dispensary.RegisterReceiver(cBrain);
         
         cBrain.customerName = name;
         cBrain.maxTimeRange = timeToGetAngry;
