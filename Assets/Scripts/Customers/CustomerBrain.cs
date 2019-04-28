@@ -18,6 +18,8 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
     public bool myTurn = false; //if true, it will go to the counter
     public bool amDone = false; //if true, it will go away and will deactivates itself
+    public GameObject speechObject;
+    public TMP_Text speechBubble;
     public Dispensary dispensary;
     
     private enum NeedType
@@ -38,7 +40,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     private int _fundCheck;
     private bool introduced = false;
     
-    public TMP_Text speechBubble;
+
 
     private void OnEnable()
     {
@@ -50,7 +52,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 //            need = NeedType.makeAccount;
 //        }
 
-        myTurn = false;
+        speechObject.SetActive(false);
         amDone = false;
         introduced = false;
         hapinessLevel = 5;
@@ -95,14 +97,22 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     {
         //as long as in the queue, time is of essence. If it is their turn, they will move to counter
         //TODO: set this somewhere to true
+        if (amDone)
+        {
+            AngerManagment();
+            StartCoroutine(LeaveCounter());
+            return;
+        }
+
         if(!myTurn) 
         {
             WaitingInQueue();
-            return;   
+            return;
         }
 
         if (!introduced)
         {
+            speechObject.SetActive(true);
             Introduce();
             introduced = true;
         }
@@ -115,9 +125,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             moreMoney = false;
         }
 
-        if (!amDone) return;
-        AngerManagment();
-        StartCoroutine(LeaveCounter());
+
     }
 
     private void WaitingInQueue()
@@ -232,6 +240,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         yield return leaveTween.WaitForCompletion();
 
         App.instance.score.happiness = App.instance.score.happiness+hapinessLevel;
+        myTurn = false;
         CustomerManager.next = true;
     }
 
