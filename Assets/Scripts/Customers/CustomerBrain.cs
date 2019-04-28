@@ -43,17 +43,16 @@ public class CustomerBrain : MonoBehaviour
     {
         //TODO: check their Account -> Needs the money tracking system
 
-        if (!cI.hasAccount)
-        {
-            need = NeedType.makeAccount;
-        }
+//        if (!cI.hasAccount)
+//        {
+//            need = NeedType.makeAccount;
+//        }
 
         myTurn = false;
         amDone = false;
         introduced = false;
         hapinessLevel = 5;
 
-        
         //setup their action they want to do
         if (Random.Range(0, 100) > 95) //5 percent chance
         {
@@ -66,7 +65,6 @@ public class CustomerBrain : MonoBehaviour
         }
         action = need.ToString();
 
-        
         //set the wait time to wait
         _maxTime = Random.Range(maxTimeRange.minValue,maxTimeRange.maxValue)*5;
         //maxTime = Mathf.Floor((maxTime / 60));
@@ -145,9 +143,6 @@ public class CustomerBrain : MonoBehaviour
                 speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
                                     " Moneys! my Account Number is " + accountNumber + ".";
                 GiveMoney();
-                
-                //set new _money amount if we have to through again
-
                 break;
             }
 
@@ -230,8 +225,8 @@ public class CustomerBrain : MonoBehaviour
     {
         Tween leaveTween = transform.DOMoveX(transform.position.x, -100);
         yield return leaveTween.WaitForCompletion();
-        //TODO: give angryness value to the Scoreboard 
-        //cI.happiness = hapinessLevel;
+
+        App.instance.score.happiness = App.instance.score.happiness+hapinessLevel;
         CustomerManager.next = true;
     }
 
@@ -242,7 +237,7 @@ public class CustomerBrain : MonoBehaviour
     }
     
     //TODO: able to give customers money
-    private void GetRobbedMoney()
+    private void GetMoney()
     {
         //increase _fundCheck 
     }
