@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d9c0a972e5d724da1d7701927817ba, type: 3}
   m_Name: MolaMolaMola
   m_EditorClassIdentifier: 
-  CustomerPrefab: {fileID: 0}
-  dispensaryPrefab: {fileID: 0}
+  CustomerPrefab: {fileID: 711611375084092403, guid: 7465bccf907a3684b958032f5444e95d,
+    type: 3}
+  dispensaryPrefab: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
+    type: 3}
   account:
-    accountNumber: 
-    firstName: 
-    lastName: 
-    balance: 0
-  graphic: {fileID: 0}
+    accountNumber: 3014
+    firstName: Mola
+    lastName: MolaMola
+    balance: 1502
   moneyWantingToUse:
-    minValue: 0
-    maxValue: 0
-  wrongMoneyUseRange: 0
+    minValue: 626.89935
+    maxValue: 2452.5107
+  wrongMoneyUseRange: 184
   timeToGetAngry:
-    minValue: 0
-    maxValue: 0
+    minValue: 33.557552
+    maxValue: 50

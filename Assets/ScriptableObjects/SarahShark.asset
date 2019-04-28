@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d9c0a972e5d724da1d7701927817ba, type: 3}
   m_Name: SarahShark
   m_EditorClassIdentifier: 
-  CustomerPrefab: {fileID: 0}
-  dispensaryPrefab: {fileID: 0}
+  CustomerPrefab: {fileID: 9216914771357251088, guid: ab9520cde3a527c499ec28c0d1f10447,
+    type: 3}
+  dispensaryPrefab: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
+    type: 3}
   account:
-    accountNumber: 
-    firstName: 
-    lastName: 
-    balance: 0
-  graphic: {fileID: 0}
+    accountNumber: 123456798
+    firstName: Sarah
+    lastName: Shark
+    balance: 57
   moneyWantingToUse:
-    minValue: 0
-    maxValue: 0
-  wrongMoneyUseRange: 0
+    minValue: 181.4179
+    maxValue: 397.90744
+  wrongMoneyUseRange: 7
   timeToGetAngry:
-    minValue: 0
-    maxValue: 0
+    minValue: 47.073452
+    maxValue: 55.593647

@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CustomerPrefab: {fileID: 3534616037941894670, guid: 79eed034f7657fe478eae774fef58e1f,
     type: 3}
+  dispensaryPrefab: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
+    type: 3}
   account:
     accountNumber: 21412515
     firstName: Trundle
     lastName: Turtle
     balance: 40
-  graphic: {fileID: 21300000, guid: dfbe46a6455fc9743ad6353b62fa35ce, type: 3}
   moneyWantingToUse:
-    minValue: 164.2792
-    maxValue: 323.51385
-  wrongMoneyUseRange: 12
+    minValue: 345.71414
+    maxValue: 601.00256
+  wrongMoneyUseRange: 88
   timeToGetAngry:
-    minValue: 39.791245
-    maxValue: 50
+    minValue: 64.79123
+    maxValue: 75
