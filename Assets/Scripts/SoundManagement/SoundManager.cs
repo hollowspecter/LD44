@@ -80,6 +80,20 @@ public class SoundManager : MonoBehaviour
         m_sounds.Add ( nameof ( m_soundDb.Misc.TearingSound ), m_soundDb.Misc.TearingSound );
         m_sounds.Add ( nameof ( m_soundDb.Misc.UIAlert ), m_soundDb.Misc.UIAlert );
         m_sounds.Add ( nameof ( m_soundDb.Misc.BigWoosh ), m_soundDb.Misc.BigWoosh );
+
+        // Dialog
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop1), m_soundDb.Dialog.bop1);
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop2), m_soundDb.Dialog.bop2);
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop3), m_soundDb.Dialog.bop3);
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop4), m_soundDb.Dialog.bop4);
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop5), m_soundDb.Dialog.bop5);
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop6), m_soundDb.Dialog.bop6);
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop1), m_soundDb.Dialog.high1);
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop2), m_soundDb.Dialog.high2);
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop3), m_soundDb.Dialog.high3);
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop4), m_soundDb.Dialog.high4);
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop5), m_soundDb.Dialog.high5);
+        m_sounds.Add(nameof(m_soundDb.Dialog.bop6), m_soundDb.Dialog.high6);
     }
 
     private void ToggleSource( AudioSource _source )
