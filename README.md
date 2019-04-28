@@ -8,6 +8,6 @@ Contributors:
 * Vivi aka hollowspecter
 * Pat aka comicat
 * Diana aka Hakaysha
-* Sam
+* Sam aka Sem
 * Ingelis aka Schlingelis
 * Bene?
