@@ -128,6 +128,7 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
         messageText.text = "ERROR";
     }
     public void Dispense(){        
+        if(dispensary.dispensing){ return;}
         float dispensed = dispensary.DispenseChange(amountField);
         balance -= dispensed;
     }
