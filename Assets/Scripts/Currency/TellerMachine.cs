@@ -47,8 +47,8 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
         }
     }
 
-    private IAccountReceiver receiver;
-    public void RegisterAccountReceiver(IAccountReceiver receiver){        
+    private ICustomer receiver;
+    public void RegisterAccountReceiver(ICustomer receiver){        
         if(this.receiver != null){
             throw new Exception("Only one receiver per TellerMachine");
         }
