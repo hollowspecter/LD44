@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class App : MonoBehaviour {
+    public static App instance;
+
     public StateMachine<App> stateMachine;
     [Serializable]
     public class State : StateMachine<App>.State
@@ -64,10 +66,33 @@ public class App : MonoBehaviour {
             }
         }
     }
+    [Serializable]
+    public class EndOfDay : State
+    {
+        public EndOfDay(App representation) : base(representation) { }
+
+        public override void Enter(){
+            base.Enter();
+            var r = representation;
+            // TODO show score etc...
+            print("Total happiness: " + r.score.happiness);
+        }
+    }
+    [Serializable]
+    public class Score {
+        public float happiness = 0f;
+        public float lostMoney = 0f;
+        public float extraMoney = 0f;
+    }
+    public Score score;
 
     public PreGame preGame;
     public InGame inGame;
     private void Awake(){
+        if(instance != null){
+            throw new Exception("Only one App allowed!");
+        }
+        instance = this;
         preGame.Init(this);
         inGame.Init(this);
         stateMachine = new StateMachine<App>();
