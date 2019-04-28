@@ -110,7 +110,8 @@ public class MainMenu : MonoBehaviour
     IEnumerator CreditOpenCoroutine()
     {
         cPopUp = DOTween.Sequence();
-        cPopUp.Append(creditsWindow.DOAnchorPos(creditsTargetPos.position, speed, true))
+        cPopUp.Append(creditsWindow.transform.DOMove(creditsTargetPos.position, speed, true) )
+        //cPopUp.Append(creditsWindow.DOAnchorPos(creditsTargetPos.position, speed, true) )
             .SetEase(Ease.OutQuint)
             .Insert(0,creditsWindow.DOScale(fullSize,speed));
         yield return cPopUp.WaitForCompletion();
@@ -141,7 +142,8 @@ public class MainMenu : MonoBehaviour
     IEnumerator TutorialOpenCoroutine()
     {
         tPopUp = DOTween.Sequence();
-        tPopUp.Append(tutorialWindow.DOAnchorPos(tutorialTargetPos.position, speed, true))
+        tPopUp.Append ( tutorialWindow.transform.DOMove ( tutorialTargetPos.position, speed, true ) )
+        //tPopUp.Append(tutorialWindow.DOAnchorPos(tutorialTargetPos.position, speed, true))
             .SetEase(Ease.OutQuint)
             .Insert(0, tutorialWindow.DOScale(fullSize,speed));
         yield return tPopUp.WaitForCompletion();
