@@ -4,8 +4,13 @@
 public class CustomerGenEvent : CustomerGenerator
 {
     public GameObject CustomerPrefab;
-    public string accountNumber;
-    public string name;
+    public string accountNumber { get{
+        return account.accountNumber;
+    }}
+    public string name {get{
+        return account.firstName + account.lastName;
+    }}
+    public Account account;
     public Sprite graphic;
     [MinMaxRange(1,350)]public RangedFloat moneyWantingToUse;
     public int wrongMoneyUseRange; //the range from moneyWantingToUse that they give you
