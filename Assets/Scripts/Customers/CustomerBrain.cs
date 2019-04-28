@@ -42,7 +42,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
     private void OnEnable()
     {
-        dispensary.RegisterReceiver(this);
 
         //TODO: check their Account -> Needs the money tracking system
 
@@ -111,7 +110,8 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         if (moreMoney)
         {
             _money = (_moneyWanting/2) + Random.Range(-moneyRange, moneyRange);
-            GiveMoney(1);
+            //plz don't overwrite this again
+            GiveMoney();
             moreMoney = false;
         }
 
@@ -146,7 +146,8 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             {
                 speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
                                     " Moneys! my Account Number is " + accountNumber + ".";
-                GiveMoney(1);
+                //plz don't overwrite this again
+                GiveMoney();
                 break;
             }
 
