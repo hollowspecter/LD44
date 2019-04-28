@@ -2,7 +2,6 @@
 using DG.Tweening;
 using UnityEngine;
 using TMPro;
-using System;
 
 public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 {
@@ -257,7 +256,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
                 return false;
             }
             default: {
-                throw new Exception("Unhandled Draggable!");
+                throw new System.Exception("Unhandled Draggable!");
             }
         }
     }
