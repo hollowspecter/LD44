@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CustomerPrefab: {fileID: 489099820978914747, guid: 946e79451201e064bae9b93831d40565,
     type: 3}
-  accountNumber: 25012
-  name: Randy
+  account:
+    accountNumber: 939298
+    firstName: Randy
+    lastName: Raccoon
+    balance: 0
   graphic: {fileID: 21300000, guid: bb81ea557e2d29a4ba7de5c388b57561, type: 3}
   moneyWantingToUse:
     minValue: 30.339031

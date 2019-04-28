@@ -17,6 +17,9 @@ public class Dispensary : MonoBehaviour {
         dispenseRoutine = StartCoroutine(DispenseRoutine());
         trigger.stay = (c)=>OnTriggerStay(c);
     }
+    private void OnDisable(){
+        receiver = null;
+    }
 
     public void RegisterReceiver(IDraggableReceiver receiver){
         if(this.receiver != null){
@@ -58,11 +61,19 @@ public class Dispensary : MonoBehaviour {
         if(changePrefabs.Length > 0){
             for(int i = changePrefabs.Length-1; i >= 0;i--){
                 var prefab = changePrefabs[i];
-                while(prefab.value <= amount){
+                for(int count = 1;prefab.value <= amount; count++){
                     Draggable drag = Instantiate<Draggable>(prefab);
                     dispensed += drag.value;
                     amount -= drag.value;
                     DispenseQueued(drag);
+                    if(count > 2){
+                        if(i > 0){
+                            var next = changePrefabs[i-1];
+                            if(next.value == prefab.value){
+                                break;
+                            }
+                        }
+                    }
                 }
             }
         }

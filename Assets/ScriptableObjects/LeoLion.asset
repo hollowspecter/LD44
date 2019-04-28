@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d9c0a972e5d724da1d7701927817ba, type: 3}
+  m_Name: LeoLion
+  m_EditorClassIdentifier: 
+  CustomerPrefab: {fileID: 2262742946600095323, guid: e20e81b647d8fc242b3650b4d377ff3a,
+    type: 3}
+  account:
+    accountNumber: 32124124
+    firstName: Leo
+    lastName: Lion
+    balance: 100
+  graphic: {fileID: 21300000, guid: dfbe46a6455fc9743ad6353b62fa35ce, type: 3}
+  moneyWantingToUse:
+    minValue: 234.62184
+    maxValue: 307.43552
+  wrongMoneyUseRange: 12
+  timeToGetAngry:
+    minValue: 239.93045
+    maxValue: 375.5433
