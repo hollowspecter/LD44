@@ -91,6 +91,11 @@ public class SoundManager : MonoBehaviour
         m_sounds.Add ( nameof ( m_soundDb.Misc.TearingSound ), m_soundDb.Misc.TearingSound );
         m_sounds.Add ( nameof ( m_soundDb.Misc.UIAlert ), m_soundDb.Misc.UIAlert );
         m_sounds.Add ( nameof ( m_soundDb.Misc.BigWoosh ), m_soundDb.Misc.BigWoosh );
+
+        // Dialog
+        m_sounds.Add(nameof(m_soundDb.Dialog.oldlady), m_soundDb.Dialog.oldlady);
+        m_sounds.Add(nameof(m_soundDb.Dialog.oldlady), m_soundDb.Dialog.tryin);
+        
     }
 
     private void ToggleSource( AudioSource _source )

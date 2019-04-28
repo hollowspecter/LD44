@@ -10,6 +10,7 @@ namespace sfx
     {
         public MainSfx Main;
         public MiscSfx Misc;
+        public DialogSfx Dialog;
     }
 
     [Serializable]
@@ -36,5 +37,12 @@ namespace sfx
         public AudioClip TearingSound;
         public AudioClip UIAlert;
         public AudioClip BigWoosh;
+    }
+
+    [Serializable]
+    public class DialogSfx
+    {
+        public AudioClip oldlady;
+        public AudioClip tryin;
     }
 }
