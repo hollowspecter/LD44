@@ -1,0 +1,130 @@
+title: Start
+tags: 
+colorID: 0
+position: 670,-287
+---
+Good Morning. This is unbelievable!
+First the weather and than there is a demonstration or strike or something
+for what ever reason and sure, saying what you think is a good thing but do they have to do it on a working day?
+I mean I have to do groceries and they are blocking everything.
+[[Right, these people could be a little more considerate. Those young people should better get a job, like we did in their age.|considerate]]
+[[You know, they demonstrate because they don't get enough money. And if it wouldn't be on a workday, how would anybody notice?|notice]]
+===
+title: considerate
+tags: 
+colorID: 0
+position: 186,-229
+---
+<<if $lastStraw is true>>
+*enraged fish sounds*
+I wanna see the manager!
+[[I apologize!|upset]]
+<<else>>
+Oh yes! Young people today! No respect and no decency! And they sympathize with all these strangers!
+Well, if they don't want jobs, of course they don't mind the foreigners stealing them!
+[[But the young people have jobs. They just want to get paid properly. And the foreigners also don't come to steal. They just want a better life, like everybody else.|likeeverybody]]
+[[Urgh, yes! Best thing to do is be a decent role model and getting sure our kids come out all right.|rolemodel]]
+<<endif>>
+===
+title: notice
+tags: 
+colorID: 0
+position: 894,-14
+---
+<<if $lastStraw is true>>
+*enraged fish sounds*
+I wanna see the manager!
+[[I apologize!|upset]]
+<<else>>
+Ugh! But don't you notice the young people today? No respect and no decency! And they sympathize with all these strangers!
+Well, if they don't want jobs, of course they don't mind the foreigners stealing them! You have to be careful, or they'll steal your job too!
+[[You know, you are right. I have never seen it from that perspective. More people should notice that!|perspective]]
+[[Maybe you should talk to some of them. In person. It could change the whole way you see the world. And by the way, the weather is awesome!|change]]
+<<endif>>
+===
+title: likeeverybody
+tags: 
+colorID: 0
+position: 2,451
+---
+<<if $lastStraw is true>>
+*enraged fish sounds*
+I wanna see the manager!
+[[I apologize!|upset]]
+<<else>>
+Yeah sure. But they should search for a better life in their country. I do not deserve this!
+Maybe you just don't understand. But maybe you will, if they steal your job!
+<<endif>>
+===
+title: change
+tags: 
+colorID: 0
+position: 1038,293
+---
+<<if $lastStraw is true>>
+*enraged fish sounds*
+I wanna see the manager!
+[[I apologize!|upset]]
+<<else>>
+What? I mean, of course I talked to... some... I... need to leave now. Have a... day.
+<<endif>>
+===
+title: rolemodel
+tags: 
+colorID: 0
+position: 360,479
+---
+<<if $lastStraw is true>>
+*enraged fish sounds*
+I wanna see the manager!
+[[I apologize!|upset]]
+<<else>>
+Oh it would be nice to have more people like you in the world! It would be a much nicer place.
+Have a wonderful day, although the weather again... 
+<<endif>>
+===
+title: perspective
+tags: 
+colorID: 0
+position: 712,381
+---
+<<if $lastStraw is true>>
+*enraged fish sounds*
+I wanna see the manager!
+[[I apologize!|upset]]
+<<else>>
+Good to see, that people can still think the right thing. So there is still hope. Have a nice day!
+<<endif>>
+===
+title: upset
+tags: 
+colorID: 0
+position: -453,118
+---
+And he better fire you and replace you immediately!
+Those shiny robots are 100 times more efficient and they don't steal jobs!
+===
+title: job
+tags: 
+colorID: 0
+position: 1245,760
+---
+Oh, friend that doesn't sound good. You have my deepest sympathy!
+But let me give you a hint, if you ever get into the second hand food business, meet me at Furry Park. At Midnight.
+But you don't look like someone who changes their habits.
+Haha, non-trash dwellers. Have a nice day!
+
+===
+title: no
+tags: 
+colorID: 0
+position: 261,814
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll rummage through your garbage!
+[[I apologize!|upset]]
+<<else>>
+Too bad! You don't know what you are missing!
+<<endif>>
+===

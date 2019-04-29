@@ -41,15 +41,10 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     private int _money;
     private int _fundCheck;
     private bool introduced = false;
-<<<<<<< HEAD
-    
-    public TMP_Text speechBubble;
-=======
 
     // Properties
     private bool HasAccount { get { return TellerMachine.Instance.accounts.ContainsKey ( accountNumber ); } }
     private int AccountMoney { get { return ( int ) TellerMachine.Instance.accounts [ accountNumber ].balance; } }
->>>>>>> develop
 
     private void OnEnable()
     {
@@ -63,7 +58,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 //            need = NeedType.makeAccount;
 //        }
 
-        myTurn = false;
         amDone = false;
         introduced = false;
         hapinessLevel = 5;
@@ -114,8 +108,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     {
         //as long as in the queue, time is of essence. If it is their turn, they will move to counter
         //TODO: set this somewhere to true
-<<<<<<< HEAD
-=======
         if (amDone)
         {
             AngerManagment();
@@ -126,11 +118,10 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             return;
         }
 
->>>>>>> develop
         if(!myTurn) 
         {
             WaitingInQueue();
-            return;   
+            return;
         }
 
         if (!introduced)
@@ -147,9 +138,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             moreMoney = false;
         }
 
-        if (!amDone) return;
-        AngerManagment();
-        StartCoroutine(LeaveCounter());
+
     }
 
     private void WaitingInQueue()
@@ -182,8 +171,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             .Subscribe ( x => { if ( x ) amDone = true; } )
             .AddTo ( disposables );
 
-        // start dialogue
-        dialogueRunner.StartDialogue ();
+        
 
         //possible: needs to give you more money
         //possible: can get money
@@ -192,36 +180,46 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         {
             case "deposit":
             {
-                speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
-                                    " Moneys! my Account Number is " + accountNumber + ".";
+                    //speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
+                    //                    " Moneys! my Account Number is " + accountNumber + ".";
 
-                PostitUI.Instance.PublishToPostit ( string.Format ( "{0} ${1} TO {2}",
-                        action, _money, accountNumber ) );
-                GiveMoney();
-                break;
+                    PostitUI.Instance.PublishToPostit ( string.Format ( "{0} ${1} TO {2}",
+                            action, _money, accountNumber ) );
+                    GiveMoney();
+                    // start dialogue
+                    dialogueRunner.StartDialogue ();
+                    break;
             }
 
             case "withdraw":
             {
-                speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
-                                    " Moneys! my Account Number is " + accountNumber + ".";
-                PostitUI.Instance.PublishToPostit ( string.Format ( "{0} ${1} FROM {2}",
-                        action, _money, accountNumber ) );
-                break;
+                    //speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
+                    //                    " Moneys! my Account Number is " + accountNumber + ".";
+                    PostitUI.Instance.PublishToPostit ( string.Format ( "{0} ${1} FROM {2}",
+                            action, _money, accountNumber ) );
+                    // start dialogue
+                    dialogueRunner.StartDialogue ();
+                    break;
             }
             case "robbery":
             {
-                speechBubble.text = "Hands in the air! I want to have "+ _money +
-                                    " Moneys! Give it to me now!";
-                PostitUI.Instance.PublishToPostit ( string.Format ( "GIVE ROBBER {0}", accountNumber ) );
-                _fundCheck = 0;
-                break;
+                    // TODO: DOESNT MAKE SENSE WITH ONLY THE POST IT?! 
+
+                    //speechBubble.text = "Hands in the air! I want to have "+ _money +
+                    //                    " Moneys! Give it to me now!";
+                    PostitUI.Instance.PublishToPostit ( string.Format ( "GIVE ROBBER ${0}", _money ) );
+                    _fundCheck = 0;
+                    // start dialogue
+                    dialogueRunner.StartDialogue ("Robbery");
+                    break;
             }
             case "makeAccount":
             {
-                speechBubble.text = "Hi I want to make an Account! My name is: " + customerName;
-                PostitUI.Instance.PublishToPostit ( string.Format ( "make account for {0}", customerName ) );
-                break;
+                    //speechBubble.text = "Hi I want to make an Account! My name is: " + customerName;
+                    PostitUI.Instance.PublishToPostit ( string.Format ( "make account for {0}", customerName ) );
+                    // start dialogue
+                    dialogueRunner.StartDialogue ();
+                    break;
             }
             default:
                 break;
@@ -295,6 +293,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         yield return leaveTween.WaitForCompletion();
 
         App.instance.score.happiness = App.instance.score.happiness+hapinessLevel;
+        myTurn = false;
         CustomerManager.next = true;
     }
 

@@ -1,0 +1,160 @@
+title: Start
+tags: 
+colorID: 0
+position: 1059,-152
+---
+Hey, hey. Wow this building totally reminds me of something...
+so crowded and big and kinda cold... 
+[[Prison?|Prison]]
+[[A bank?|bank]]
+[[The depths of the subconscious?|depths]]
+===
+title: Prison
+tags: 
+colorID: 0
+position: 653,-74
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll rummage through your garbage!
+[[I apologize!|upset]]
+<<else>>
+Woah! You genius it totally does! 
+I mean, when I was there, I was boss of the candy ring, if you know what I mean and had a lot of fun stealing the food of the guards, but...
+You see what I'm getting at?
+Anyway, I had to change location and am searching for a new established clientele. You need some light in this dark place?
+[[I have no idea what you're talking about. Are you trying to sell me drugs at my workplace?|wtf]]
+[[Absolutely. I could use some fun here.|fun]]
+[[What drugs do you have?|drugs]]
+<<endif>>
+===
+title: drugs
+tags: 
+colorID: 0
+position: -77,769
+---
+Woah! What do you mean? Drugs? I meant second hand food! What do you think I am? A dolphin? 
+You need help my friend. If you want some good stuff, come to the Furry Park at midnight. See ya! 
+===
+title: wtf
+tags: 
+colorID: 0
+position: 247,-66
+---
+Drugs? No! What makes you think that? I meant second hand food. 
+You are paranoid my friend! My aunt had the same problem and now she lives in the petting zoo. With a goat! 
+Stay clean my friend and stay away from petting hands! 
+
+===
+title: fun
+tags: 
+colorID: 0
+position: -444,586
+---
+That's what I wanted to hear! Alright:
+I have bird, cat and dog food. I even licked off the saliva. 
+Also a half eaten sandwich with tuna and a cup of melted ice cream. I'm telling you, as good as new!
+I know there is this sign on the door to not eat in here, so meet me at Furry Park at midnight. See ya!
+
+===
+title: swimmingpool
+tags: 
+colorID: 0
+position: 663,183
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll rummage through your garbage!
+[[I apologize!|upset]]
+<<else>>
+Ah, swimming! I totally need to bath again! Don't you love the feeling, when the water cools your sticky fur? 
+And when you can wash your food, until it's all squishy. Don't you love that? 
+It works best with cat food! If you ever crave it, let me know but don't tell the cats. 
+Hmm, now I am getting hungry. Don't you? Want to buy some food?
+[[Uh, sure, what do you have?|fun]]
+[[Urgh... No, sorry. Have a nice day.|no]]
+<<endif>>
+===
+title: bank
+tags: 
+colorID: 0
+position: 931,250
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll rummage through your garbage!
+[[I apologize!|upset]]
+<<else>>
+Well, it is a bank, right? Is it? Am I wrong? Ugh, not again... Where am I again? 
+I told my cousin not to get food out of the dumpster near the cleaning products factory. 
+[[Don't worry, you are at a bank.|help]]
+[[No, sorry, this is the money donation place. Thank you for your contribution!|lie]]
+<<endif>>
+===
+title: help
+tags: 
+colorID: 0
+position: 579,680
+---
+Haha, okay... I was only joking... 
+Uh, bye... 
+
+===
+title: lie
+tags: 
+colorID: 0
+position: 884,755
+---
+What?! No! Argh! 
+I will totally kill this cleaning vinegar drinking imbecile of a cousin...!
+
+===
+title: depths
+tags: 
+colorID: 0
+position: 1362,415
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll rummage through your garbage!
+[[I apologize!|upset]]
+<<else>>
+Haha, what? Are you choking on a gloomy philosopher? 
+Are you hungry? You gotta eat when you got that in your head! My sister tried to eat me once in her sleep. Not funny. 
+I am searching for a new established clientele. You need some light in this dark place?
+[[Sure, what do you sell?|fun]]
+[[Sorry, I just hate my job. But have a nice day.|job]]
+[[No, I was talking about the endless emptiness behind our consciousness. Full of information and impressions that we can never access. Therefore, we are forever doomed to run after the lost meaning of life.|help]]
+<<endif>>
+===
+title: job
+tags: 
+colorID: 0
+position: 1245,760
+---
+Oh, friend that doesn't sound good. You have my deepest sympathy!
+But let me give you a hint, if you ever get into the second hand food business, meet me at Furry Park. At Midnight.
+But you don't look like someone who changes their habits.
+Haha, non-trash dwellers. Have a nice day!
+
+===
+title: no
+tags: 
+colorID: 0
+position: 261,814
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll rummage through your garbage!
+[[I apologize!|upset]]
+<<else>>
+Too bad! You don't know what you are missing!
+<<endif>>
+===
+title: upset
+tags: 
+colorID: 0
+position: -524,270
+---
+And I'm sure I'll find how garbage your Yhellp reviews are!
+===

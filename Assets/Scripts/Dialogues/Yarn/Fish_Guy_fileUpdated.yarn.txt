@@ -69,14 +69,15 @@ Let me tell you, they are so hard to entertain.
 title: prince
 tags: 
 colorID: 0
-position: 765,333
+position: 767,333
 ---
 <<if $lastStraw is true>>
 What kind of customer service are you running here?
 My fish is suffocating here!
 [[I apologize!|upset]]
 <<else>>
-My fish once lived with a prince and now he wants me to conquer the world. And it is really hard to find an army. You ever thought about being a slaughtering commander?
+My fish once lived with a prince and now he wants me to conquer the world. And it is really hard to find an army.
+You ever thought about being a slaughtering commander?
 [[Actually, that sounds like a great idea! When do you start?|greatidea]]
 [[No, thank you. But good luck.|goodluck]]
 <<endif>>

@@ -12,10 +12,9 @@ public class CustomerGenEvent : CustomerGenerator
         return account.firstName + account.lastName;
     }}
     public Account account;
-    public Sprite graphic;
-    [MinMaxRange(1,350)]public RangedFloat moneyWantingToUse;
+    [MinMaxRange(1,2500)]public RangedFloat moneyWantingToUse;
     public int wrongMoneyUseRange; //the range from moneyWantingToUse that they give you
-    [MinMaxRange(15,50)]public RangedFloat timeToGetAngry;
+    [MinMaxRange(15,75)]public RangedFloat timeToGetAngry;
     
     private Vector3 spawnPoint= new Vector3(0,100,0);
     
@@ -32,17 +31,11 @@ public class CustomerGenEvent : CustomerGenerator
         //var dispensary = Instantiate(dispensaryPrefab,customer.transform,false);
         
         var cBrain = customer.GetComponent<CustomerBrain>();
-<<<<<<< HEAD
-        cBrain.dispensary = dispensary;
-        
-=======
         //cBrain.dispensary = dispensary;
         //dispensary.name = cBrain.name + "Dispensery";
         //dispensary.RegisterReceiver(cBrain);
 
->>>>>>> develop
         cBrain.customerName = name;
-        cBrain.graphic = graphic;
         cBrain.maxTimeRange = timeToGetAngry;
         cBrain.moneyToUse = moneyWantingToUse;
         cBrain.moneyRange = wrongMoneyUseRange;
