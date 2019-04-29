@@ -66,7 +66,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         hapinessLevel = 5;
 
         //check if you are fucking up the dialogue
-        lastStrawD = gameObject.GetComponent<TimerDialogue>().lastStrawD;
+        lastStrawD = gameObject.GetComponentInChildren<TimerDialogue>().lastStrawD;
 
         //setup their action they want to do
         if (Random.Range(0, 100) > 95) //5 percent chance

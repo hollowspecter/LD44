@@ -93,7 +93,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         // Wait for any user input
         if(needsInput)
         {
-            while (Input.anyKeyDown == false)
+            while (Input.GetKeyDown("space") == false)
             {
                 yield return null;
             }
