@@ -207,7 +207,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
                     //speechBubble.text = "Hands in the air! I want to have "+ _money +
                     //                    " Moneys! Give it to me now!";
-                    PostitUI.Instance.PublishToPostit ( string.Format ( "GIVE ROBBER {0}", accountNumber ) );
+                    PostitUI.Instance.PublishToPostit ( string.Format ( "GIVE ROBBER {0}", _money ) );
                     _fundCheck = 0;
                     // start dialogue
                     dialogueRunner.StartDialogue ("Robbery");
