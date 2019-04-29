@@ -25,6 +25,11 @@ public class CustomerManager : MonoBehaviour
     
     private Transform _childTransform;
 
+    private void OnEnable()
+    {
+        next = false;
+    }
+
     private void Start()
     {
         // Deactivate spawner if end of day is reached

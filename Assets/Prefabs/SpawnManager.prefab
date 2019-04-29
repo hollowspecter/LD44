@@ -51,8 +51,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5c1fbe042218df43b9b16a76ecafd34, type: 2}
   - {fileID: 11400000, guid: 878563ef22f078341a952c326813efc5, type: 2}
   maximumCustomer: 3
-  minTime: 5
-  maxTime: 15
+  minTime: 2
+  maxTime: 6
   spawnPositions:
   - {x: 0.092, y: -0.065, z: 0}
   - {x: -1.448, y: -0.094, z: 0.617}

@@ -72,6 +72,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
     {
         Debug.Log ( "Dialogue Manager OnDisable: set all buttons inactive" );
         foreach ( var button in optionButtons ) button.gameObject.SetActive ( false );
+        boxText.SetActive ( false );
     }
 
     /// Show a line of dialogue, gradually
