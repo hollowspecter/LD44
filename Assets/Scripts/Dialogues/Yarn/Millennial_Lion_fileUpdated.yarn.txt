@@ -1,0 +1,99 @@
+title: Start
+tags: 
+colorID: 0
+position: 566,-277
+---
+Uh, suh!?
+*typing sound, flashlight*
+Bruh...? My bae just posted this v salty thing about me.
+She met that basic bitch that doesn't fit into our epic fam at all!
+So I suggested to ghost her. And now she acts all cray! As if I am the cheesy one!
+[[Maybe it is not a bad thing your group gets a new member. You could try to get to know the new girl. Maybe you are just afraid to lose her.|advice]]
+[[Seriously? That is so random. I know TFW when you're low key FOMO. But you can't let yourself be trolled by that. You are a v dank guy so do something beautiful to show her!|comfort]]
+===
+title: advice
+tags: 
+colorID: 0
+position: 125,-189
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll bite your head off!
+[[I apologize!|upset]]
+<<else>>
+I mean, adulting often seems high-key to be the best solution. And she is my hunty but she can be drama AF. 
+Haha, she just posted a picture of her cat sleeping. Awesome! I am also a swol cat! Slayed it! 
+You think there is a hidden meaning behind cats?
+[[Of course, they are low key the secret rulers of the world.|rulers]]
+[[I mean, they are pets and normal animals... Can there be something hidden about that?|normal]]
+[[Sure! They are so extra and amazing!|extra]]
+<<endif>>
+===
+title: comfort
+tags: 
+colorID: 0
+position: 1154,-44
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll bite your head off!
+[[I apologize!|upset]]
+<<else>>
+Yaas, right?! She should appreciate the trill. That new girl should just swerve! I mean who does she thinks she is?
+Basic bitch she is! Haha, my bae just posted a picture of her cat sleeping. Ugh, I hate when she has fun without me.
+Selfie time!
+You think there is a hidden meaning behind cats?
+[[Of course, they are low key the secret rulers of the world.|rulers]]
+[[I mean, they are pets and normal animals... Can there be something hidden about that?|normal]]
+[[Sure! They are so extra and amazing!|extra]]
+<<endif>>
+===
+title: rulers
+tags: 
+colorID: 0
+position: 528,16
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll bite your head off!
+[[I apologize!|upset]]
+<<else>>
+Bruh! You think so? FML why am I not a ruler of the world? 
+Oh, maybe it so so secret even I don't know about it!
+Aw, that is so awesome! I need to roar that on my lionstagram! Bye Felicia!
+<<endif>>
+===
+title: normal
+tags: 
+colorID: 0
+position: 657,468
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll bite your head off!
+[[I apologize!|upset]]
+<<else>>
+Bruh? You are so ridiculous. Cats are anything but generic! But anyway...
+Enough adulting for today. You should give yourself a break too. Bye Felicia!
+<<endif>>
+===
+title: extra
+tags: 
+colorID: 0
+position: 281,573
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll bite your head off!
+[[I apologize!|upset]]
+<<else>>Lit! But sometimes they seem real glassed! But anyway...
+Enough adulting for today, right? Haha. Bye Felicia!
+<<endif>>
+===
+title: upset
+tags: 
+colorID: 0
+position: -32,287
+---
+Bye Felicia!!
+===
