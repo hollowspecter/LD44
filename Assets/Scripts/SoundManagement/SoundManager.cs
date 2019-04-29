@@ -56,8 +56,8 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        if ( m_settings.AutostartMusic ) ToggleMusic ();
-        if ( m_settings.AutostartAmbient ) ToggleAmbience ();
+        if ( m_settings.AutostartMusic ) ToggleSource ( m_sources.Music, true );
+        if ( m_settings.AutostartAmbient ) ToggleSource ( m_sources.Music, true );
     }
 
     private void OnEnable()
@@ -118,16 +118,33 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    private void ToggleSource( AudioSource _source, bool _turnOn )
+    {
+        if ( _turnOn )
+        {
+            // fade in
+            _source.Play ();
+            _source.DOFade ( 1f, m_settings.FadeDuration )
+                   .From ( 0f );
+        }
+        else
+        {
+            // fade out
+            _source.DOFade ( 0f, m_settings.FadeDuration )
+                   .OnComplete ( _source.Stop );
+        }
+    }
+
     private void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if ( scene.name == "MainMenu" )
         {
-            ToggleAmbience ();
+            ToggleSource ( m_sources.Ambience, false );
         }
 
         if (scene.name == "MainGame" )
         {
-            ToggleAmbience ();
+            ToggleSource ( m_sources.Ambience, true );
         }
     }
 
