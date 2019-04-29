@@ -1,0 +1,91 @@
+title: Start
+tags: 
+colorID: 0
+position: 501,-206
+---
+Man, have you ever had a fish? 
+[[Yes.|Yes]]
+[[No.|No]]
+===
+title: Yes
+tags: 
+colorID: 0
+position: 165,-76
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+I'll bite your head off!
+[[I apologize!|upset]]
+<<else>>
+But mine is the fish of a prince!
+He is so special. He wants me to conquer the world for him, so he can be Fish-King over the world. Or queen.
+Sometimes he feels like a queen.
+But anyway, you ever thought about being a slaughtering commander?
+[[Actually, that sounds like a great idea! When do you start?|greatidea]]
+[[No, thank you. But good luck.|goodluck]]
+<<endif>>
+===
+title: greatidea
+tags: 
+colorID: 0
+position: 468,132
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+My fish is suffocating here!
+[[I apologize!|upset]]
+<<else>>
+Dude, don‘t talk that loud! You can‘t let everybody hear that. You will hear from the fish. Or maybe not.
+<<endif>>
+===
+title: goodluck
+tags: 
+colorID: 0
+position: 207,465
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+My fish is suffocating here!
+[[I apologize!|upset]]
+<<else>>
+Haha, yeah. I‘ll see you around.
+<<endif>>
+===
+title: No
+tags: 
+colorID: 0
+position: 827,45
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+My fish is suffocating here!
+[[I apologize!|upset]]
+<<else>>
+Let me tell you, they are so hard to entertain.
+[[Really? What do they need?|prince]]
+[[I thought they are just swimming around and eating?|prince]]
+<<endif>>
+===
+title: prince
+tags: 
+colorID: 0
+position: 765,333
+---
+<<if $lastStraw is true>>
+What kind of customer service are you running here?
+My fish is suffocating here!
+[[I apologize!|upset]]
+<<else>>
+My fish once lived with a prince and now he wants me to conquer the world. And it is really hard to find an army. You ever thought about being a slaughtering commander?
+[[Actually, that sounds like a great idea! When do you start?|greatidea]]
+[[No, thank you. But good luck.|goodluck]]
+<<endif>>
+===
+title: upset
+tags: 
+colorID: 0
+position: -279,245
+---
+Is your head underwater?
+I'll be shore to drown you in bad reviews.
+===

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1855175904034276708}
   - component: {fileID: 1855175904034276699}
   - component: {fileID: 1855175904034276698}
-  - component: {fileID: 1855175904034276710}
+  - component: {fileID: 1374872511627249635}
+  - component: {fileID: 1105852109635666377}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1855175904034276697}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6.666666, y: 6.666666, z: 6.666666}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -47,13 +48,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceText:
-  - {fileID: 4900000, guid: 5302720b591728845a1c40f489214617, type: 3}
+  - {fileID: 4900000, guid: 881620c638deb214e92ff43b262427b5, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
   variableStorage: {fileID: 1855175904034276699}
   dialogueUI: {fileID: 1855175904034276698}
-  startNode: Grandma_1
+  startNode: Start
   startAutomatically: 0
   automaticCommands: 1
 --- !u!114 &1855175904034276699
@@ -98,7 +99,107 @@ MonoBehaviour:
   - {fileID: 0}
   gameControlsContainer: {fileID: 0}
   needsInput: 1
---- !u!114 &1855175904034276710
+  autoSkipAfterSeconds: 3
+  voice: {fileID: 1105852109635666377}
+  voiceSpeed: 4
+--- !u!82 &1374872511627249635
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855175904034276697}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -5001094217974631896, guid: 8650c3c24fb739f45a01cbabd1533469,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1105852109635666377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,8 +208,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1855175904034276697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5db33aa0c9805f04bb526886fd22aab8, type: 3}
+  m_Script: {fileID: 11500000, guid: f85daded5d2ca9a4e8be992fef9eede2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currCountdownValue: 0
-  variableStorage: {fileID: 1855175904034276697}
+  m_soundfiles:
+  - {fileID: 8300000, guid: 94554acb19159b641b348ec2802c870e, type: 3}
+  m_pitchMinMax: {x: 0.7, y: 1.3}
