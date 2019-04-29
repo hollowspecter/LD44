@@ -418,7 +418,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sourceText.Array.data[0]
       value: 
-      objectReference: {fileID: 4900000, guid: f2f93f4134b48b44aa1c2fa37407af28, type: 3}
+      objectReference: {fileID: 4900000, guid: 5d42a33530fa20742bcc1ea91f005d11, type: 3}
     - target: {fileID: 1855175904034276709, guid: ed955f7e69b53854bb5ee121dd32c313,
         type: 3}
       propertyPath: m_LocalPosition.x
