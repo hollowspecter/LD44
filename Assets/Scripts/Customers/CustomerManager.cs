@@ -30,6 +30,7 @@ public class CustomerManager : MonoBehaviour
     }
 
     //has customer an account?
+    //-> gets created in CustomerGenEvent
     protected virtual void Spawn()
     {
         foreach (var customer in cGen)
@@ -55,9 +56,13 @@ public class CustomerManager : MonoBehaviour
         if (next)
         {
             queue.Peek().SetActive(false);
-            queue.Dequeue();
-            queue.Peek().transform.position = spawnPositions[0];
-            queue.Peek().GetComponent<CustomerBrain>().myTurn = true;
+            queue.Dequeue (); // destroy
+            if (queue.Count > 0)
+            {
+                queue.Peek().transform.position = spawnPositions[0];
+                queue.Peek().GetComponent<CustomerBrain>().myTurn = true;
+            }
+            else { firstSpawn = true; }
             next = false;
         }
 
