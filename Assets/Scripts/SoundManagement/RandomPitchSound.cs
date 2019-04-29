@@ -19,6 +19,11 @@ public class RandomPitchSound : MonoBehaviour
 
     public void PlaySound()
     {
+        if ( m_audio == null )
+        {
+            Debug.LogWarning ( "AudioSource is null!", this );
+            return;
+        }
         m_audio.Stop ();
         m_audio.clip = m_soundfiles [ Random.Range ( 0, m_soundfiles.Length ) ];
         m_audio.pitch = Random.Range ( m_pitchMinMax.x, m_pitchMinMax.y );

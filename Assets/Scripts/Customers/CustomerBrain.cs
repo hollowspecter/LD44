@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class CustomerBrain : MonoBehaviour, IDraggableReceiver
@@ -45,6 +46,8 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
     private void OnEnable()
     {
+        // Trigger the Sound
+        SoundManager.Instance.m_doorOpen.PlaySound ();
 
         //TODO: check their Account -> Needs the money tracking system
 
@@ -92,6 +95,12 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         }
 
         _fundCheck = AccountMoney;
+    }
+
+    private void OnDisable()
+    {
+        // Trigger door close sound
+        SoundManager.Instance.m_doorClose.PlaySound ();
     }
 
     private void Update()
@@ -146,6 +155,14 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     #region switch cases
     private void Introduce()
     {
+        // subscribe to buttons
+        // unsubscription is automatically done when amdone is pressed
+        CustomerInteractionUI.Instance.SubscribeCustomer (
+            // called when moremoney button is pressed
+            () => moreMoney = true,
+            // called when amdone button is pressed
+            () => amDone = true );
+
         //possible: needs to give you more money
         //possible: can get money
         //possible: can rob
