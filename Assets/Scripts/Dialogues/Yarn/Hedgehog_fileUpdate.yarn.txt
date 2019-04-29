@@ -68,6 +68,7 @@ If you can?
 [[Don't worry about it! I'm just trying to help|help]]
 [[You are very polite, I appreciate it|nice]]
 [[It's okay, what do you like to do on your free time?|swimmingpool]]
+<<endif>>
 ===
 title: speak
 tags: 
