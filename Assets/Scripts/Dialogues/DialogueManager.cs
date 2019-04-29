@@ -47,6 +47,8 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
     public bool needsInput = true;
     //public bool nothing;
 
+    public float autoSkipAfterSeconds = 3f;
+
     void Awake()
     {
         // Start by hiding the container, line and option buttons
@@ -93,8 +95,11 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         // Wait for any user input
         if(needsInput)
         {
-            while (Input.GetKeyDown("space") == false)
+            float timer = 0f;
+            while (Input.GetKeyDown(KeyCode.Space) == false
+                && timer <= autoSkipAfterSeconds)
             {
+                timer += Time.deltaTime;
                 yield return null;
             }
         }
