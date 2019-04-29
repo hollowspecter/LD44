@@ -1024,11 +1024,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3534616037941894671}
     m_Modifications:
-    - target: {fileID: 8401639902776399303, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 8401639902776399163, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1134,6 +1129,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8401639902776399303, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042718901925712463, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6279887925011230403}
+    - target: {fileID: 6042718900688833503, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6279887925011230403}
+    - target: {fileID: 6042718901134541648, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6279887925011230403}
     - target: {fileID: 3720586754449953241, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1154,21 +1169,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    - target: {fileID: 6042718901134541648, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6279887925011230403}
-    - target: {fileID: 6042718901925712463, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6279887925011230403}
-    - target: {fileID: 6042718900688833503, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6279887925011230403}
     - target: {fileID: 3720586755265438923, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
         type: 3}
       propertyPath: m_IsActive
@@ -1256,16 +1256,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3534616037941894671}
     m_Modifications:
-    - target: {fileID: 1105852109635666377, guid: ed955f7e69b53854bb5ee121dd32c313,
+    - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
         type: 3}
-      propertyPath: m_soundfiles.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: da22e4d6250496140860e82431a57f59, type: 3}
-    - target: {fileID: 1855175904034276697, guid: ed955f7e69b53854bb5ee121dd32c313,
-        type: 3}
-      propertyPath: m_Name
-      value: Dialogue
+      propertyPath: sourceText.Array.size
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: sourceText.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 28e5043c62de3a147bdbfa9d5b9c2ce9, type: 3}
+    - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: startNode
+      value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: sourceText.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: edfb8cf57aad8b44595110bd8b253ad1, type: 3}
     - target: {fileID: 1855175904034276709, guid: ed955f7e69b53854bb5ee121dd32c313,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1351,15 +1361,25 @@ PrefabInstance:
       propertyPath: optionButtons.Array.data[2]
       value: 
       objectReference: {fileID: 4987426139987556710}
-    - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
+    - target: {fileID: 1855175904034276697, guid: ed955f7e69b53854bb5ee121dd32c313,
         type: 3}
-      propertyPath: sourceText.Array.data[0]
+      propertyPath: m_Name
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105852109635666377, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: m_soundfiles.Array.data[0]
       value: 
-      objectReference: {fileID: 4900000, guid: 28e5043c62de3a147bdbfa9d5b9c2ce9, type: 3}
-    - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
+      objectReference: {fileID: 8300000, guid: da22e4d6250496140860e82431a57f59, type: 3}
+    - target: {fileID: 1105852109635666377, guid: ed955f7e69b53854bb5ee121dd32c313,
         type: 3}
-      propertyPath: startNode
-      value: Start
+      propertyPath: m_pitchMinMax.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105852109635666377, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: m_pitchMinMax.y
+      value: 1.7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1855175904034276710, guid: ed955f7e69b53854bb5ee121dd32c313, type: 3}
@@ -1407,16 +1427,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3534616037941894671}
     m_Modifications:
-    - target: {fileID: 2807712944880615960, guid: 9688d64004433c535923771c5252b348,
-        type: 3}
-      propertyPath: m_Name
-      value: CustomerDispensary
-      objectReference: {fileID: 0}
     - target: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
         type: 3}
       propertyPath: customerBrain
       value: 
       objectReference: {fileID: 5205697144947192116}
+    - target: {fileID: 2807712944880615960, guid: 9688d64004433c535923771c5252b348,
+        type: 3}
+      propertyPath: m_Name
+      value: CustomerDispensary
+      objectReference: {fileID: 0}
     - target: {fileID: 1475306271940872271, guid: 9688d64004433c535923771c5252b348,
         type: 3}
       propertyPath: m_LocalPosition.y

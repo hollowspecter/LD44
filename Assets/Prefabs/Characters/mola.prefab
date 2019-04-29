@@ -414,16 +414,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 711611375084092173}
     m_Modifications:
-    - target: {fileID: 2807712944880615960, guid: 9688d64004433c535923771c5252b348,
-        type: 3}
-      propertyPath: m_Name
-      value: CustomerDispensary
-      objectReference: {fileID: 0}
     - target: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
         type: 3}
       propertyPath: customerBrain
       value: 
       objectReference: {fileID: 2009781703295635792}
+    - target: {fileID: 2807712944880615960, guid: 9688d64004433c535923771c5252b348,
+        type: 3}
+      propertyPath: m_Name
+      value: CustomerDispensary
+      objectReference: {fileID: 0}
     - target: {fileID: 1475306271940872271, guid: 9688d64004433c535923771c5252b348,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -516,11 +516,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 711611375084092173}
     m_Modifications:
-    - target: {fileID: 1855175904034276697, guid: ed955f7e69b53854bb5ee121dd32c313,
+    - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
         type: 3}
-      propertyPath: m_Name
-      value: Dialogue
+      propertyPath: sourceText.Array.size
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: sourceText.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 243dd22aaa982054ea193d5e01790667, type: 3}
+    - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: sourceText.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: edfb8cf57aad8b44595110bd8b253ad1, type: 3}
     - target: {fileID: 1855175904034276709, guid: ed955f7e69b53854bb5ee121dd32c313,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -606,11 +616,26 @@ PrefabInstance:
       propertyPath: optionButtons.Array.data[2]
       value: 
       objectReference: {fileID: 2800876535209029046}
-    - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
+    - target: {fileID: 1855175904034276697, guid: ed955f7e69b53854bb5ee121dd32c313,
         type: 3}
-      propertyPath: sourceText.Array.data[0]
+      propertyPath: m_Name
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105852109635666377, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: m_soundfiles.Array.data[0]
       value: 
-      objectReference: {fileID: 4900000, guid: fc452264046a5fc4482259a140b2b97b, type: 3}
+      objectReference: {fileID: 8300000, guid: c9ba52dcb6343a547afc779ee3a13d44, type: 3}
+    - target: {fileID: 1105852109635666377, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: m_pitchMinMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105852109635666377, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: m_pitchMinMax.y
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed955f7e69b53854bb5ee121dd32c313, type: 3}
 --- !u!1 &7591808608331989385 stripped
@@ -656,11 +681,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 711611375084092173}
     m_Modifications:
-    - target: {fileID: 8401639902776399303, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
-        type: 3}
-      propertyPath: m_Name
-      value: DialogueCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 8401639902776399163, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -766,15 +786,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6042718901134541648, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
+    - target: {fileID: 8401639902776399303, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7591808608331989386}
-    - target: {fileID: 6042718901134541648, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetOption
+      propertyPath: m_Name
+      value: DialogueCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 6042718901925712463, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
         type: 3}
@@ -792,6 +807,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7591808608331989386}
     - target: {fileID: 6042718900688833503, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetOption
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042718901134541648, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7591808608331989386}
+    - target: {fileID: 6042718901134541648, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetOption
