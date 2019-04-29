@@ -45,15 +45,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   simulationTimeFactor: 1
-  timeUntilDayEnds: 800
+  timeUntilDayEnds: 300
   score:
     happiness: 0
-    lostMoney: 0
-    extraMoney: 0
-  preGame:
-    stateObjects: []
+    moneyDifference: 0
   inGame:
     stateObjects: []
-    tellerMachine: {fileID: 0}
   endOfDay:
-    stateObjects: []
+    stateObjects:
+    - {fileID: 0}
