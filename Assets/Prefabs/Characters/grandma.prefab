@@ -1358,7 +1358,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sourceText.Array.data[0]
       value: 
-      objectReference: {fileID: 4900000, guid: 06966d72d6683524399d531a01b34c30, type: 3}
+      objectReference: {fileID: 4900000, guid: 28e5043c62de3a147bdbfa9d5b9c2ce9, type: 3}
     - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
         type: 3}
       propertyPath: startNode
