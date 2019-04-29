@@ -12,7 +12,7 @@ public class App : MonoBehaviour {
     public BoolReactiveProperty EndOfDayActive { private set; get; }
 
     public float simulationTimeFactor = 1F;
-    public float timeUntilDayEnds = 800F;
+    public float timeUntilDayEnds = 20F;
 
     public StateMachine<App> stateMachine;
     [Serializable]

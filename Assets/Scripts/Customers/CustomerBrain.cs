@@ -141,8 +141,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             GiveMoney();
             moreMoney = false;
         }
-
-
     }
 
     private void WaitingInQueue()
@@ -154,9 +152,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         
         if (_timePast > _maxTime)
         {
-            print("I am going home!");
             hapinessLevel = hapinessLevel-2;
-            amDone = true;
         }
     }
     #region switch cases

@@ -12,6 +12,7 @@ public class CustomerManager : MonoBehaviour
     public Vector3[] spawnPositions;
     
     public Queue<GameObject> queue = new Queue<GameObject>();
+    public LinkedList<GameObject> llQueue= new LinkedList<GameObject>();
     private float _timeToQueue = 1F;
     private bool _timeSet = false;
     private List<string> names = new List<string>();
@@ -61,21 +62,34 @@ public class CustomerManager : MonoBehaviour
         //if the CustomerBrain knows it is done and has moved away -> dequeue it 
         if (next)
         {
-            queue.Peek().SetActive(false);
-            queue.Dequeue (); // destroy
-            if (queue.Count > 0)
+            llQueue.First.Value.SetActive(false);
+            llQueue.RemoveFirst();
+
+            if (llQueue.Count > 0)
             {
-                queue.Peek().transform.position = spawnPositions[0];
-                queue.Peek().GetComponent<CustomerBrain>().myTurn = true;
+                UpdateQueuePositions();
+                llQueue.First.Value.GetComponent<CustomerBrain>().myTurn = true;
             }
             else { firstSpawn = true; }
             next = false;
+            
+            //old system with queue<>
+//            queue.Peek().SetActive(false);
+//            queue.Dequeue (); // destroy
+//            if (queue.Count > 0)
+//            {
+//                queue.Peek().transform.position = spawnPositions[0];
+//                queue.Peek().GetComponent<CustomerBrain>().myTurn = true;
+//            }
+//            else { firstSpawn = true; }
+//            next = false;
         }
 
         if (_timeToQueue <= 0)
             {_timeSet = false;}
-        
-        if (!(_timeToQueue <= 0) || queue.Count > maximumCustomer) return;
+
+        if (!(_timeToQueue <= 0) || llQueue.Count > maximumCustomer) return;
+//        if (!(_timeToQueue <= 0) || queue.Count > maximumCustomer) return;
         
         //try to add/spawn new character in queue, if it fails to often it just leaves it be
         var enqueued = false;
@@ -87,22 +101,51 @@ public class CustomerManager : MonoBehaviour
             
             countTries++;
             if (countTries > names.Count + 3) break;
-            //check if character is already enqueued
-            if (!queue.Contains(Customers[nextCharacter]))
+
+            if (!llQueue.Contains(Customers[nextCharacter]))
             {
                 var c = Customers[nextCharacter];
                 //set a character active and add to queue
                 c.SetActive(true);
-                c.transform.position = spawnPositions[Mathf.Max(0, queue.Count)];
+                c.transform.position = spawnPositions[Mathf.Max(0, llQueue.Count)];
                 if (firstSpawn)
                 {
                     c.GetComponent<CustomerBrain>().myTurn = true;
                     firstSpawn = false;
                 }
-                queue.Enqueue(Customers[nextCharacter]);
+
+                llQueue.AddLast(Customers[nextCharacter]);
                 enqueued = true;
                 break;
             }
+            
+//            //check if character is already enqueued
+//            if (!queue.Contains(Customers[nextCharacter]))
+//            {
+//                var c = Customers[nextCharacter];
+//                //set a character active and add to queue
+//                c.SetActive(true);
+//                c.transform.position = spawnPositions[Mathf.Max(0, queue.Count)];
+//                if (firstSpawn)
+//                {
+//                    c.GetComponent<CustomerBrain>().myTurn = true;
+//                    firstSpawn = false;
+//                }
+//                queue.Enqueue(Customers[nextCharacter]);
+//                enqueued = true;
+//                break;
+//            }
         }
+    }
+
+    private void UpdateQueuePositions()
+    {
+        llQueue.First.Value.transform.position = spawnPositions[0];
+        if (llQueue.First.Next != null) llQueue.First.Next.Value.transform.position = spawnPositions[1];
+        if (llQueue.First.Next == null) return;
+        if (llQueue.First.Next.Next == null) return;
+        llQueue.First.Next.Next.Value.transform.position = spawnPositions[2];
+        if (llQueue.First.Next.Next.Next != null)
+            llQueue.First.Next.Next.Next.Value.transform.position = spawnPositions[3];
     }
 }

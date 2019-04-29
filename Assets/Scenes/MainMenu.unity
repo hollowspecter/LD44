@@ -1930,6 +1930,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 665077617, guid: 474ce3703e9bebb41b48063a16cb0999, type: 3}
+      propertyPath: m_text
+      value: "- Benedikt Kirchmeier\n- Diana Alves\n- Ingelis Wipfelder\n- Mathew
+        Varkki @rayvshimself\n- Patricia Cotrim\n- Sam B\xE4umer\n- Vivien Baguio
+        @hollowspecter\n\nMusic by:\n\"Lobby Time\" Kevin MacLeod (incompetech.com)\nLicensed
+        under Creative Commons: By Attribution 3.0 License http://creativecommons.org/licenses/by/3.0/\n\nSounds
+        from Soniss and freesfx.co.uk"
+      objectReference: {fileID: 0}
+    - target: {fileID: 665077617, guid: 474ce3703e9bebb41b48063a16cb0999, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 345
+      objectReference: {fileID: 0}
+    - target: {fileID: 665077617, guid: 474ce3703e9bebb41b48063a16cb0999, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 665077617, guid: 474ce3703e9bebb41b48063a16cb0999, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 54
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 474ce3703e9bebb41b48063a16cb0999, type: 3}
 --- !u!224 &192519840500172777 stripped
@@ -1953,7 +1973,7 @@ PrefabInstance:
     - target: {fileID: 1055237675710303254, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1055237675710303249, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
         type: 3}
