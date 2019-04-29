@@ -43,7 +43,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     private int _money;
     private int _fundCheck;
     private bool introduced = false;
-    private bool lastStrawD;
 
     // Properties
     private bool HasAccount { get { return TellerMachine.Instance.accounts.ContainsKey ( accountNumber ); } }
@@ -65,9 +64,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         amDone = false;
         introduced = false;
         hapinessLevel = 5;
-
-        //check if you are fucking up the dialogue
-        lastStrawD = gameObject.GetComponentInChildren<TimerDialogue>().lastStrawD;
 
         //setup their action they want to do
         if (Random.Range(0, 100) > 95) //5 percent chance
@@ -271,14 +267,13 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
                     break;
                 }
             case "lastStraw":
-                if (!lastStrawD)
+                if (!gameObject.GetComponentInChildren<TimerDialogue> ().lastStrawD )
                 {
                     break;
                 }
                 else
                 {
                     hapinessLevel -= 3;
-                    lastStrawD = false;
                     break;
                 }                
             default:
