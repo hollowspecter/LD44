@@ -7,20 +7,20 @@ using Yarn;
 public class TimerDialogue : MonoBehaviour
 {
     public float currCountdownValue;
+    [NonSerialized]
+    public bool lastStrawD = false;
     public GameObject variableStorage;
 
     public void Update()
     {
-        //if (currCountdownValue == 0)
+        if (currCountdownValue == 0)
+        {
+            var varStore = variableStorage.GetComponent<VariableStorage>();
+            var valueToSet = new Yarn.Value(true);
+            varStore.SetValue("$lastStraw", valueToSet);
+            lastStrawD = true;
+        }
 
-        var varStore = variableStorage.GetComponent<VariableStorage>();
-        var valueToSet = new Yarn.Value(true);
-        varStore.SetValue("$lastStraw", valueToSet);
-        //Debug.Log(valueToSet);
-
-        var newName = new Yarn.Value("GRANDMA");
-        varStore.SetValue("$newName", newName);
-        //Debug.Log(newName);
     }
 
     public void StartCount()
