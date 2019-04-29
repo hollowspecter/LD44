@@ -2,11 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class App : MonoBehaviour {
     public static App instance;
     public float time;
     public GameObject soundManagerPrefab;
+
+    public BoolReactiveProperty EndOfDayActive { private set; get; }
 
     public float simulationTimeFactor = 1F;
     public float timeUntilDayEnds = 800F;
@@ -61,9 +64,7 @@ public class App : MonoBehaviour {
 
         public override void Enter(){
             base.Enter();
-            App r = representation;
-            // TODO show score etc...
-            print("Total happiness: " + r.score.happiness);
+            representation.EndOfDayActive.Value = true;
         }
     }
     [Serializable]
@@ -81,11 +82,14 @@ public class App : MonoBehaviour {
         }
         instance = this;
         inGame.Init(this);
+        endOfDay.Init ( this );
         stateMachine = new StateMachine<App>();
         if (SoundManager.Instance == null)
         {
             Instantiate ( soundManagerPrefab );
         }
+
+        EndOfDayActive = new BoolReactiveProperty ( false );
     }
     private void Start()
     {

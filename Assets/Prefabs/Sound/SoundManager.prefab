@@ -142,8 +142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_soundfiles:
-  - {fileID: 8300000, guid: 24839310e9be24b40972de186b50264a, type: 3}
-  - {fileID: 8300000, guid: 2236630a2bde1054d9710660c9d81063, type: 3}
+  - {fileID: 8300000, guid: f92411073b211144aa7317d1d6bb87cd, type: 3}
+  - {fileID: 8300000, guid: 51a5b815cb0931145b3cb8da8a2e4792, type: 3}
+  - {fileID: 8300000, guid: ff899c95751a08f459f449c8147b20b6, type: 3}
   m_pitchMinMax: {x: 0.7, y: 1.3}
 --- !u!1 &1104912254
 GameObject:
@@ -876,8 +877,8 @@ MonoBehaviour:
     Ambience: {fileID: 1985078187}
     SFX: {fileID: 1435042661}
   m_settings:
-    AutostartMusic: 0
-    AutostartAmbient: 0
+    AutostartMusic: 1
+    AutostartAmbient: 1
     FadeDuration: 3
   m_doorOpen: {fileID: 2056198279}
   m_doorClose: {fileID: 797459562}
