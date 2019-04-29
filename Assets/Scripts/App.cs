@@ -68,8 +68,7 @@ public class App : MonoBehaviour {
     [Serializable]
     public class Score {
         public float happiness = 0f;
-        public float lostMoney = 0f;
-        public float extraMoney = 0f;
+        public float moneyDifference = 0f;
     }
     public Score score;
 
