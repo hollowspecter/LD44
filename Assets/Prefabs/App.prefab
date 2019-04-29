@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
+  soundManagerPrefab: {fileID: 8882521893668518125, guid: 66d533a3b456bae42a4e9ad4969c3df5,
+    type: 3}
   simulationTimeFactor: 1
   timeUntilDayEnds: 300
   score:

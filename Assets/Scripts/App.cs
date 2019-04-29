@@ -6,6 +6,7 @@ using UnityEngine;
 public class App : MonoBehaviour {
     public static App instance;
     public float time;
+    public GameObject soundManagerPrefab;
 
     public float simulationTimeFactor = 1F;
     public float timeUntilDayEnds = 800F;
@@ -70,7 +71,7 @@ public class App : MonoBehaviour {
         public float happiness = 0f;
         public float moneyDifference = 0f;
     }
-    public Score score;
+    public Score score = new Score ();
 
     public InGame inGame;
     public EndOfDay endOfDay;
@@ -81,6 +82,10 @@ public class App : MonoBehaviour {
         instance = this;
         inGame.Init(this);
         stateMachine = new StateMachine<App>();
+        if (SoundManager.Instance == null)
+        {
+            Instantiate ( soundManagerPrefab );
+        }
     }
     private void Start()
     {
