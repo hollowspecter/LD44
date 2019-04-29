@@ -8,6 +8,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TellerMachine : MonoBehaviour, IDraggableReceiver {
+    // Singleton
+    public static TellerMachine Instance { get; private set; }
+
     public Dispensary dispensary;
     public Dictionary<string,Account> accounts = new Dictionary<string, Account>();
     public string firstNameField { get; set;}
@@ -36,6 +39,17 @@ public class TellerMachine : MonoBehaviour, IDraggableReceiver {
         accounts.Clear();
         receiver = null;
     }
+
+    private void Awake()
+    {
+        // Singleton
+        if ( Instance != null && Instance != this )
+        {
+            Destroy ( gameObject );
+        }
+        Instance = this;
+    }
+
     private void Update(){
         Account a;
         if(TryGetAccount(accountNumberField,out a)){
