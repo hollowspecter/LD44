@@ -14,8 +14,6 @@ public class App : MonoBehaviour {
     [Serializable]
     public class State : StateMachine<App>.State
     {
-
-        
         public GameObject[] stateObjects;
         public State(App representation) : base(representation) { }
 
@@ -45,31 +43,14 @@ public class App : MonoBehaviour {
     }
 
     [Serializable]
-    public class PreGame : State
-    {
-        public PreGame(App representation) : base(representation) { }
-        public override void Update(){
-            base.Update();
-            var r = representation;
-            if(Input.GetKeyDown(KeyCode.Space)){
-                r.stateMachine.SetState(r.inGame);
-            }
-        }
-    }    
-    [Serializable]
     public class InGame : State
     {
-        public TellerMachine tellerMachine;
         public InGame(App representation) : base(representation) { }
         public override void Enter(){
             base.Enter();
         }
         public override void Update(){
             base.Update();
-            var r = representation;
-            if(Input.GetKeyDown(KeyCode.Escape)){
-                r.stateMachine.SetState(r.preGame);
-            }
         }
     }
     [Serializable]
@@ -79,7 +60,7 @@ public class App : MonoBehaviour {
 
         public override void Enter(){
             base.Enter();
-            var r = representation;
+            App r = representation;
             // TODO show score etc...
             print("Total happiness: " + r.score.happiness);
         }
@@ -92,7 +73,6 @@ public class App : MonoBehaviour {
     }
     public Score score;
 
-    public PreGame preGame;
     public InGame inGame;
     public EndOfDay endOfDay;
     private void Awake(){
@@ -100,13 +80,12 @@ public class App : MonoBehaviour {
             throw new Exception("Only one App allowed!");
         }
         instance = this;
-        preGame.Init(this);
         inGame.Init(this);
         stateMachine = new StateMachine<App>();
     }
     private void Start()
     {
-        stateMachine.SetState(preGame);
+        stateMachine.SetState(inGame);
     }
     private void Update()
     {

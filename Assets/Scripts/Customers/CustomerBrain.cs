@@ -36,11 +36,12 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     private float _timePast;
     private int _moneyWanting;
     private int _money;
-    private int _accountMoney = 230;
     private int _fundCheck;
     private bool introduced = false;
-    
 
+    // Properties
+    private bool HasAccount { get { return TellerMachine.Instance.accounts.ContainsKey ( accountNumber ); } }
+    private int AccountMoney { get { return ( int ) TellerMachine.Instance.accounts [ accountNumber ].balance; } }
 
     private void OnEnable()
     {
@@ -77,20 +78,20 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         _moneyWanting = (int)Random.Range(moneyToUse.minValue,moneyToUse.maxValue);
         _money = _moneyWanting + Random.Range(-moneyRange, moneyRange);
 
-        //if the account has no money, they will change their action to deposit
-        if (_accountMoney == 0)
+        // if the account has no money, they will change their action to deposit
+        if (AccountMoney <= 1f)
         {
             action = "deposit";
         }
  
         //if they want to withdraw/exchange/transfer and "money" is higher than the total
         //on their bank account, the total will be the new "money"
-        if (_accountMoney < _money && _accountMoney != 0)
+        if (AccountMoney < _money && AccountMoney != 0)
         {
-            _money = _accountMoney;
+            _money = AccountMoney;
         }
 
-        _fundCheck = _accountMoney;
+        _fundCheck = AccountMoney;
     }
 
     private void Update()
@@ -188,7 +189,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         switch (action)
         {
             case "deposit":
-                if (_accountMoney == _moneyWanting + _fundCheck)
+                if (AccountMoney == _moneyWanting + _fundCheck)
                 {
                     break;
                 }
@@ -198,7 +199,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
                     break;
                 }
             case "withdraw":
-                if (_accountMoney == _fundCheck - _moneyWanting)
+                if (AccountMoney == _fundCheck - _moneyWanting)
                 {
                     break;
                 }
