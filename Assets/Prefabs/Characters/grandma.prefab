@@ -408,7 +408,6 @@ MonoBehaviour:
   moreMoney: 0
   myTurn: 0
   amDone: 0
-  speechObject: {fileID: 0}
   dispensary: {fileID: 8850214891724533748}
   dialogueRunner: {fileID: 6279887925011230461}
 --- !u!1 &3534616038121924315
@@ -1418,6 +1417,16 @@ PrefabInstance:
       propertyPath: customerBrain
       value: 
       objectReference: {fileID: 5205697144947192116}
+    - target: {fileID: 1475306271940872271, guid: 9688d64004433c535923771c5252b348,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.085
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475306271940872271, guid: 9688d64004433c535923771c5252b348,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.272
+      objectReference: {fileID: 0}
     - target: {fileID: 512649747061044903, guid: 9688d64004433c535923771c5252b348,
         type: 3}
       propertyPath: m_LocalPosition.x
