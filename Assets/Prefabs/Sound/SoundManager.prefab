@@ -142,8 +142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_soundfiles:
-  - {fileID: 8300000, guid: 24839310e9be24b40972de186b50264a, type: 3}
-  - {fileID: 8300000, guid: 2236630a2bde1054d9710660c9d81063, type: 3}
+  - {fileID: 8300000, guid: f92411073b211144aa7317d1d6bb87cd, type: 3}
+  - {fileID: 8300000, guid: 51a5b815cb0931145b3cb8da8a2e4792, type: 3}
+  - {fileID: 8300000, guid: ff899c95751a08f459f449c8147b20b6, type: 3}
   m_pitchMinMax: {x: 0.7, y: 1.3}
 --- !u!1 &1104912254
 GameObject:
