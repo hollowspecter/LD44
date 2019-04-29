@@ -48,6 +48,9 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
     //public bool nothing;
 
     public float autoSkipAfterSeconds = 3f;
+    public RandomPitchSound voice;
+    [Header("Every n-th letter is voiced")]
+    public int voiceSpeed = 4;
 
     void Awake()
     {
@@ -77,9 +80,11 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         {
             // Display the line one character at a time
             var stringBuilder = new StringBuilder();
-
+            int count = 0;
             foreach (char c in line.text)
             {
+                count++;
+                if ( count % voiceSpeed == 0 ) voice.PlaySound ();
                 stringBuilder.Append(c);
                 lineText.text = stringBuilder.ToString();
                 yield return new WaitForSeconds(textSpeed);
@@ -99,7 +104,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
             while (Input.GetKeyDown(KeyCode.Space) == false
                 && timer <= autoSkipAfterSeconds)
             {
-                timer += Time.deltaTime;
+                timer+=Time.deltaTime;
                 yield return null;
             }
         }
