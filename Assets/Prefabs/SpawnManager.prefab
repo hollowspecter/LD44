@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0cd68ae1c38e1f44c97f810d09ee3150, type: 2}
   - {fileID: 11400000, guid: f5c1fbe042218df43b9b16a76ecafd34, type: 2}
   - {fileID: 11400000, guid: 878563ef22f078341a952c326813efc5, type: 2}
-  maximumCustomer: 4
+  maximumCustomer: 3
   minTime: 5
   maxTime: 15
   spawnPositions:
@@ -58,4 +58,3 @@ MonoBehaviour:
   - {x: -1.448, y: -0.094, z: 0.617}
   - {x: -1.229, y: 0, z: 1.412}
   - {x: 2.29, y: 0, z: 1.8}
-  dispensary: {fileID: 0}
