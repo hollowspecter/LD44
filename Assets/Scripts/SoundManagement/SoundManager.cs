@@ -18,6 +18,7 @@ public class SoundManager : MonoBehaviour
 
     public RandomPitchSound m_doorOpen;
     public RandomPitchSound m_doorClose;
+    public RandomPitchSound m_coinDrop;
 
     [System.Serializable]
     public class Sources
