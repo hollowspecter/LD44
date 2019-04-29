@@ -130,11 +130,15 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             introduced = true;
         }
 
-        if (moreMoney)
+        if (moreMoney && action == "deposit")
         {
-            _money = (_moneyWanting/2) + Random.Range(-moneyRange, moneyRange);
+            //_money = (_moneyWanting/2) + Random.Range(-moneyRange, moneyRange);
             //plz don't overwrite this again
-            GiveMoney();
+            if(_money>0){
+                GiveMoney();
+            }else{
+                dialogueRunner.dialogueUI.InstantMessage("I already gave you my money!");
+            }
             moreMoney = false;
         }
 
@@ -302,6 +306,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     {
         //throw amount of _money
         dispensary.DispenseChange(_money);
+        _money = 0;
     }
     
     //TODO: able to give customers money

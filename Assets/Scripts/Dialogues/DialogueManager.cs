@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Text;
@@ -236,5 +236,22 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         }
 
         yield break;
+    }
+    public bool instantMessage = false;
+    public IEnumerator DoInstantMessage(string s ){
+        instantMessage = true;
+        bool wasActive = instance.lineText.gameObject.activeInHierarchy;
+        lineText.gameObject.SetActive(true);
+        boxText.SetActive(true);
+        lineText.text = s;
+        yield return new WaitForSeconds(1f);
+        lineText.gameObject.SetActive(wasActive);
+       boxText.SetActive(wasActive);
+        instantMessage = false;
+    }
+    public override void InstantMessage(string s ){        
+        if(!instantMessage){                    
+            StartCoroutine(DoInstantMessage(s));
+        }
     }
 }

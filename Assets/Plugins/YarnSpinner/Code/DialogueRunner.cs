@@ -437,6 +437,8 @@ namespace Yarn.Unity
     /// Scripts that can act as the UI for the conversation should subclass this
     public abstract class DialogueUIBehaviour : MonoBehaviour
     {
+        public virtual void InstantMessage(string s ){}
+
         /// A conversation has started.
         public virtual IEnumerator DialogueStarted() {
             // Default implementation does nothing.
