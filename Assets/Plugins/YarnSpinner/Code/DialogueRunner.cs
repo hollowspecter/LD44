@@ -62,7 +62,7 @@ namespace Yarn.Unity
         public Yarn.Unity.DialogueUIBehaviour dialogueUI;
 
         /// Which node to start from
-        private string startNode = Yarn.Dialogue.DEFAULT_START;
+        public string startNode = Yarn.Dialogue.DEFAULT_START;
 
         /// Whether we should start dialogue when the scene starts
         public bool startAutomatically = true;
@@ -141,12 +141,12 @@ namespace Yarn.Unity
             }
         }
 
-        private void Update()
-        {
-            //assign to active character
-            activeCharacter = GameObject.FindGameObjectWithTag("activecharacter");
-            startNode = activeCharacter.gameObject.scene.name;
-        }
+        //private void Update()
+        //{
+        //    //assign to active character
+        //    activeCharacter = GameObject.FindGameObjectWithTag("activecharacter");
+        //    startNode = activeCharacter.gameObject.scene.name;
+        //}
 
         /// Add a string of text to a script
         public void AddScript(string text) {
