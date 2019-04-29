@@ -47,6 +47,11 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
     public bool needsInput = true;
     //public bool nothing;
 
+    public float autoSkipAfterSeconds = 3f;
+    public RandomPitchSound voice;
+    [Header("Every n-th letter is voiced")]
+    public int voiceSpeed = 4;
+
     void Awake()
     {
         // Start by hiding the container, line and option buttons
@@ -75,9 +80,11 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         {
             // Display the line one character at a time
             var stringBuilder = new StringBuilder();
-
+            int count = 0;
             foreach (char c in line.text)
             {
+                count++;
+                if ( count % voiceSpeed == 0 ) voice.PlaySound ();
                 stringBuilder.Append(c);
                 lineText.text = stringBuilder.ToString();
                 yield return new WaitForSeconds(textSpeed);
@@ -93,8 +100,11 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         // Wait for any user input
         if(needsInput)
         {
-            while (Input.anyKeyDown == false)
+            float timer = 0f;
+            while (Input.GetKeyDown(KeyCode.Space) == false
+                && timer <= autoSkipAfterSeconds)
             {
+                timer+=Time.deltaTime;
                 yield return null;
             }
         }
@@ -132,12 +142,12 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         }
 
         //start the timer of how long the player takes to answer
-        count = true;
-        if (count == true)
-        {
-            optionButtons[0].GetComponent<TimerDialogue>().StartCount();
-            count = false;
-        }
+        //count = true;
+        //if (count == true)
+        //{
+        //    optionButtons[0].GetComponent<TimerDialogue>().StartCount();
+        //    count = false;
+        //}
 
         // Record that we're using it
         SetSelectedOption = optionChooser;

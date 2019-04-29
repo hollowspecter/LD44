@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UniRx;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -22,14 +23,19 @@ public class CustomerManager : MonoBehaviour
     public Dictionary<string,GameObject> Customers = new Dictionary<string, GameObject>();
     
     private Transform _childTransform;
-    public Dispensary dispensary;
-    
+
     private void Start()
     {
+        // Deactivate spawner if end of day is reached
+        App.instance.EndOfDayActive
+            .Subscribe ( x => { if ( x ) gameObject.SetActive ( false ); } )
+            .AddTo ( this );
+
         Spawn();
     }
 
     //has customer an account?
+    //-> gets created in CustomerGenEvent
     protected virtual void Spawn()
     {
         foreach (var customer in cGen)
@@ -56,9 +62,13 @@ public class CustomerManager : MonoBehaviour
         if (next)
         {
             queue.Peek().SetActive(false);
-            queue.Dequeue();
-            queue.Peek().transform.position = spawnPositions[0];
-            queue.Peek().GetComponent<CustomerBrain>().myTurn = true;
+            queue.Dequeue (); // destroy
+            if (queue.Count > 0)
+            {
+                queue.Peek().transform.position = spawnPositions[0];
+                queue.Peek().GetComponent<CustomerBrain>().myTurn = true;
+            }
+            else { firstSpawn = true; }
             next = false;
         }
 

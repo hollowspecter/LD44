@@ -16,6 +16,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private Settings m_settings;
 
+    public RandomPitchSound m_doorOpen;
+    public RandomPitchSound m_doorClose;
+    public RandomPitchSound m_coinDrop;
+
     [System.Serializable]
     public class Sources
     {
@@ -93,8 +97,13 @@ public class SoundManager : MonoBehaviour
         m_sounds.Add ( nameof ( m_soundDb.Misc.BigWoosh ), m_soundDb.Misc.BigWoosh );
 
         // Dialog
+<<<<<<< HEAD
         m_sounds.Add(nameof(m_soundDb.Dialog.oldlady), m_soundDb.Dialog.oldlady);
         m_sounds.Add(nameof(m_soundDb.Dialog.tryin), m_soundDb.Dialog.tryin);
+=======
+        m_sounds.Add ( nameof ( m_soundDb.Dialog.oldlady ), m_soundDb.Dialog.oldlady );
+        m_sounds.Add ( nameof ( m_soundDb.Dialog.tryin ), m_soundDb.Dialog.tryin );
+>>>>>>> develop
     }
 
     private void ToggleSource( AudioSource _source )

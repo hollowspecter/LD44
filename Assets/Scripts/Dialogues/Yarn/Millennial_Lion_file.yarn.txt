@@ -1,0 +1,61 @@
+title: Start
+tags: 
+colorID: 0
+position: 550,-127
+---
+<<Millennial Lion>> Uh, suh!? 
+-> typing sound, flashlight
+<<Millennial Lion>> Bruh...? My bae just posted this v salty thing about me. She met that basic bitch that doesn't fit into our epic fam at all! So I suggested to ghost her. And now she acts all cray! As if I am the cheesy one!
+<<Self>> [[Maybe it is not a bad thing your group gets a new member. You could try to get to know the new girl. Maybe you are just afraid to lose her.|advice]]
+<<Self>> [[Seriously? That is so random. I know TFW when you're low key FOMO. But you can't let yourself be trolled by that. You are a v dank guy so do something beautiful to show her!|comfort]]
+===
+title: advice
+tags: 
+colorID: 0
+position: 289,-29
+---
+<<Millennial Lion>> I mean, adulting often seems high-key to be the best solution. And she is my hunty but she can be drama AF. 
+<<Millennial Lion>> Haha, she just posted a picture of her cat sleeping. Awesome! I am also a swol cat! Slayed it! 
+<<Millennial Lion>> You think there is a hidden meaning behind cats?
+<<Self>> [[Of course, they are low key the secret rulers of the world.|rulers]]
+<<Self>> [[I mean, they are pets and normal animals... Can there be something hidden about that?|normal]]
+<<Self>> [[Sure! They are so extra and amazing!|extra]]
+===
+title: comfort
+tags: 
+colorID: 0
+position: 882,-41
+---
+<<Millennial Lion>> Yaas, right?! She should appreciate the trill me. That new girl should just swerve! I mean who does she thinks she is? Basic stan she is!
+<<Millenial Lion>> Haha, my bae just posted a picture of her cat sleeping. Ugh, I hate when she has fun without me. Selfie time!
+<<Millennial Lion>> You think there is a hidden meaning behind cats?
+<<Self>> [[Of course, they are low key the secret rulers of the world.|rulers]]
+<<Self>> [[I mean, they are pets and normal animals... Can there be something hidden about that?|normal]]
+<<Self>> [[Sure! They are so extra and amazing!|extra]]
+===
+title: rulers
+tags: 
+colorID: 0
+position: 561,94
+---
+<<Millennial Lion>> Bruh! You think so? FML why am I not a ruler of the world? 
+<<Millennial Lion>> Oh, maybe it so so secret even I don't know about it! Aw, that is so awesome! I need to roar that on my lionstagram! Bye Felicia!
+-> leaves
+===
+title: normal
+tags: 
+colorID: 0
+position: 558,334
+---
+<<Millennial Lion>> Bruh? You are so ridiculous. Cats are anything but generic! 
+<<Millennial Lion>> But anyway... Enough adulting for today. You should give yourself a break too. Bye Felicia!
+-> Leaves
+===
+title: extra
+tags: 
+colorID: 0
+position: 565,564
+---
+<<Millenial Lionn>> Lit! But sometimes they seem real glassed! But anyway... Enough adulting for today, right? Haha. Bye Felicia!
+-> Leaves
+===

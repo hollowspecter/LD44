@@ -6,36 +6,39 @@ using Yarn;
 
 public class TimerDialogue : MonoBehaviour
 {
+    
     public float currCountdownValue;
+    [NonSerialized]
+    public bool lastStrawD = false;
     public GameObject variableStorage;
 
     public void Update()
     {
-        //if (currCountdownValue == 0)
-
-        var varStore = variableStorage.GetComponent<VariableStorage>();
-        var valueToSet = new Yarn.Value(true);
-        varStore.SetValue("$lastStraw", valueToSet);
-        //Debug.Log(valueToSet);
-
-        var newName = new Yarn.Value("GRANDMA");
-        varStore.SetValue("$newName", newName);
-        //Debug.Log(newName);
+        if (currCountdownValue >= 9)
+        {
+            var varStore = variableStorage.GetComponent<VariableStorage>();
+            var valueToSet = new Yarn.Value(true);
+            varStore.SetValue("$lastStraw", valueToSet);
+            lastStrawD = true;
+        }
     }
 
-    public void StartCount()
+    public void OnEnable()
     {
       StartCoroutine(StartCountdown());
     }
-    
-    public IEnumerator StartCountdown(float countdownValue = 10)
+    public void OnDisable()
+    {
+        currCountdownValue = 0;
+    }
+
+    public IEnumerator StartCountdown(float countdownValue = 0)
     {
         currCountdownValue = countdownValue;
-        while (currCountdownValue > 0)
+        while (currCountdownValue < 10)
         {
-           
             yield return new WaitForSeconds(1.0f);
-            currCountdownValue--;
+            currCountdownValue++;
         }
     }
 }

@@ -2,10 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class App : MonoBehaviour {
     public static App instance;
     public float time;
+    public GameObject soundManagerPrefab;
+
+    public BoolReactiveProperty EndOfDayActive { private set; get; }
 
     public float simulationTimeFactor = 1F;
     public float timeUntilDayEnds = 800F;
@@ -14,8 +18,6 @@ public class App : MonoBehaviour {
     [Serializable]
     public class State : StateMachine<App>.State
     {
-
-        
         public GameObject[] stateObjects;
         public State(App representation) : base(representation) { }
 
@@ -45,31 +47,14 @@ public class App : MonoBehaviour {
     }
 
     [Serializable]
-    public class PreGame : State
-    {
-        public PreGame(App representation) : base(representation) { }
-        public override void Update(){
-            base.Update();
-            var r = representation;
-            if(Input.GetKeyDown(KeyCode.Space)){
-                r.stateMachine.SetState(r.inGame);
-            }
-        }
-    }    
-    [Serializable]
     public class InGame : State
     {
-        public TellerMachine tellerMachine;
         public InGame(App representation) : base(representation) { }
         public override void Enter(){
             base.Enter();
         }
         public override void Update(){
             base.Update();
-            var r = representation;
-            if(Input.GetKeyDown(KeyCode.Escape)){
-                r.stateMachine.SetState(r.preGame);
-            }
         }
     }
     [Serializable]
@@ -79,20 +64,16 @@ public class App : MonoBehaviour {
 
         public override void Enter(){
             base.Enter();
-            var r = representation;
-            // TODO show score etc...
-            print("Total happiness: " + r.score.happiness);
+            representation.EndOfDayActive.Value = true;
         }
     }
     [Serializable]
     public class Score {
         public float happiness = 0f;
-        public float lostMoney = 0f;
-        public float extraMoney = 0f;
+        public float moneyDifference = 0f;
     }
-    public Score score;
+    public Score score = new Score ();
 
-    public PreGame preGame;
     public InGame inGame;
     public EndOfDay endOfDay;
     private void Awake(){
@@ -100,13 +81,19 @@ public class App : MonoBehaviour {
             throw new Exception("Only one App allowed!");
         }
         instance = this;
-        preGame.Init(this);
         inGame.Init(this);
+        endOfDay.Init ( this );
         stateMachine = new StateMachine<App>();
+        if (SoundManager.Instance == null)
+        {
+            Instantiate ( soundManagerPrefab );
+        }
+
+        EndOfDayActive = new BoolReactiveProperty ( false );
     }
     private void Start()
     {
-        stateMachine.SetState(preGame);
+        stateMachine.SetState(inGame);
     }
     private void Update()
     {

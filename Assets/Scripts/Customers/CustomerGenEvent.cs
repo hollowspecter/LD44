@@ -20,20 +20,34 @@ public class CustomerGenEvent : CustomerGenerator
     private Vector3 spawnPoint= new Vector3(0,100,0);
     
     public override GameObject GenerateCustomer()
-    { 
+    {
+        // create the account, key is accountnumber!
+        if ( !TellerMachine.Instance.accounts.ContainsKey ( accountNumber ) )
+        {
+            Debug.Log ( "Creating a new Account: " + accountNumber );
+            TellerMachine.Instance.accounts.Add ( accountNumber, account );
+        }
+
         var customer = Instantiate(CustomerPrefab, spawnPoint, Quaternion.identity);
-        var dispensary = Instantiate(dispensaryPrefab,customer.transform,false);
+        //var dispensary = Instantiate(dispensaryPrefab,customer.transform,false);
         
         var cBrain = customer.GetComponent<CustomerBrain>();
+<<<<<<< HEAD
         cBrain.dispensary = dispensary;
         
+=======
+        //cBrain.dispensary = dispensary;
+        //dispensary.name = cBrain.name + "Dispensery";
+        //dispensary.RegisterReceiver(cBrain);
+
+>>>>>>> develop
         cBrain.customerName = name;
         cBrain.graphic = graphic;
         cBrain.maxTimeRange = timeToGetAngry;
         cBrain.moneyToUse = moneyWantingToUse;
         cBrain.moneyRange = wrongMoneyUseRange;
         cBrain.accountNumber = accountNumber;
-        
+
         return customer;
     }
 }

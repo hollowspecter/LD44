@@ -14,25 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Main:
     Alarm: {fileID: 8300000, guid: 212de881b245d0d439f17409213fc6c8, type: 3}
-    Ambience: {fileID: 8300000, guid: ff330c258cb4e9f4890c3e17520079e8, type: 3}
-    BillsCounted: {fileID: 0}
-    CoinCounterRunning: {fileID: 0}
-    CoinDrops:
-    - {fileID: 8300000, guid: 65064a4c380111d47a24c284870cdc7b, type: 3}
-    - {fileID: 8300000, guid: cdf9acb2c12b30d4daa259278b4813c2, type: 3}
-    - {fileID: 8300000, guid: 9852cdc9cff16e9499f72e5d031af73b, type: 3}
-    - {fileID: 8300000, guid: c4379036033875f43bee6429a10e1b14, type: 3}
-    DoorClose:
-    - {fileID: 8300000, guid: f92411073b211144aa7317d1d6bb87cd, type: 3}
-    - {fileID: 8300000, guid: 51a5b815cb0931145b3cb8da8a2e4792, type: 3}
-    - {fileID: 8300000, guid: ff899c95751a08f459f449c8147b20b6, type: 3}
-    DoorOpen:
-    - {fileID: 8300000, guid: 24839310e9be24b40972de186b50264a, type: 3}
-    - {fileID: 8300000, guid: 2236630a2bde1054d9710660c9d81063, type: 3}
+    BillsCounted: {fileID: 8300000, guid: 9e0d5b372f32b9e4db1bc34139174314, type: 3}
+    CoinCounterRunning: {fileID: 8300000, guid: c7f436f84ded1da4abdb79b4976dcb8b,
+      type: 3}
     GunShots: {fileID: 8300000, guid: 92606483e799d374082546a2a587abb7, type: 3}
-    KeyboardClicks:
-    - {fileID: 8300000, guid: 0c3b8107bb53648469b59a092d89e9e8, type: 3}
-    - {fileID: 8300000, guid: 06e16082ab337604c8d52e42e5c79bfe, type: 3}
     MachineRunning: {fileID: 8300000, guid: c897c70979a694e4f982904d767b01b0, type: 3}
     MouseClick: {fileID: 8300000, guid: a1a7a4733ef97c346a50a8d813a51e37, type: 3}
     PoliceSiren: {fileID: 8300000, guid: 10d833a6762d7a345963cf223a8ec06a, type: 3}
@@ -46,4 +31,6 @@ MonoBehaviour:
     TearingSound: {fileID: 8300000, guid: a81f4fb2965cab74fbdc5892dbdfe6f0, type: 3}
     UIAlert: {fileID: 8300000, guid: 4bd6032630006b347b5a75d84feae0e8, type: 3}
     BigWoosh: {fileID: 8300000, guid: e31a3fa9c44b2e64f85d1865b5787db1, type: 3}
-    Ambience: {fileID: 8300000, guid: 3411423012b62d848b4461980aa53de4, type: 3}
+  Dialog:
+    oldlady: {fileID: 8300000, guid: da22e4d6250496140860e82431a57f59, type: 3}
+    tryin: {fileID: 8300000, guid: 94554acb19159b641b348ec2802c870e, type: 3}

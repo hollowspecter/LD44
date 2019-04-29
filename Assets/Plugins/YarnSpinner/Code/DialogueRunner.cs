@@ -72,6 +72,9 @@ namespace Yarn.Unity
 
         public bool automaticCommands = true;
 
+        //check for the conversation happening now
+        private GameObject activeCharacter;
+
         /// Our conversation engine
         /** Automatically created on first access
          */
@@ -136,8 +139,14 @@ namespace Yarn.Unity
                     }
                 }
             }
-
         }
+
+        //private void Update()
+        //{
+        //    //assign to active character
+        //    activeCharacter = GameObject.FindGameObjectWithTag("activecharacter");
+        //    startNode = activeCharacter.gameObject.scene.name;
+        //}
 
         /// Add a string of text to a script
         public void AddScript(string text) {
