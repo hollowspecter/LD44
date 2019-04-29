@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0010a187741d04d9fa46ba7ec595c0, type: 3}
+  m_Name: SoundDB
+  m_EditorClassIdentifier: 
+  Main:
+    Alarm: {fileID: 8300000, guid: 212de881b245d0d439f17409213fc6c8, type: 3}
+    BillsCounted: {fileID: 8300000, guid: 9e0d5b372f32b9e4db1bc34139174314, type: 3}
+    CoinCounterRunning: {fileID: 8300000, guid: c7f436f84ded1da4abdb79b4976dcb8b,
+      type: 3}
+    GunShots: {fileID: 8300000, guid: 92606483e799d374082546a2a587abb7, type: 3}
+    MachineRunning: {fileID: 8300000, guid: c897c70979a694e4f982904d767b01b0, type: 3}
+    MouseClick: {fileID: 8300000, guid: a1a7a4733ef97c346a50a8d813a51e37, type: 3}
+    PoliceSiren: {fileID: 8300000, guid: 10d833a6762d7a345963cf223a8ec06a, type: 3}
+  Misc:
+    BoxHandling: {fileID: 8300000, guid: 587fa7ce8bca9574486382f439a73a10, type: 3}
+    ButtonPress: {fileID: 8300000, guid: d412afea2b8d5864e81bcef6e96ae3b4, type: 3}
+    DoorLock: {fileID: 8300000, guid: 67bcd02d328705c4faffe9bde9be4621, type: 3}
+    CoinsFallInJar: {fileID: 8300000, guid: c52401c3c4164cf49b1480e92fa74339, type: 3}
+    PokerChipSound: {fileID: 8300000, guid: 74f6da2dc3682e34c84582fb9fdcf633, type: 3}
+    GrabbingPaper: {fileID: 8300000, guid: 08d5d63a1345c7546afe8279e0aebc0b, type: 3}
+    TearingSound: {fileID: 8300000, guid: a81f4fb2965cab74fbdc5892dbdfe6f0, type: 3}
+    UIAlert: {fileID: 8300000, guid: 4bd6032630006b347b5a75d84feae0e8, type: 3}
+    BigWoosh: {fileID: 8300000, guid: e31a3fa9c44b2e64f85d1865b5787db1, type: 3}
+  Dialog:
+    oldlady: {fileID: 8300000, guid: da22e4d6250496140860e82431a57f59, type: 3}
+    tryin: {fileID: 8300000, guid: 94554acb19159b641b348ec2802c870e, type: 3}

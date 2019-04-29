@@ -1,0 +1,16 @@
+title: Robbery
+tags: 
+colorID: 0
+position: 753,103
+---
+Oh Hi there! What a nice day we are having! You know what would make it even better?
+[[Telling me what I can help you with?|help]]
+===
+title: helpRobbery
+tags: 
+colorID: 0
+position: 424,264
+---
+Or...
+You could just c.a.l.m.l.y give me all the money. This is a ROBBERY!!
+===

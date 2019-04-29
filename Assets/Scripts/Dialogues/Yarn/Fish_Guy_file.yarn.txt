@@ -1,0 +1,51 @@
+title: Start
+tags: 
+colorID: 0
+position: 516,-92
+---
+<<Fish Guy>> Man, have you ever had a fish? 
+<<Self>> [[Yes.|Yes]]
+<<Self>> [[No.|No]]
+===
+title: Yes
+tags: 
+colorID: 0
+position: 201,15
+---
+<<Fish Guy>> But mine is the fish of a prince. He is so special. He wants me to conquer the world for him, so he can be Fish-King over the world. Or queen. Sometimes he feels like a queen.  But anyway, you ever thought about being a slaughtering commander? 
+<<Self>> [[Actually, that sounds like a great idea! When do you start?|greatidea]]
+<<Self>> [[No, thank you. But good luck.|goodluck]]
+===
+title: greatidea
+tags: 
+colorID: 0
+position: 505,210
+---
+<<Fish Guy>> Dude, don‘t talk that loud! You can‘t let everybody hear that. You will hear from the fish. Or maybe not. 
+===
+title: goodluck
+tags: 
+colorID: 0
+position: 247,424
+---
+<<Fish Guy>> Haha, yeah. I‘ll see you around. 
+-> (Guy & Fish wink)
+===
+title: No
+tags: 
+colorID: 0
+position: 839,86
+---
+<<Fish Guy>> Let me tell you, they are so hard to entertain.
+<<Self>> [[Really? What do they need?|prince]]
+<<Self>> [[I thought they are just swimming around and eating?|prince]]
+===
+title: prince
+tags: 
+colorID: 0
+position: 772,404
+---
+<<Fish Guy>> My fish once lived with a prince and now he wants me to conquer the world. And it is really hard to find an army. You ever thought about being a slaughtering commander?
+<<Self>> [[Actually, that sounds like a great idea! When do you start?|greatidea]]
+<<Self>> [[No, thank you. But good luck.|goodluck]]
+===

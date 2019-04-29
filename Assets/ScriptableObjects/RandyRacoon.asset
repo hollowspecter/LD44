@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d9c0a972e5d724da1d7701927817ba, type: 3}
+  m_Name: RandyRacoon
+  m_EditorClassIdentifier: 
+  CustomerPrefab: {fileID: 489099820978914747, guid: 946e79451201e064bae9b93831d40565,
+    type: 3}
+  dispensaryPrefab: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
+    type: 3}
+  account:
+    accountNumber: 939298
+    firstName: Randy
+    lastName: Raccoon
+    balance: 0
+  moneyWantingToUse:
+    minValue: 30.339031
+    maxValue: 249.98752
+  wrongMoneyUseRange: 5
+  timeToGetAngry:
+    minValue: 34.244843
+    maxValue: 43.04578

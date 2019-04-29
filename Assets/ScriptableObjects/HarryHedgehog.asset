@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d9c0a972e5d724da1d7701927817ba, type: 3}
+  m_Name: HarryHedgehog
+  m_EditorClassIdentifier: 
+  CustomerPrefab: {fileID: 7973804071723880547, guid: d7d062476d5afa64a8a39a4d7a8b989b,
+    type: 3}
+  dispensaryPrefab: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
+    type: 3}
+  account:
+    accountNumber: 88446648
+    firstName: Harry
+    lastName: Hedgehog
+    balance: 51
+  moneyWantingToUse:
+    minValue: 39.23126
+    maxValue: 133.1326
+  wrongMoneyUseRange: 24
+  timeToGetAngry:
+    minValue: 38.83088
+    maxValue: 40.433487

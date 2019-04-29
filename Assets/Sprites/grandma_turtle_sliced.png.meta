@@ -1,0 +1,376 @@
+fileFormatVersion: 2
+guid: d1ae74395f834bf478da9ec5c1cf27f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4764444034438738112
+    second: grandma_turtle_sliced_1
+  - first:
+      213: -341555486596111489
+    second: grandma_turtle_sliced_2
+  - first:
+      213: 3357517939230210593
+    second: grandma_turtle_sliced_3
+  - first:
+      213: 6682981361736948982
+    second: grandma_turtle_sliced_4
+  - first:
+      213: 161073229269111217
+    second: grandma_turtle_sliced_6
+  - first:
+      213: 7648882061332078530
+    second: grandma_turtle_sliced_7
+  - first:
+      213: 6260800994308567356
+    second: grandma_turtle_sliced_8
+  - first:
+      213: 4201404392399392323
+    second: grandma_turtle_sliced_9
+  - first:
+      213: 708575833033103819
+    second: grandma_turtle_sliced_10
+  - first:
+      213: -1059214026657724917
+    second: grandma_turtle_sliced_11
+  - first:
+      213: 3011927403043312083
+    second: grandma_turtle_sliced_12
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: grandma_turtle_sliced_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 951
+        width: 108
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e42893bc6007bb48a53cbe369d0c669
+      internalID: -4764444034438738112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_turtle_sliced_2
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 735
+        width: 331
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2ea53fb7148d444952fd75d9d26d3a
+      internalID: -341555486596111489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_turtle_sliced_3
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 850
+        width: 177
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c23a25a6d38dfe48a80108e394e2986
+      internalID: 3357517939230210593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_turtle_sliced_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 766
+        width: 163
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e6a583d170a9143a34fd9430dbd973
+      internalID: 6682981361736948982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_turtle_sliced_6
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 650
+        width: 177
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef815bcfb69f1344bc75d1902033009
+      internalID: 161073229269111217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_turtle_sliced_7
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 438
+        width: 164
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6968d80efc0b7f14eb4736f0795f2608
+      internalID: 7648882061332078530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_turtle_sliced_8
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 515
+        width: 167
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59c9272a31065549a4c4c41765874a3
+      internalID: 6260800994308567356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_turtle_sliced_9
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 94
+        width: 140
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c96ec3aa9dbcc4f809202106a608b8
+      internalID: 4201404392399392323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_turtle_sliced_10
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 22
+        width: 113
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1474e7a228bec8444adf9c98c64a2fed
+      internalID: 708575833033103819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_turtle_sliced_11
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 31
+        width: 63
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6092c4f453570d24fa95b6565a8b67b1
+      internalID: -1059214026657724917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_turtle_sliced_12
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 7
+        width: 459
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3f53df1096e8e41b5ce83d8fe3a2f7
+      internalID: 3011927403043312083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 64e4000087769324180626274edefc02
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
