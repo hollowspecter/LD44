@@ -23,6 +23,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     public GameObject speechObject;
     public TMP_Text speechBubble;
     public Dispensary dispensary;
+    public Yarn.Unity.DialogueRunner dialogueRunner;
 
     private CompositeDisposable disposables = new CompositeDisposable ();
 
@@ -117,6 +118,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         if (amDone)
         {
             AngerManagment();
+            dialogueRunner.Stop ();
             StartCoroutine(LeaveCounter());
             amDone = false;
             disposables.Dispose ();
@@ -176,6 +178,9 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         App.instance.EndOfDayActive
             .Subscribe ( x => { if ( x ) amDone = true; } )
             .AddTo ( disposables );
+
+        // start dialogue
+        dialogueRunner.StartDialogue ();
 
         //possible: needs to give you more money
         //possible: can get money
