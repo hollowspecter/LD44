@@ -1,0 +1,123 @@
+title: Start
+tags: 
+colorID: 0
+position: 813,39
+---
+<<Raccoon>> Hey, hey. Wow this building totally reminds me of something... so crowded and big and kinda cold... 
+<<Self>> [[Prison?|Prison]]
+<<Self>> [[A swimmingpool?|swimmingpool]]
+<<Self>> [[A bank?|bank]]
+<<Self>> [[The depths of the subconscious?|depths]]
+===
+title: Prison
+tags: 
+colorID: 0
+position: 557,46
+---
+<<Raccoon>> Woah! You genius it totally does! 
+<<Raccoon>> I mean, when I was there, I was boss of the candy ring, if you know what I mean and had a lot of fun stealing the food of the guards, but... You see what I'm getting at?
+<<Raccoon>> Anyway, I had to change location and am searching for a new established clientele. You need some light in this dark place?
+<<Self>> [[I have no idea what you're talking about. Are you trying to sell me drugs at my workplace?|wtf]]
+<<Self>> [[Absolutely. I could use some fun here.|fun]]
+<<Self>> [[What drugs do you have?|drugs]]
+===
+title: drugs
+tags: 
+colorID: 0
+position: 288,539
+---
+<<Raccoon>> Woah! What do you mean? Drugs? I meant second hand food! What do you think I am? A dolphin? 
+<<Raccoon>> You need help my friend. If you want some good stuff, come to the Furry Park at midnight. See ya! 
+-> Leaves
+===
+title: wtf
+tags: 
+colorID: 0
+position: 279,76
+---
+<<Raccoon>> Drugs? No! What makes you think that? I meant second hand food. 
+<<Raccoon>> You are paranoid my friend! My aunt had the same problem and now she lives in the petting zoo. With a goat! 
+<<Raccoon>> Stay clean my friend and stay away from petting hands! 
+-> leaves 
+===
+title: fun
+tags: 
+colorID: 0
+position: 145,309
+---
+<<Raccoon>> That's what I wanted to hear! Alright:
+<<Raccoon>> I have bird, cat and dog food. I even licked off the saliva. 
+<<Raccoon>> Also a half eaten sandwich with tuna and a cup of melted ice cream. I'm telling you, as good as new!
+<<Raccoon>> I know there is this sign on the door to not eat in here, so meet me at Furry Park at midnight. See ya!
+-> leaves 
+===
+title: swimmingpool
+tags: 
+colorID: 0
+position: 610,430
+---
+<<Raccoon>> Ah, swimming! I totally need to bath again! Don't you love the feeling, when the water cools your sticky fur? 
+<<Raccoon>> And when you can wash your food, until it's all squishy. Don't you love that? 
+<<Raccoon>> It works best with cat food! If you ever crave it, let me know but don't tell the cats. 
+<<Raccoon>> Hmm, now I am getting hungry. Don't you? Want to buy some food?
+<<Self>> [[Uh, sure, what do you have?|fun]]
+<<Self>> [[Urgh... No, sorry. Have a nice day.|no]]
+===
+title: bank
+tags: 
+colorID: 0
+position: 861,426
+---
+<<Raccoon>> Well, it is a bank, right? Is it? Am I wrong? Ugh, not again... Where am I again? 
+<<Raccoon>> I told my cousin not to get food out of the dumpster near the cleaning products factory. 
+<<Self>> [[Don't worry, you are at a bank.|help]]
+<<self>> [[No, sorry, this is the money donation place. Thank you for your sontribution!|lie]]
+===
+title: help
+tags: 
+colorID: 0
+position: 571,658
+---
+<<Raccoon>> Haha, okay... I was only joking... 
+<<Raccoon>> Uh, bye... 
+-> leaves
+===
+title: lie
+tags: 
+colorID: 0
+position: 806,757
+---
+<<Raccoon>> What?! No! Argh! 
+<<Raccoon>> I will totally kill this cleaning vinegar drinking imbecile of a cousin...!
+-> leaves
+===
+title: depths
+tags: 
+colorID: 0
+position: 1198,421
+---
+<<Raccoon>> Haha, what? Are you choking on a gloomy philosopher? 
+<<Raccoon>> Are you hungry? You gotta eat when you got that in your head! My sister tried to eat me once in her sleep. Not funny. 
+<<Raccoon>> I am searching for a new established clientele. You need some light in this dark place?
+<<Self>> [[Sure, what do you sell?|fun]]
+<<Self>> [[Sorry, I just hate my job. But have a nice day.|job]]
+<<Self>> [[No, I was talking about the endless emptiness behind our consciousness. Full of information and impressions that we can never access. Therefore, we are forever doomed to run after the lost meaning of life.|help]]
+===
+title: job
+tags: 
+colorID: 0
+position: 1241,671
+---
+<<Raccoon>> Oh, friend that doesn't sound good. You have my deepest sympathy!
+<<Raccoon>> But let me give you a hint, if you ever get into the second hand food business, meet me at Furry Park. At Midnight. But you don't look like someone who changes their habits. 
+<<Raccoon>> Haha, humans. Have a nice day!
+-> leaves
+===
+title: no
+tags: 
+colorID: 0
+position: 268,794
+---
+<<Raccoon>> Too bad! You don't know what you are missing!
+-> leaves
+===

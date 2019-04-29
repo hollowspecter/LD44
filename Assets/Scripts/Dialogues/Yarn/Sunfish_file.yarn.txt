@@ -1,0 +1,59 @@
+title: Start
+tags: 
+colorID: 0
+position: 534,21
+---
+<<Grumble Lady>> Good Morning. It is unbelievable. First the weather and than there is a demonstration or strike or something for what ever reason and sure, saying what you think is a good thing but do they have to do it on a working day? I mean I have to do groceries and they are blocking everything. 
+<<Self>> [[Right, these people could be a little more considerate. Those young people should better get a job, like we did in their age.|considerate]]
+<<Self>> [[You know, they demonstrate because they don't get enough money. And if it wouldn't be on a workday, how would anybody notice?|notice]]
+===
+title: considerate
+tags: 
+colorID: 0
+position: 283,103
+---
+<<Grumble Lady>> Oh yes! Young people today! No respect and no decency! And they sympathize with all these strangers! Well, if they don't want jobs, of course they don't mind the foreigners stealing them!
+<<Self>> [[But the young people have jobs. They just want to get paid properly. And the foreigners also don't come to steal. They just want a better life, like everybody else.|likeeverybody]]
+<<Self>> [[Urgh, yes! Best thing to do is be a decent role model and getting sure our kids come out all right.|rolemodel]]
+===
+title: notice
+tags: 
+colorID: 0
+position: 794,90
+---
+<<Grumble Lady>> Ugh! But don't you notice the young people today? No respect and no decency! And they sympathize with all these strangers! Well, if they don't want jobs, of course they don't mind the foreigners stealing them! You have to be careful, or they'll steal your job too!
+<<Self>> [[You know, you are right. I have never seen it from that perspective. More people should notice that!|perspective]]
+<<Self>> [[Maybe you should talk to some of them. In person. It could change the whole way you see the world. And by the way, the weather is awesome!|change]]
+===
+title: likeeverybody
+tags: 
+colorID: 0
+position: 27,259
+---
+<<Grumble Lady>> Yeah sure. But they should search for a better life in their country. I do not deserve this! Maybe you just don't understand. But maybe you will, if they steal your job!
+-> Grumble Lady leaves & bad critique
+===
+title: change
+tags: 
+colorID: 0
+position: 994,359
+---
+<<Grumble Lady>> What? I mean, of course I talked to... some... I... need to leave now. Have a... day. 
+-> leaves (no good and no bad critique) Maybe even good critique?
+===
+title: rolemodel
+tags: 
+colorID: 0
+position: 271,368
+---
+<<Grumble Ladyy>> Oh it would be nice to have more people like you in the world! It would be a much nicer place. Have a wonderful day, although the weather again... 
+->leaves & good critiques
+===
+title: perspective
+tags: 
+colorID: 0
+position: 730,427
+---
+<<Grumble Lady>> Good to see, that people can still think the right thing. So there is still hope. Have a nice day!
+-> Leaves & no good or bad critique
+===
