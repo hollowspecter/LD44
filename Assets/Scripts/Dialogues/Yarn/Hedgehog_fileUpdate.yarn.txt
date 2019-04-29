@@ -1,0 +1,151 @@
+title: Start
+tags: 
+colorID: 0
+position: 1059,-152
+---
+H-hello? Could you please
+maybe...
+help me?
+[[But of course! That is my job after all?|myjob]]
+[[Could you please speak up?|speak]]
+===
+title: fun
+tags: 
+colorID: 0
+position: -451,655
+---
+That's what I wanted to hear! Alright:
+I have bird, cat and dog food. I even licked off the saliva. 
+Also a half eaten sandwich with tuna and a cup of melted ice cream. I'm telling you, as good as new!
+I know there is this sign on the door to not eat in here, so meet me at Furry Park at midnight. See ya!
+
+===
+title: swimmingpool
+tags: 
+colorID: 0
+position: 97,408
+---
+<<if $lastStraw is true>>
+If you're not busy, I guess?
+I'll just wait here...
+[[I apologize!|upset]]
+<<else>>
+Ah... swimming! I love the feeling, when the water cools your sticky fur? 
+And when I'm in the water is super silent around me...
+I feel so safe...
+[[That's nice, I guess?|no]]
+[[Sounds, like a fun hobby!|fun]]
+<<endif>>
+===
+title: no
+tags: 
+colorID: 0
+position: 144,687
+---
+<<if $lastStraw is true>>
+If you're not busy, I guess?
+I'll just wait here...
+[[I apologize!|upset]]
+<<else>>
+Well, I like it...
+It's okay if you don't! I respect your choices.
+Goodbye?
+<<endif>>
+===
+title: myjob
+tags: 
+colorID: 0
+position: 517,-118
+---
+<<if $lastStraw is true>>
+If you're not busy, I guess?
+I'll just wait here...
+[[I apologize!|upset]]
+<<else>>
+Oh... Yes it is! I wasn't trying to say that you are not god at your job!
+I just maybe need to this done?
+If you can?
+[[Don't worry about it! I'm just trying to help|help]]
+[[You are very polite, I appreciate it|nice]]
+[[It's okay, what do you like to do on your free time?|swimmingpool]]
+===
+title: speak
+tags: 
+colorID: 0
+position: 1021,219
+---
+<<if $lastStraw is true>>
+If you're not busy, I guess?
+I'll just wait here...
+[[I apologize!|upset]]
+<<else>>
+Of course!
+CAN
+YOU PLEASE
+HELP ME?
+MAYBE?
+Is this better?
+[[YES, thank you. Much better...|nice]]
+[[Are you okay?|wonder]]
+<<endif>>
+===
+title: help
+tags: 
+colorID: 0
+position: 654,407
+---
+<<if $lastStraw is true>>
+If you're not busy, I guess?
+I'll just wait here...
+[[I apologize!|upset]]
+<<else>>
+Oh! Thank you so much!!
+This means so much to me.
+I'll remenber this day for the rest of my life!
+[[You don't need to get so excited it was just a compliment|nice]]
+[[Are you okay?|wonder]]
+<<endif>>
+===
+title: nice
+tags: 
+colorID: 0
+position: -42,-240
+---
+<<if $lastStraw is true>>
+If you're not busy, I guess?
+I'll just wait here...
+[[I apologize!|upset]]
+<<else>>
+I know! I'm just...
+Don't mind me, please take all the time you need.
+Sometimes I take long and then people stop talking
+or leave
+[[That sounds unpleasant|unpleasant]]
+[[If you take this long to finish a single sentence it's not wonder...|wonder]]
+<<endif>>
+===
+title: upset
+tags: 
+colorID: 0
+position: -491,315
+---
+N-no! It's okay...
+Sometimes people forget I'm around so I'm used to it.
+===
+title: unpleasant
+tags: 
+colorID: 0
+position: -425,-113
+---
+It is not! They're just trying their best...
+Like you!
+===
+title: wonder
+tags: 
+colorID: 0
+position: -142,119
+---
+I guess?
+I'll try to be a little better next time I come around.
+So I won't bother you so much...
+===
