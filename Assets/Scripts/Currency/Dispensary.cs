@@ -11,6 +11,7 @@ public class Dispensary : MonoBehaviour {
     public float dispenseForce = 1f;
     public float dispenseDelay = 0.3f;
     private Queue<Draggable> dispenseQueue = new Queue<Draggable>();
+    public CustomerBrain customerBrain;
     private IDraggableReceiver receiver;
     public bool dispensing => dispenseQueue.Count > 0;
 
@@ -18,14 +19,20 @@ public class Dispensary : MonoBehaviour {
         SortChange();
         dispenseRoutine = StartCoroutine(DispenseRoutine());
         trigger.stay = (c)=>OnTriggerStay(c);
+        if ( customerBrain != null ) receiver = customerBrain;
     }
     private void OnDisable(){
         receiver = null;
     }
 
     public void RegisterReceiver(IDraggableReceiver receiver){
+        Debug.LogFormat ( "Register Receiver: {0}", gameObject.name );
         if(this.receiver != null){
             throw new Exception("Only one receiver per Dispensary");
+        }
+        if ( receiver == null )
+        {
+            throw new System.NullReferenceException ( "The receiver was null!" );
         }
         this.receiver = receiver;
     }

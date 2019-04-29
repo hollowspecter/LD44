@@ -21,11 +21,12 @@ public class CustomerGenEvent : CustomerGenerator
     public override GameObject GenerateCustomer()
     { 
         var customer = Instantiate(CustomerPrefab, spawnPoint, Quaternion.identity);
-        var dispensary = Instantiate(dispensaryPrefab,customer.transform,false);
+        //var dispensary = Instantiate(dispensaryPrefab,customer.transform,false);
         
         var cBrain = customer.GetComponent<CustomerBrain>();
-        cBrain.dispensary = dispensary;
-        dispensary.RegisterReceiver(cBrain);
+        //cBrain.dispensary = dispensary;
+        //dispensary.name = cBrain.name + "Dispensery";
+        //dispensary.RegisterReceiver(cBrain);
         
         cBrain.customerName = name;
         cBrain.maxTimeRange = timeToGetAngry;
