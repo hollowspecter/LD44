@@ -20,8 +20,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
     public bool myTurn = false; //if true, it will go to the counter
     public bool amDone = false; //if true, it will go away and will deactivates itself
-    public GameObject speechObject;
-    public TMP_Text speechBubble;
     public Dispensary dispensary;
     public Yarn.Unity.DialogueRunner dialogueRunner;
 
@@ -60,7 +58,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 //            need = NeedType.makeAccount;
 //        }
 
-        speechObject.SetActive(false);
         amDone = false;
         introduced = false;
         hapinessLevel = 5;
@@ -129,7 +126,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
         if (!introduced)
         {
-            speechObject.SetActive(true);
             Introduce();
             introduced = true;
         }
@@ -171,8 +167,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             .Subscribe ( x => { if ( x ) amDone = true; } )
             .AddTo ( disposables );
 
-        // start dialogue
-        dialogueRunner.StartDialogue ();
+        
 
         //possible: needs to give you more money
         //possible: can get money
@@ -181,36 +176,46 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         {
             case "deposit":
             {
-                speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
-                                    " Moneys! my Account Number is " + accountNumber + ".";
+                    //speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
+                    //                    " Moneys! my Account Number is " + accountNumber + ".";
 
-                PostitUI.Instance.PublishToPostit ( string.Format ( "{0} ${1} TO {2}",
-                        action, _money, accountNumber ) );
-                GiveMoney();
-                break;
+                    PostitUI.Instance.PublishToPostit ( string.Format ( "{0} ${1} TO {2}",
+                            action, _money, accountNumber ) );
+                    GiveMoney();
+                    // start dialogue
+                    dialogueRunner.StartDialogue ();
+                    break;
             }
 
             case "withdraw":
             {
-                speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
-                                    " Moneys! my Account Number is " + accountNumber + ".";
-                PostitUI.Instance.PublishToPostit ( string.Format ( "{0} ${1} FROM {2}",
-                        action, _money, accountNumber ) );
-                break;
+                    //speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
+                    //                    " Moneys! my Account Number is " + accountNumber + ".";
+                    PostitUI.Instance.PublishToPostit ( string.Format ( "{0} ${1} FROM {2}",
+                            action, _money, accountNumber ) );
+                    // start dialogue
+                    dialogueRunner.StartDialogue ();
+                    break;
             }
             case "robbery":
             {
-                speechBubble.text = "Hands in the air! I want to have "+ _money +
-                                    " Moneys! Give it to me now!";
-                PostitUI.Instance.PublishToPostit ( string.Format ( "GIVE ROBBER {0}", accountNumber ) );
-                _fundCheck = 0;
-                break;
+                    // TODO: DOESNT MAKE SENSE WITH ONLY THE POST IT?! 
+
+                    //speechBubble.text = "Hands in the air! I want to have "+ _money +
+                    //                    " Moneys! Give it to me now!";
+                    PostitUI.Instance.PublishToPostit ( string.Format ( "GIVE ROBBER ${0}", _money ) );
+                    _fundCheck = 0;
+                    // start dialogue
+                    dialogueRunner.StartDialogue ("Robbery");
+                    break;
             }
             case "makeAccount":
             {
-                speechBubble.text = "Hi I want to make an Account! My name is: " + customerName;
-                PostitUI.Instance.PublishToPostit ( string.Format ( "make account for {0}", customerName ) );
-                break;
+                    //speechBubble.text = "Hi I want to make an Account! My name is: " + customerName;
+                    PostitUI.Instance.PublishToPostit ( string.Format ( "make account for {0}", customerName ) );
+                    // start dialogue
+                    dialogueRunner.StartDialogue ();
+                    break;
             }
             default:
                 break;
