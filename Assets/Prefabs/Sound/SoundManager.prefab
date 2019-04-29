@@ -876,8 +876,8 @@ MonoBehaviour:
     Ambience: {fileID: 1985078187}
     SFX: {fileID: 1435042661}
   m_settings:
-    AutostartMusic: 0
-    AutostartAmbient: 0
+    AutostartMusic: 1
+    AutostartAmbient: 1
     FadeDuration: 3
   m_doorOpen: {fileID: 2056198279}
   m_doorClose: {fileID: 797459562}

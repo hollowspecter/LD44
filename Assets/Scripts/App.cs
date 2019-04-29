@@ -61,9 +61,6 @@ public class App : MonoBehaviour {
 
         public override void Enter(){
             base.Enter();
-            App r = representation;
-            // TODO show score etc...
-            print("Total happiness: " + r.score.happiness);
         }
     }
     [Serializable]
