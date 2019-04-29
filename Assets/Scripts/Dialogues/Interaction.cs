@@ -7,6 +7,7 @@ public class Interaction : MonoBehaviour
 {
     public GameObject dialogueRunner;
     private bool interacting;
+    public string activeCharacter;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,8 @@ public class Interaction : MonoBehaviour
     {
         if(interacting)
         {
-            dialogueRunner.GetComponent<DialogueRunner>().StartDialogue();
+            name = activeCharacter;
+            dialogueRunner.GetComponent<DialogueRunner>().StartDialogue(activeCharacter);
             interacting = false;
         }
     }
