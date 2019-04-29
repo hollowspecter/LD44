@@ -306,7 +306,6 @@ MonoBehaviour:
   moreMoney: 0
   myTurn: 0
   amDone: 0
-  speechObject: {fileID: 0}
   dispensary: {fileID: 7984410176563066966}
   dialogueRunner: {fileID: 2593070106751155068}
 --- !u!95 &5823170644129202760
@@ -415,11 +414,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7973804071723880544}
     m_Modifications:
-    - target: {fileID: 1855175904034276697, guid: ed955f7e69b53854bb5ee121dd32c313,
+    - target: {fileID: 1855175904034276708, guid: ed955f7e69b53854bb5ee121dd32c313,
         type: 3}
-      propertyPath: m_Name
-      value: Dialogue
-      objectReference: {fileID: 0}
+      propertyPath: sourceText.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: f2f93f4134b48b44aa1c2fa37407af28, type: 3}
     - target: {fileID: 1855175904034276709, guid: ed955f7e69b53854bb5ee121dd32c313,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -505,6 +504,16 @@ PrefabInstance:
       propertyPath: optionButtons.Array.data[2]
       value: 
       objectReference: {fileID: 68100241246333137}
+    - target: {fileID: 1855175904034276697, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: m_Name
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105852109635666377, guid: ed955f7e69b53854bb5ee121dd32c313,
+        type: 3}
+      propertyPath: m_pitchMinMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1855175904034276710, guid: ed955f7e69b53854bb5ee121dd32c313, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed955f7e69b53854bb5ee121dd32c313, type: 3}
@@ -551,11 +560,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7973804071723880544}
     m_Modifications:
-    - target: {fileID: 8401639902776399303, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
-        type: 3}
-      propertyPath: m_Name
-      value: DialogueCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 8401639902776399163, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -661,17 +665,22 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6042718901134541648, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
+    - target: {fileID: 8401639902776399303, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2593070106751155010}
+      propertyPath: m_Name
+      value: DialogueCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 6042718901925712463, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2593070106751155010}
     - target: {fileID: 6042718900688833503, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2593070106751155010}
+    - target: {fileID: 6042718901134541648, guid: 69d2203b5889ef9478e37ddcde2ee7b1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -756,16 +765,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7973804071723880544}
     m_Modifications:
-    - target: {fileID: 2807712944880615960, guid: 9688d64004433c535923771c5252b348,
-        type: 3}
-      propertyPath: m_Name
-      value: CustomerDispensary
-      objectReference: {fileID: 0}
     - target: {fileID: 985711844318232796, guid: 9688d64004433c535923771c5252b348,
         type: 3}
       propertyPath: customerBrain
       value: 
       objectReference: {fileID: -6538886202785098143}
+    - target: {fileID: 2807712944880615960, guid: 9688d64004433c535923771c5252b348,
+        type: 3}
+      propertyPath: m_Name
+      value: CustomerDispensary
+      objectReference: {fileID: 0}
     - target: {fileID: 512649747061044903, guid: 9688d64004433c535923771c5252b348,
         type: 3}
       propertyPath: m_LocalPosition.x
