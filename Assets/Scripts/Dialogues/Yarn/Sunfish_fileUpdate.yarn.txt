@@ -99,22 +99,10 @@ Good to see, that people can still think the right thing. So there is still hope
 title: upset
 tags: 
 colorID: 0
-position: -408,251
+position: -453,118
 ---
 And he better fire you and replace you immediately!
 Those shiny robots are 100 times more efficient and they don't steal jobs!
-===
-ing here?
-I'll rummage through your garbage!
-[[I apologize!|upset]]
-<<else>>
-Haha, what? Are you choking on a gloomy philosopher? 
-Are you hungry? You gotta eat when you got that in your head! My sister tried to eat me once in her sleep. Not funny. 
-I am searching for a new established clientele. You need some light in this dark place?
-[[Sure, what do you sell?|fun]]
-[[Sorry, I just hate my job. But have a nice day.|job]]
-[[No, I was talking about the endless emptiness behind our consciousness. Full of information and impressions that we can never access. Therefore, we are forever doomed to run after the lost meaning of life.|help]]
-<<endif>>
 ===
 title: job
 tags: 
@@ -139,11 +127,4 @@ I'll rummage through your garbage!
 <<else>>
 Too bad! You don't know what you are missing!
 <<endif>>
-===
-title: upset
-tags: 
-colorID: 0
-position: -524,270
----
-And I'm sure I'll find how garbage your Yhellp reviews are!
 ===
