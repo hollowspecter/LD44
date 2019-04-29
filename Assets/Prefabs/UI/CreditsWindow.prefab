@@ -65,11 +65,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "- Benedikt Kirchmeier\r\n- Diana\r\n- Ingelis Wipfelder\r\n- Mathew Varkki
-    @rayvshimself\r\n- Pat\r\n- Sam B\xE4umer\r\n- Vivien Baguio @hollowspecter\r\n\r\nMusic
-    by:\r\n\"Lobby Time\" Kevin MacLeod (incompetech.com)\r\nLicensed under Creative
-    Commons: By Attribution 3.0 License\r\nhttp://creativecommons.org/licenses/by/3.0/\r\n\r\nSounds
-    from\r\n- Soniss \r\n- freesfx.co.uk"
+  m_text: "- Benedikt Kirchmeier\n- Diana\n- Ingelis Wipfelde\n- Mathew Varkki @rayvshimself\n-
+    Pat\n- Sam B\xE4umer\n- Vivien Baguio @hollowspecter\n\nMusic by:\n\"Lobby Time\"
+    Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution
+    3.0 License http://creativecommons.org/licenses/by/3.0/\n\nSounds from Soniss
+    and freesfx.co.uk"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 328
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -138,12 +138,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 665077617}
-    characterCount: 343
+    characterCount: 326
     spriteCount: 0
-    spaceCount: 45
-    wordCount: 53
+    spaceCount: 43
+    wordCount: 52
     linkCount: 0
-    lineCount: 17
+    lineCount: 14
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

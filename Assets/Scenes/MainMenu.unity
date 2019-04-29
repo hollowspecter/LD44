@@ -1801,8 +1801,6 @@ MonoBehaviour:
   creditsButton: {fileID: 940878779}
   quitButton: {fileID: 2119535287}
   speed: 1
-  parallaxing: 0
-  parallaxTransform: {fileID: 0}
 --- !u!114 &2119535287 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8137965910817569876, guid: b65286837a93e674ea71bf86180e24c8,
@@ -1951,6 +1949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TutorialWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055237675710303254, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1055237675710303249, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
         type: 3}
