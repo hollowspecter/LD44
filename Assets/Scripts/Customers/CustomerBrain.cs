@@ -46,6 +46,8 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
     private void OnEnable()
     {
+        // Trigger the Sound
+        SoundManager.Instance.m_doorOpen.PlaySound ();
 
         //TODO: check their Account -> Needs the money tracking system
 
@@ -93,6 +95,12 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         }
 
         _fundCheck = AccountMoney;
+    }
+
+    private void OnDisable()
+    {
+        // Trigger door close sound
+        SoundManager.Instance.m_doorClose.PlaySound ();
     }
 
     private void Update()

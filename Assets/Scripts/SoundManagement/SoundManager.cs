@@ -16,6 +16,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private Settings m_settings;
 
+    public RandomPitchSound m_doorOpen;
+    public RandomPitchSound m_doorClose;
+
     [System.Serializable]
     public class Sources
     {
