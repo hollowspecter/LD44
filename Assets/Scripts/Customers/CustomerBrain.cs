@@ -119,6 +119,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             AngerManagment();
             StartCoroutine(LeaveCounter());
             amDone = false;
+            disposables.Dispose ();
             return;
         }
 
@@ -169,7 +170,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             // called when moremoney button is pressed
             () => moreMoney = true,
             // called when amdone button is pressed
-            () => { amDone = true; disposables.Dispose (); } );
+            () => { amDone = true; } );
 
         // Subcribe to end of day to rush out when the bank closes
         App.instance.EndOfDayActive
@@ -185,7 +186,9 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             {
                 speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
                                     " Moneys! my Account Number is " + accountNumber + ".";
-                //plz don't overwrite this again
+
+                PostitUI.Instance.PublishToPostit ( string.Format ( "{0} ${1} TO {2}",
+                        action, _money, accountNumber ) );
                 GiveMoney();
                 break;
             }
@@ -194,18 +197,22 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             {
                 speechBubble.text = "Hello my name is " + customerName + " and I want to " + action +" "+ _money +
                                     " Moneys! my Account Number is " + accountNumber + ".";
+                PostitUI.Instance.PublishToPostit ( string.Format ( "{0} ${1} FROM {2}",
+                        action, _money, accountNumber ) );
                 break;
             }
             case "robbery":
             {
                 speechBubble.text = "Hands in the air! I want to have "+ _money +
                                     " Moneys! Give it to me now!";
+                PostitUI.Instance.PublishToPostit ( string.Format ( "GIVE ROBBER {0}", accountNumber ) );
                 _fundCheck = 0;
                 break;
             }
             case "makeAccount":
             {
                 speechBubble.text = "Hi I want to make an Account! My name is: " + customerName;
+                PostitUI.Instance.PublishToPostit ( string.Format ( "make account for {0}", customerName ) );
                 break;
             }
             default:
@@ -214,8 +221,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     }
     private void AngerManagment()
     {
-        Debug.Log ( "AngerManagement called" );
-
         //check if everything went right
         //increase angrinessLevel if necessary
         switch (action)
