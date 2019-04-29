@@ -3,6 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using UniRx;
 
 public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 {
@@ -22,7 +23,9 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     public GameObject speechObject;
     public TMP_Text speechBubble;
     public Dispensary dispensary;
-    
+
+    private CompositeDisposable disposables = new CompositeDisposable ();
+
     private enum NeedType
     {
         deposit,
@@ -111,6 +114,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         {
             AngerManagment();
             StartCoroutine(LeaveCounter());
+            amDone = false;
             return;
         }
 
@@ -161,7 +165,12 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             // called when moremoney button is pressed
             () => moreMoney = true,
             // called when amdone button is pressed
-            () => amDone = true );
+            () => { amDone = true; disposables.Dispose (); } );
+
+        // Subcribe to end of day to rush out when the bank closes
+        App.instance.EndOfDayActive
+            .Subscribe ( x => { if ( x ) amDone = true; } )
+            .AddTo ( disposables );
 
         //possible: needs to give you more money
         //possible: can get money
@@ -201,6 +210,8 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     }
     private void AngerManagment()
     {
+        Debug.Log ( "AngerManagement called" );
+
         //check if everything went right
         //increase angrinessLevel if necessary
         switch (action)
