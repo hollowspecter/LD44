@@ -1,0 +1,127 @@
+title: Start
+tags: Wants to talk about Grandchildren 
+colorID: 0
+position: 815,-54
+---
+Hello my dear! Can you help me?
+May I say that your hair looks really fabulous!
+[[Thank you very much! Your hair looks awesome too!|compliment]]
+[[Oh, thank you! I had it done at the Mall. Really great woman there.|recommendation]]
+[[Thank you, I did it myself! Hairdressers never understand what you want anyway, right?|critique]]
+===
+title: compliment
+tags: 
+colorID: 0
+position: 473,72
+---
+<<if $lastStraw is true>>
+I'm the old one here!
+Are you getting deaf with old age?
+[[I apologize!|upset]]
+<<else>>
+Oh, that is so nice of you!
+My grandson did it. Did you know, he is a hairdresser himself? And a really good one! You should totally see him!
+[[I thought you said my hair was fabulous? Why do I need to see another hairdresser?|irritation]]
+[[Oh, that is awesome! I bet he is the best! It is such a sophisticated job.|confirmation]]
+[[Sounds good! Where is the place where I can find him?|question]]
+<<endif>>
+===
+title: irritation
+tags: 
+colorID: 0
+position: 169,80
+---
+<<if $lastStraw is true>>
+I'm the old one here!
+Are you getting deaf with old age?
+[[I apologize!|upset]]
+<<else>>
+Oh, my dear. If you don't know that yourself...
+You know there is a mirror in the bathroom. My poor, poor, dear. Have you ever tried a marriage agency?
+...
+Anyway... Have a nice day, dear. Try to see the good things in life
+<<endif>>
+===
+title: confirmation
+tags: 
+colorID: 0
+position: 598,507
+---
+<<if $lastStraw is true>>
+I'm the old one here!
+Are you getting deaf with old age?
+[[I apologize!|upset]]
+<<else>>
+<<Grandma>> That is so right my dear! It is an art form not valued enough!
+He is a real creative genius! The Curls and the Bob and the Plaits! He even invented a new bald!
+<<Self>> [[What? You know, that all those are normal hairstyles you can just get everywhere...?|confusion]]
+<<Self>> [[Oh, right, ofcourse! I heard of the new bald. Is that the new cut you got yourself?|confusion]]
+<<Self>> [[Your son really is godlike creature. He should totally get the nobelprize for hairdressers. Have a real nice day!|saving]]
+<<endif>>
+===
+title: question
+tags: 
+colorID: 0
+position: 823,214
+---
+<<if $lastStraw is true>>
+I'm the old one here!
+Are you getting deaf with old age?
+[[I apologize!|upset]]
+<<else>>
+<<Grandma>> Hm, it is a really big place. All shiny and wonderful. But my memory is letting me down. Haha...
+<<Self>> [[No, really! Where do I find it?|serious]]
+<<Self>> [[Oh, I see! Too bad, anyway it is a really nice haircut you have. I wish you the best day!|saving]]
+<<endif>>
+===
+title: saving
+tags: 
+colorID: 0
+position: 1045,653
+---
+<<if $lastStraw is true>>
+I'm the old one here!
+Are you getting deaf with old age?
+[[I apologize!|upset]]
+<<else>>
+<<Grandma>> Thank you, my dear! Maybe one day you get the best haircut in your whole live and you will know, it was him!
+Have a nice, hairy day, my dear. 
+<<endif>>
+===
+title: confusion
+tags: 
+colorID: 0
+position: 270,686
+---
+<<if $lastStraw is true>>
+I'm the old one here!
+Are you getting deaf with old age?
+[[I apologize!|upset]]
+<<else>>
+<<Grandma>> Oooh, my! What an awful thing to say! You poor dishevelled and disorientated thing!
+Someone should do something about the youth before they all go to rack!
+/*Grandma leaves*/
+<<endif>>
+===
+title: serious
+tags: 
+colorID: 0
+position: 1240,83
+---
+<<if $lastStraw is true>>
+I'm the old one here!
+Are you getting deaf with old age?
+[[I apologize!|upset]]
+<<else>>
+<<Grandma>> Oh, look at the time! We're standing here talking like laundry girls!
+Alright, see you soon, have a nice day, good bye!
+/*Grandma leaves*/
+<<endif>>
+===
+title: upset
+tags: 
+colorID: 0
+position: -1,428
+---
+My grandson would be a much better teller than you can ever be!
+===
