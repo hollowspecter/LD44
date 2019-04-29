@@ -3,6 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using UniRx;
 
 public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 {
@@ -22,7 +23,9 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     public GameObject speechObject;
     public TMP_Text speechBubble;
     public Dispensary dispensary;
-    
+
+    private CompositeDisposable disposables = new CompositeDisposable ();
+
     private enum NeedType
     {
         deposit,
@@ -39,6 +42,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     private int _money;
     private int _fundCheck;
     private bool introduced = false;
+    private bool lastStrawD;
 
     // Properties
     private bool HasAccount { get { return TellerMachine.Instance.accounts.ContainsKey ( accountNumber ); } }
@@ -60,6 +64,9 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         amDone = false;
         introduced = false;
         hapinessLevel = 5;
+
+        //check if you are fucking up the dialogue
+        lastStrawD = gameObject.GetComponent<TimerDialogue>().lastStrawD;
 
         //setup their action they want to do
         if (Random.Range(0, 100) > 95) //5 percent chance
@@ -111,6 +118,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         {
             AngerManagment();
             StartCoroutine(LeaveCounter());
+            amDone = false;
             return;
         }
 
@@ -161,7 +169,12 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             // called when moremoney button is pressed
             () => moreMoney = true,
             // called when amdone button is pressed
-            () => amDone = true );
+            () => { amDone = true; disposables.Dispose (); } );
+
+        // Subcribe to end of day to rush out when the bank closes
+        App.instance.EndOfDayActive
+            .Subscribe ( x => { if ( x ) amDone = true; } )
+            .AddTo ( disposables );
 
         //possible: needs to give you more money
         //possible: can get money
@@ -201,6 +214,8 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     }
     private void AngerManagment()
     {
+        Debug.Log ( "AngerManagement called" );
+
         //check if everything went right
         //increase angrinessLevel if necessary
         switch (action)
@@ -245,7 +260,17 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
                     hapinessLevel -= 3;
                     break;
                 }
-                
+            case "lastStraw":
+                if (!lastStrawD)
+                {
+                    break;
+                }
+                else
+                {
+                    hapinessLevel -= 3;
+                    lastStrawD = false;
+                    break;
+                }                
             default:
                 break;
         }

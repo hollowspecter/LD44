@@ -15,9 +15,11 @@ public class EndOfDayUI : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log ( "Score Happiness=" + App.instance.score.happiness );
+
         playNextDayButton.onClick.AddListener ( OnPlayNextDayPressed );
         quitYourJobButton.onClick.AddListener ( OnQuitYourJobPressed );
-        pointsText.text = string.Format ( "Customer happiness: {0}\nMoney Difference: {1}",
+        pointsText.text = string.Format ( "<color=\"blue\"><size=150%>Customer happiness: {0}\nMoney Difference: {1}",
             App.instance.score.happiness,
             App.instance.score.moneyDifference );
 

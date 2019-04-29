@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UniRx;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -23,9 +24,14 @@ public class CustomerManager : MonoBehaviour
     public Dictionary<string,GameObject> Customers = new Dictionary<string, GameObject>();
     
     private Transform _childTransform;
-    
+
     private void Start()
     {
+        // Deactivate spawner if end of day is reached
+        App.instance.EndOfDayActive
+            .Subscribe ( x => { if ( x ) gameObject.SetActive ( false ); } )
+            .AddTo ( this );
+
         Spawn();
     }
 

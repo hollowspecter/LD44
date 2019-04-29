@@ -132,12 +132,12 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         }
 
         //start the timer of how long the player takes to answer
-        count = true;
-        if (count == true)
-        {
-            optionButtons[0].GetComponent<TimerDialogue>().StartCount();
-            count = false;
-        }
+        //count = true;
+        //if (count == true)
+        //{
+        //    optionButtons[0].GetComponent<TimerDialogue>().StartCount();
+        //    count = false;
+        //}
 
         // Record that we're using it
         SetSelectedOption = optionChooser;
