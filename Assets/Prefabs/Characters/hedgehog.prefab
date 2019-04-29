@@ -249,8 +249,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7973804071723880544}
-  - component: {fileID: -6538886202785098143}
-  - component: {fileID: 5823170644129202760}
   m_Layer: 0
   m_Name: hedgehog
   m_TagString: Untagged
@@ -266,13 +264,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7973804071723880547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalPosition: {x: 2.09, y: 5.78, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7973804070116566883}
   - {fileID: 7973804071398444999}
   - {fileID: 7973804072047934067}
   - {fileID: 7973804070888498324}
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
   - {fileID: 2785078731709329483}
   - {fileID: 7241486149245570605}
   - {fileID: 2593070106751155069}
@@ -330,6 +333,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+>>>>>>> develop
 --- !u!1 &7973804072047934066
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +414,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
+=======
 --- !u!1001 &1367426149304637120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -986,3 +992,4 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7161745350703052938}
   m_PrefabAsset: {fileID: 0}
+>>>>>>> develop

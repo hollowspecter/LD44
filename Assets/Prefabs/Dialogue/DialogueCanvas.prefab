@@ -177,7 +177,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8401639902373049071}
   m_Layer: 5
+<<<<<<< HEAD:Assets/Prefabs/Dialogue/Canvas.prefab
+  m_Name: Frame
+=======
   m_Name: DialogueContainer
+>>>>>>> develop:Assets/Prefabs/Dialogue/DialogueCanvas.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +221,11 @@ GameObject:
   - component: {fileID: 8401639902776399301}
   - component: {fileID: 8401639902776399302}
   m_Layer: 5
+<<<<<<< HEAD:Assets/Prefabs/Dialogue/Canvas.prefab
+  m_Name: Canvas
+=======
   m_Name: DialogueCanvas
+>>>>>>> develop:Assets/Prefabs/Dialogue/DialogueCanvas.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,7 +272,11 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
+<<<<<<< HEAD:Assets/Prefabs/Dialogue/Canvas.prefab
+  m_SortingOrder: 0
+=======
   m_SortingOrder: 1
+>>>>>>> develop:Assets/Prefabs/Dialogue/DialogueCanvas.prefab
   m_TargetDisplay: 0
 --- !u!114 &8401639902776399301
 MonoBehaviour:
@@ -382,7 +394,7 @@ GameObject:
   - component: {fileID: 8401639903199491621}
   - component: {fileID: 8401639903199491622}
   m_Layer: 0
-  m_Name: Image
+  m_Name: SubtitlesBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1098,12 +1110,20 @@ PrefabInstance:
     - target: {fileID: 5132611583149818325, guid: 88fad6f8cc535ee4bb2ad55d4dc66311,
         type: 3}
       propertyPath: m_Name
+<<<<<<< HEAD:Assets/Prefabs/Dialogue/Canvas.prefab
+      value: GameBubble
+=======
       value: InfoBubble
+>>>>>>> develop:Assets/Prefabs/Dialogue/DialogueCanvas.prefab
       objectReference: {fileID: 0}
     - target: {fileID: 5132611583149818325, guid: 88fad6f8cc535ee4bb2ad55d4dc66311,
         type: 3}
       propertyPath: m_IsActive
+<<<<<<< HEAD:Assets/Prefabs/Dialogue/Canvas.prefab
+      value: 1
+=======
       value: 0
+>>>>>>> develop:Assets/Prefabs/Dialogue/DialogueCanvas.prefab
       objectReference: {fileID: 0}
     - target: {fileID: 5132611583149818346, guid: 88fad6f8cc535ee4bb2ad55d4dc66311,
         type: 3}

@@ -20,8 +20,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
     public bool myTurn = false; //if true, it will go to the counter
     public bool amDone = false; //if true, it will go away and will deactivates itself
-    public GameObject speechObject;
-    public TMP_Text speechBubble;
     public Dispensary dispensary;
     public Yarn.Unity.DialogueRunner dialogueRunner;
 
@@ -43,10 +41,15 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     private int _money;
     private int _fundCheck;
     private bool introduced = false;
+<<<<<<< HEAD
+    
+    public TMP_Text speechBubble;
+=======
 
     // Properties
     private bool HasAccount { get { return TellerMachine.Instance.accounts.ContainsKey ( accountNumber ); } }
     private int AccountMoney { get { return ( int ) TellerMachine.Instance.accounts [ accountNumber ].balance; } }
+>>>>>>> develop
 
     private void OnEnable()
     {
@@ -60,7 +63,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 //            need = NeedType.makeAccount;
 //        }
 
-        speechObject.SetActive(false);
+        myTurn = false;
         amDone = false;
         introduced = false;
         hapinessLevel = 5;
@@ -111,6 +114,8 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     {
         //as long as in the queue, time is of essence. If it is their turn, they will move to counter
         //TODO: set this somewhere to true
+<<<<<<< HEAD
+=======
         if (amDone)
         {
             AngerManagment();
@@ -121,15 +126,15 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             return;
         }
 
+>>>>>>> develop
         if(!myTurn) 
         {
             WaitingInQueue();
-            return;
+            return;   
         }
 
         if (!introduced)
         {
-            speechObject.SetActive(true);
             Introduce();
             introduced = true;
         }
@@ -142,7 +147,9 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             moreMoney = false;
         }
 
-
+        if (!amDone) return;
+        AngerManagment();
+        StartCoroutine(LeaveCounter());
     }
 
     private void WaitingInQueue()
@@ -288,7 +295,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         yield return leaveTween.WaitForCompletion();
 
         App.instance.score.happiness = App.instance.score.happiness+hapinessLevel;
-        myTurn = false;
         CustomerManager.next = true;
     }
 

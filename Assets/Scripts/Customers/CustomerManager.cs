@@ -17,7 +17,6 @@ public class CustomerManager : MonoBehaviour
     private List<string> names = new List<string>();
     private int nextCharacterNumber;
     private string nextCharacter;
-    private bool firstSpawn = true;
     
     private Clock instance; //get global time from clock
 
@@ -43,6 +42,7 @@ public class CustomerManager : MonoBehaviour
         {
             var c = customer.GenerateCustomer();
             var cName = c.GetComponent<CustomerBrain>().customerName;
+            print("customer: " + cName);
             Customers.Add(cName,c);
             Customers[cName].SetActive(false);
             names.Add(cName);
@@ -84,21 +84,18 @@ public class CustomerManager : MonoBehaviour
         {
             nextCharacterNumber = Random.Range(0, names.Count);
             nextCharacter = names[nextCharacterNumber];
-            
+            print("nexCharNum: " + nextCharacterNumber + " | nextcharacter: " + nextCharacter);
             countTries++;
             if (countTries > names.Count + 3) break;
             //check if character is already enqueued
             if (!queue.Contains(Customers[nextCharacter]))
             {
+                print("ququq: " + spawnPositions[Mathf.Max(0, queue.Count)]);
+
                 var c = Customers[nextCharacter];
                 //set a character active and add to queue
                 c.SetActive(true);
                 c.transform.position = spawnPositions[Mathf.Max(0, queue.Count)];
-                if (firstSpawn)
-                {
-                    c.GetComponent<CustomerBrain>().myTurn = true;
-                    firstSpawn = false;
-                }
                 queue.Enqueue(Customers[nextCharacter]);
                 enqueued = true;
                 break;

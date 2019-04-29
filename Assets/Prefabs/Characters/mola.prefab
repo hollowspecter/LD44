@@ -331,7 +331,6 @@ GameObject:
   m_Component:
   - component: {fileID: 711611375084092173}
   - component: {fileID: 711611375084092172}
-  - component: {fileID: 2009781703295635792}
   m_Layer: 0
   m_Name: mola
   m_TagString: Untagged
@@ -347,16 +346,19 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711611375084092403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -8.33, y: 0, z: 0}
+  m_LocalScale: {x: 0.59272, y: 0.59272, z: 0.59272}
   m_Children:
   - {fileID: 711611373305956267}
   - {fileID: 711611373598182327}
   - {fileID: 711611373711884973}
+<<<<<<< HEAD
+=======
   - {fileID: 1732355042198326451}
   - {fileID: 6648671331436707740}
   - {fileID: 7591808608331989429}
   - {fileID: 115444834386951133}
+>>>>>>> develop
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -379,6 +381,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+<<<<<<< HEAD
+=======
 --- !u!114 &2009781703295635792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1005,3 +1009,4 @@ MonoBehaviour:
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+>>>>>>> develop
