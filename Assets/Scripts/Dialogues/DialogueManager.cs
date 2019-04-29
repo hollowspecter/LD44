@@ -92,6 +92,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
                 count++;
                 if ( count % voiceSpeed == 0 ) voice.PlaySound ();
                 stringBuilder.Append(c);
+                yield return new WaitUntil(()=>!instantMessage);
                 lineText.text = stringBuilder.ToString();
                 yield return new WaitForSeconds(textSpeed);
             }
@@ -99,6 +100,7 @@ public class DialogueManager : Yarn.Unity.DialogueUIBehaviour
         else
         {
             // Display the line immediately if textSpeed == 0
+            yield return new WaitUntil(()=>!instantMessage);
             lineText.text = line.text;
         }
 
