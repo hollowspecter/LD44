@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class CustomerBrain : MonoBehaviour, IDraggableReceiver
@@ -146,6 +147,14 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     #region switch cases
     private void Introduce()
     {
+        // subscribe to buttons
+        // unsubscription is automatically done when amdone is pressed
+        CustomerInteractionUI.Instance.SubscribeCustomer (
+            // called when moremoney button is pressed
+            () => moreMoney = true,
+            // called when amdone button is pressed
+            () => amDone = true );
+
         //possible: needs to give you more money
         //possible: can get money
         //possible: can rob
