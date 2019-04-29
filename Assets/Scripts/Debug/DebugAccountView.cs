@@ -16,6 +16,8 @@ public class DebugAccountView : MonoBehaviour
         refreshButton.onClick.AsObservable ()
             .Subscribe ( _ => RefreshText())
             .AddTo ( this );
+
+        gameObject.SetActive ( false );
     }
 
     private void RefreshText()
