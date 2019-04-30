@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Events;
-using TMPro;
 using UniRx;
 
 public class CustomerBrain : MonoBehaviour, IDraggableReceiver
@@ -41,6 +39,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     private int _money;
     private int _fundCheck;
     private bool introduced = false;
+    private int gaveMoreMoney = 0;
 
     // Properties
     private bool HasAccount { get { return TellerMachine.Instance.accounts.ContainsKey ( accountNumber ); } }
@@ -53,11 +52,11 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
         //TODO: check their Account -> Needs the money tracking system
 
-//        if (!cI.hasAccount)
+//        if (!hasAccount)
 //        {
 //            need = NeedType.makeAccount;
 //        }
-
+        _fundCheck = AccountMoney;
         amDone = false;
         introduced = false;
         hapinessLevel = 5;
@@ -75,27 +74,26 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         action = need.ToString();
 
         //set the wait time to wait
-        _maxTime = Random.Range(maxTimeRange.minValue,maxTimeRange.maxValue)*5;
+        _maxTime = Random.Range(maxTimeRange.minValue,maxTimeRange.maxValue)*2;
 
         //set money wanting to use
         //set money to use in range of wanting to use(difference!)
         _moneyWanting = (int)Random.Range(moneyToUse.minValue,moneyToUse.maxValue);
-        _money = _moneyWanting + Random.Range(-moneyRange, moneyRange);
-
+        _money = _moneyWanting + Random.Range(-moneyRange, moneyRange+1);
+    
         // if the account has no money, they will change their action to deposit
-        if (AccountMoney <= 1f)
+        if (AccountMoney <= 1)
         {
             action = "deposit";
-        }
- 
-        //if they want to withdraw/exchange/transfer and "money" is higher than the total
-        //on their bank account, the total will be the new "money"
-        if (AccountMoney < _money && AccountMoney != 0)
-        {
-            _money = AccountMoney;
+            return;
         }
 
-        _fundCheck = AccountMoney;
+        //if they want to withdraw/exchange/transfer and "money" is higher than the total
+        //on their bank account, the total will be the new "money"
+        if (need == NeedType.withdraw && AccountMoney < _money)
+        {
+            _money = AccountMoney;
+        }  
     }
 
     private void OnDisable()
@@ -104,10 +102,9 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         SoundManager.Instance.m_doorClose.PlaySound ();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         //as long as in the queue, time is of essence. If it is their turn, they will move to counter
-        //TODO: set this somewhere to true
         if (amDone)
         {
             AngerManagment();
@@ -135,14 +132,12 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             //_money = (_moneyWanting/2) + Random.Range(-moneyRange, moneyRange);
             //plz don't overwrite this again
             if(_money>0){
-                GiveMoney();
+                GiveMoney(_money);
             }else{
                 dialogueRunner.dialogueUI.InstantMessage("I already gave you my money!");
             }
             moreMoney = false;
         }
-
-
     }
 
     private void WaitingInQueue()
@@ -154,11 +149,12 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
         
         if (_timePast > _maxTime)
         {
-            print("I am going home!");
-            hapinessLevel = hapinessLevel-2;
-            amDone = true;
+            //print("I am going home!");
+            hapinessLevel  = hapinessLevel-2;
+            //amDone = true;
         }
     }
+    
     #region switch cases
     private void Introduce()
     {
@@ -175,8 +171,6 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
             .Subscribe ( x => { if ( x ) amDone = true; } )
             .AddTo ( disposables );
 
-        
-
         //possible: needs to give you more money
         //possible: can get money
         //possible: can rob
@@ -189,7 +183,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
                     PostitUI.Instance.PublishToPostit ( string.Format ( "{0} ${1} TO {2}",
                             action, _money, accountNumber ) );
-                    GiveMoney();
+                    GiveMoney(_money);
                     // start dialogue
                     dialogueRunner.StartDialogue ();
                     break;
@@ -293,7 +287,7 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
 
     IEnumerator LeaveCounter()
     {
-        Tween leaveTween = transform.DOMoveX(transform.position.x+-10, 1);
+        Tween leaveTween = transform.DOMoveX(transform.position.x+-5, 1);
         yield return leaveTween.WaitForCompletion();
 
         App.instance.score.happiness = App.instance.score.happiness+hapinessLevel;
@@ -302,18 +296,25 @@ public class CustomerBrain : MonoBehaviour, IDraggableReceiver
     }
 
     //TODO: throws money amount. Look at how Sam dispenses with his Teller machine
-    private void GiveMoney()
+    private void GiveMoney(int amount)
     {
         //throw amount of _money
-        dispensary.DispenseChange(_money);
-        _money = 0;
+        dispensary.DispenseChange(amount);
+        //gives at least once more, more money
+        _money = amount / 2;
+        if (gaveMoreMoney < 1)
+        {
+            gaveMoreMoney++;
+            return;
+        }
+        _money = 0; 
     }
     
     //TODO: able to give customers money
     private void GetMoney(int amount)
     {
         //increase _fundCheck 
-        _money += amount;
+        _fundCheck += amount;
     }
 
     public bool OnReceivedDraggable(Draggable drag)

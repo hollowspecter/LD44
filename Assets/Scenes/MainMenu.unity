@@ -1930,26 +1930,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 665077617, guid: 474ce3703e9bebb41b48063a16cb0999, type: 3}
-      propertyPath: m_text
-      value: "- Benedikt Kirchmeier\n- Diana Alves\n- Ingelis Wipfelder\n- Mathew
-        Varkki @rayvshimself\n- Patricia Alves\n- Sam B\xE4umer\n- Vivien Baguio @hollowspecter\n\nMusic
-        by:\n\"Lobby Time\" Kevin MacLeod (incompetech.com)\nLicensed under Creative
-        Commons: By Attribution 3.0 License http://creativecommons.org/licenses/by/3.0/\n\nSounds
-        from Soniss and freesfx.co.uk"
-      objectReference: {fileID: 0}
-    - target: {fileID: 665077617, guid: 474ce3703e9bebb41b48063a16cb0999, type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 344
-      objectReference: {fileID: 0}
-    - target: {fileID: 665077617, guid: 474ce3703e9bebb41b48063a16cb0999, type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 665077617, guid: 474ce3703e9bebb41b48063a16cb0999, type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 54
-      objectReference: {fileID: 0}
+    - target: {fileID: 1970626, guid: 474ce3703e9bebb41b48063a16cb0999, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2017510185}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 474ce3703e9bebb41b48063a16cb0999, type: 3}
 --- !u!224 &192519840500172777 stripped
@@ -1969,11 +1953,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TutorialWindow
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055237675710303254, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1055237675710303249, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
         type: 3}
@@ -2080,43 +2059,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2248824286210931835, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
+    - target: {fileID: 3206504361738302035, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
         type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 559
-      objectReference: {fileID: 0}
-    - target: {fileID: 2248824286210931835, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 108
-      objectReference: {fileID: 0}
-    - target: {fileID: 2248824286210931835, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 106
-      objectReference: {fileID: 0}
-    - target: {fileID: 2248824286210931835, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2248824286210931835, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2248824286210931835, guid: 81b36f8e8a8365f45aa579f4be5d9f13,
-        type: 3}
-      propertyPath: m_text
-      value: "Welcome to your first day as a Teller at this humble bank! Your job
-        is pretty easy.\nIf a customer comes up, best write a note and put it on your
-        pc, so you remember what they want. Then you write the amount and account
-        number into your pc. \n<b>Withdraw:</b> hit the withdraw button and then hit
-        klick dispense. The money will come out. Don't forget to give the money to
-        the customers!\n<b>Deposit:</b> Put the money the customer gives you into
-        the machine and klick deposit. Check if they gave you enough money. Be nice
-        and <b>talk</b> with them!\n .... oh, and be aware of robbers!"
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2017510185}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81b36f8e8a8365f45aa579f4be5d9f13, type: 3}
 --- !u!224 &2829547172186301756 stripped
